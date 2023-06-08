@@ -1,0 +1,60 @@
+version: "3.1"
+
+stories:
+
+- story: buscar um livro cominho feliz
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - intent: buscar_livro
+    - action: utter_buscar_livro
+    - intent: agradecimento
+    - action: utter_agradecimento
+    - action: utter_finalizacao
+
+- story: buscar um livro caminho triste
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - intent: buscar_livro
+    - action: utter_buscar_livro
+    - intent: negacao
+    - action: utter_negacao
+    - action: utter_desculpa
+    - action: utter_nova_acao
+    - intent: negacao
+    - action: utter_finalizacao
+
+- story: recomendar um livro caminho feliz
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - intent: recomendar_livro
+    - action: utter_recomendar_livro
+    - intent: agradecimento
+    - action: utter_agradecimento
+    - action: utter_finalizacao
+
+- story: recomendar um livro caminho triste
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - intent: recomendar_livro
+    - action: utter_recomendar_livro
+    - intent: negacao
+    - action: utter_negacao
+    - action: utter_desculpa
+    - action: utter_nova_acao
+    - intent: negacao
+    - action: utter_finalizacao
+
+- story: listar nomes de livros caminho feliz
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - intent: listar_livros
+    - action: utter_listar_livros
+    - action: action_listar_nomes_livros
+    # - action: action_hello_world
+    - intent: agradecimento
+    - action: utter_finalizacao

@@ -1,0 +1,20 @@
+version: "3.1"
+
+rules:
+
+- rule: Diga tchau toda vez que o usuario dizer tchau
+  steps:
+    - intent: tchau
+    - action: utter_finalizacao
+
+- rule: Pergunte o que o usuario quer fazer toda vez que ele saudar
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+
+- rule: Execute a acao action_listar_nomes_livros sempre que utter_listar_livros for executada
+  steps:
+    - intent: listar_livros
+    - action: utter_listar_livros
+    - action: action_listar_nomes_livros
+    # - action: action_hello_world

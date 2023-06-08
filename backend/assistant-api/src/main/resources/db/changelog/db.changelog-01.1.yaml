@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/database/create-table-book.sql
+  - include:
+      file: db/changelog/load/load-table-book.sql

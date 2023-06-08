@@ -1,0 +1,72 @@
+version: "3.1"
+
+nlu:
+- intent: saudacao
+  examples: |
+    - olá
+    - ola
+    - Olá
+    - Ola
+    - Olá!
+    - oi
+    - Oi
+    - oi!
+    - Oi!
+    - bom dia
+    - bom dia!
+    - boa tarde
+    - boa tarde!
+    - boa noite
+    - boa noite!
+
+- intent: buscar_livro
+  examples: |
+    - quero pesquisar um livro
+    - pesquisar livro
+    - pesquisar um livro
+    - buscar por livro
+    - buscar um livro
+
+- intent: recomendar_livro
+  examples: |
+    - me recomende um livro
+    - recomendar livro
+    - recomende um livro
+    - recomendação de livro
+
+- intent: listar_livros
+  examples: |
+    - liste livros para mim
+    - me liste alguns livros
+    - me dê uma lista de livros
+
+- intent: agradecimento
+  examples: |
+    - obrigado pela ajuda!
+    - obrigado!
+    - obrigada pela ajuda!
+    - obrigada!
+
+- intent: tchau
+  examples: |
+    - tchau
+    - até logo
+    - adeus
+
+- intent: afirmacao
+  examples: |
+    - sim
+    - isso aí!
+    - de fato é isso mesmo
+    - claro!
+    - com certeza!
+    - correto
+
+- intent: negacao
+  examples: |
+    - não
+    - não é isso
+    - não quero este
+    - não tenho certeza
+    - não gostei
+    - não é exatamente o que procuro
