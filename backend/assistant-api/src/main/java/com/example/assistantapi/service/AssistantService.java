@@ -1,6 +1,5 @@
 package com.example.assistantapi.service;
 
-import com.example.assistantapi.entity.ElasticBookEntity;
 import com.example.assistantapi.repository.ElasticsearchRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,30 +14,30 @@ public class AssistantService {
 
     private ElasticsearchRepository elasticsearchRepository;
 
-    public List<String> getDocumentsByTitulo(String tituloValue) {
-        var list = elasticsearchRepository.getDocumentsByTitulo(tituloValue);
+    public List<String> getDocumentsByTituloMinhaBiblioteca(String tituloValue) {
+        var list = elasticsearchRepository.minhaBibliotecaGetDocumentsByTitulo(tituloValue);
         log.info("Titulo: {}", tituloValue);
         log.info("Books: {}", list);
         return list;
     }
 
-    public ElasticBookEntity getDocumentByTitulo(String titulo) {
-        var list = elasticsearchRepository.getDocumentByTitulo(titulo);
-        log.info("Titulo: {}", titulo);
-        log.info("Books: {}", list);
-        return list;
-    }
-
-    public List<String> getDocumentsByAutor(String autor) {
-        var list = elasticsearchRepository.getDocumentsByAutor(autor);
+    public List<String> getDocumentsByAutorMinhaBiblioteca(String autor) {
+        var list = elasticsearchRepository.minhaBibliotecaGetDocumentsByAutor(autor);
         log.info("Autor: {}", autor);
         log.info("Books: {}", list);
         return list;
     }
 
-    public ElasticBookEntity getDocumentByAutor(String autorValue) {
-        var list = elasticsearchRepository.getOneDocumentByAutor(autorValue);
-        log.info("Autor: {}", autorValue);
+    public List<String> getDocumentsByTituloPearsonBiblioteca(String titulo) {
+        var list = elasticsearchRepository.pearsonGetDocumentsByTitulo(titulo);
+        log.info("Titulo: {}", titulo);
+        log.info("Books: {}", list);
+        return list;
+    }
+
+    public List<String> getDocumentsByAutorPearsonBiblioteca(String autor) {
+        var list = elasticsearchRepository.pearsonGetDocumentsByAutor(autor);
+        log.info("Autor: {}", autor);
         log.info("Books: {}", list);
         return list;
     }

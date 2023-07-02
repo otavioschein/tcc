@@ -12,21 +12,26 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(indexName = "minha-biblioteca")
+@Document(indexName = "pearson-biblioteca")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ElasticBookEntity {
+public class PearsonBibliotecaBook {
 
     @Id
     private String id;
-    private String titulo;
+    private String anoDaPublicacao;
     private String autor;
-    private String isbnDigital;
-    private String isbnImpresso;
-    private String referenciaAbnt;
+    private String categaria;
+    private String dataDaPublicacao;
+    private String descricao;
+    private String edicao;
     private String editora;
     private String formato;
-    private String cursos;
-    private String seloEditorial;
-    private String edicao;
+    private String idioma;
+    private String isbn;
+    private String paginas;
+    private String selo;
+    private String status;
+    private String tags;
+    private String titulo;
 
 }

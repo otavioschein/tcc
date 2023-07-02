@@ -1,13 +1,9 @@
 package com.example.assistantapi.controller;
 
-import com.example.assistantapi.entity.ElasticBookEntity;
 import com.example.assistantapi.service.AssistantService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,27 +15,25 @@ public class AssistantController {
 
     private final AssistantService assistantService;
 
-    @GetMapping(value = "/books/titulo")
-    public List<String> searchDocumentsByTitulo(@RequestParam String titulo) {
-        log.info("Titulo a pesquisar: {}", titulo);
-        return assistantService.getDocumentsByTitulo(titulo);
+    @GetMapping(value = "/books/minha-biblioteca/titulo/{titulo}")
+    public List<String> searchDocumentsByTitulo(@PathVariable String titulo) {
+        return assistantService.getDocumentsByTituloMinhaBiblioteca(titulo);
     }
 
-    @GetMapping(value = "/books/one/titulo")
-    public ElasticBookEntity searchOneTitulo(@RequestParam String titulo) {
-        return assistantService.getDocumentByTitulo(titulo);
-    }
-
-    @GetMapping(value = "/books/autor")
-    public List<String> searchDocumentsByAturo(@RequestParam String autor) {
+    @GetMapping(value = "/books/minha-biblioteca/autor/{autor}")
+    public List<String> searchDocumentsByAutorMinha(@PathVariable String autor) {
         log.info("Autor a pesquisar: {}", autor);
-        return assistantService.getDocumentsByAutor(autor);
+        return assistantService.getDocumentsByAutorMinhaBiblioteca(autor);
     }
 
-    @GetMapping(value = "/books/one/autor")
-    public ElasticBookEntity searchDocumentsByAutor(@RequestParam String autor) {
-        log.info("Autor a pesquisar: {}", autor);
-        return assistantService.getDocumentByAutor(autor);
+    @GetMapping(value = "/books/pearson-biblioteca/titulo/{titulo}")
+    public List<String> searchDocumentsByTituloPearson(@PathVariable String titulo) {
+        return assistantService.getDocumentsByTituloPearsonBiblioteca(titulo);
+    }
+
+    @GetMapping(value = "/books/pearson-biblioteca/autor/{autor}")
+    public List<String> searchDocumentsByAutorPearson(@PathVariable String autor) {
+        return assistantService.getDocumentsByAutorPearsonBiblioteca(autor);
     }
 
 }
