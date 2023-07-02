@@ -7,18 +7,13 @@ rules:
     - intent: saudacao
     - action: utter_saudacao
 
-- rule: Execute a acao action_buscar_livro_por_autor sempre que utter_buscar_livro_por_autor for executada
+- rule: Execute a acao action_buscar_livro_por_autor sempre que a action_extrair_nome_de_autor_no_input for executada
   steps:
     - intent: autor
     - action: action_extrair_nome_de_autor_no_input
     - action: action_buscar_livro_por_autor
 
-- rule: livro
+- rule: Pergunte o nome do autor sempre que o usuário quiser pesquisar um livro por nome de autor
   steps:
     - intent: buscar_livro_por_autor
     - action: utter_buscar_livro_por_autor
-
-# - rule: identificar nome de autor
-#   steps:
-#     - intent: autor
-#     - action: action_extrair_nome_de_autor_no_input

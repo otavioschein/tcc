@@ -7,7 +7,9 @@ intents:
 
 slots:
   nome_autor:
-    type: from_text
+    type: text
+    mappings:
+    - type: from_text
 
 responses:
   utter_saudacao:
