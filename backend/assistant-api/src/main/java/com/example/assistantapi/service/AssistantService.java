@@ -1,40 +1,46 @@
 package com.example.assistantapi.service;
 
-import com.example.assistantapi.entity.BookEntity;
 import com.example.assistantapi.entity.ElasticBookEntity;
-import com.example.assistantapi.repository.BookRepository;
 import com.example.assistantapi.repository.ElasticsearchRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.List;
 
+@Slf4j
 @Service
 @AllArgsConstructor
 public class AssistantService {
 
-    private BookRepository bookRepository;
     private ElasticsearchRepository elasticsearchRepository;
 
-    public List<BookEntity> getBooksList() {
-        return bookRepository.findAll();
+    public List<String> getDocumentsByTitulo(String tituloValue) {
+        var list = elasticsearchRepository.getDocumentsByTitulo(tituloValue);
+        log.info("Titulo: {}", tituloValue);
+        log.info("Books: {}", list);
+        return list;
     }
 
-    public List<String> getBooksNames() {
-        return bookRepository.findAllBooksNames();
+    public ElasticBookEntity getDocumentByTitulo(String titulo) {
+        var list = elasticsearchRepository.getDocumentByTitulo(titulo);
+        log.info("Titulo: {}", titulo);
+        log.info("Books: {}", list);
+        return list;
     }
 
-    public List<BookEntity> getBooksByAuthor(String author) {
-        return bookRepository.findAllByAuthor(author);
+    public List<String> getDocumentsByAutor(String autor) {
+        var list = elasticsearchRepository.getDocumentsByAutor(autor);
+        log.info("Autor: {}", autor);
+        log.info("Books: {}", list);
+        return list;
     }
 
-    public List<ElasticBookEntity> getAllElasticBooks() {
-        try {
-            return elasticsearchRepository.searchAllDocuments();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public ElasticBookEntity getDocumentByAutor(String autorValue) {
+        var list = elasticsearchRepository.getOneDocumentByAutor(autorValue);
+        log.info("Autor: {}", autorValue);
+        log.info("Books: {}", list);
+        return list;
     }
 
 }

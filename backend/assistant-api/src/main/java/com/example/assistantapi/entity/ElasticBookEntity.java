@@ -7,31 +7,26 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(indexName = "books")
+@Document(indexName = "minha-biblioteca")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ElasticBookEntity {
 
     @Id
-    @Field(type = FieldType.Keyword, name = "_id")
     private String id;
-
-    @Field(type = FieldType.Long, name = "bookID")
-    private String bookID;
-
-    @Field(type = FieldType.Text, name = "title")
-    private String title;
-
-    @Field(type = FieldType.Text, name = "authors")
-    private String authors;
-
-//    @Field(type = FieldType.Double, name = "publicationDate")
-//    private double price;
+    private String titulo;
+    private String autor;
+    private String isbnDigital;
+    private String isbnImpresso;
+    private String referenciaAbnt;
+    private String editora;
+    private String formato;
+    private String cursos;
+    private String seloEditorial;
+    private String edicao;
 
 }
