@@ -1,0 +1,19 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3BChdWpJfVEucGUmlxcmJRUCjyory4wvyi+IhmnGZGQsAVFM8Nw==": "action_listen",
+    "eJyNjEEKgDAMBL/SB/iCfkUkBM0hYNOSpiKU/t2gXgVvO+zszn1MoRelA3A1zhJDfwIIJorhhZ2rkbjbKqk7LI7mdbOs498HnabICpITwUZwb52ApTT7/F4uSpc/fA==": "action_listen",
+    "eJwtisEJwCAMAFfJAJ3AVUoJUfIQ2kRi9CPu3kD7u+PuXPuA1YwnUvGqkmB9gEIPJ/jlrt1Z4h2dLZ4qoZ4gj17IIk9TbGpIw9X2vl78iSKz": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohqbQ4ObEIKF1WlB9fkF8Un1hakl9USxtDYwHrOEO1": "meu_form",
+    "eJzFjNEJgDAMBVfpAE7QVURCLBEKNilp0p/i7hZ0AP/8e8c7bh3XEkZV6oDJsnAM4xnAWCiGF87cjHi63kink3mixbB7S6jz7ipQRQHdRK8/ooUcDtHyvbfd2IJipQ==": "utter_buscar_livro_autor",
+    "eJzFjEEKwCAMBL/iA/oCv1JKsJKCUI3ExIv49wr20lsPhd522dlZW19My4wVnJdAyZo2AyQX0Zq7nKEIpsFqQR5MSKOKNbsW73jMlQkyMTgV4v6HNKLCQRy/8qkIMjy+8/fav13bwohj": "action_listen",
+    "eJzFkEEKwCAMBL/iA/oCv1JKsJKCUI3ExIv49wr20nvB2y47u4fdW99My4wVnJdAyZo2BSQX0ZrX3KEIpsFqQR5MSMOKNacW73jElQkyMTgV4r5iNKLCRRz/2lMRZPh0Z2/tCccDj9+pZQ==": "action_buscar_livro_por_autor",
+    "eJzNkMEJgDAMRVfpAE7QVURCLREKtpE06aV0dwt68SB4EPSWR/77gYy1DaZujAWcl0DJmnoMkFxEa05YQxZMPasZuWdC6ijWzJq9474uTLARg1Mhbl+URlRYiONbfSqCDBf38P78hBNu5MdHph0rkdEd": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhOLE0JTE5Mb+2NhYAPkUcrw==": "utter_saudacao",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhOLE0JTE5Mb+WgDGlJSWpRfFw1XjMiQUAL4M4FQ==": "action_listen",
+    "eJydjkEKgDAMBL/SB/iCfkUkxJpDQZuSJr2U/t2C4rXgbYcdll1bX1zLQhUwaOTkXXsCJLzIuxfOWJTScK2QDCemgepdQTswIPfJjKmSwGf/3pnc2a0ElFFXYcgsgKYsvW83OCVZFw==": "utter_buscar_livro_por_autor",
+    "eJydjkEKgDAMBL/SB/iCfkUkxJpDQRtJEy+lf7egeBOLt112stmx1MGVXegADBo5eVcuAQk38u42a8xKqbGWSRoTU7PqXUZbMCDXjxpTJYGH/t3zMWe2HFBafAjDzgJoytI37uW2+8d0AqprgIU=": "action_listen",
+    "eJytjsEJgDAMRVfpAE7QVURCrDkUtJE08VLc3YLiTSriLZ+8/Ly+7J0rq9AGGDRy8q6cAyRcyLsrzDErpcpaJqlMTDWqdxltwoC8N2pMlQRu+nNPQ2e0HFDqehOGlQXQlOWd3MPtTz8a4lfHcABC1Zpt": "action_buscar_livro_por_autor",
+    "eJytjkEKhDAMRa/SA3iCXkUkxJpFYaaRNHFTvLuFEXdDq7jLJz8vbyz74MoqtAEGjZy8K78BEn7JuzN8YlZKtWuZpHZiqlG9y2gLBuS9gTFVErjajzkNndlyQKnrTRhWFkBTlj65P7cv/WiI32H0ip7M6QBM2rsL": "action_listen"
+  }
+}

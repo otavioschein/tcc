@@ -2,51 +2,23 @@ version: "3.1"
 
 intents:
   - saudacao
-  - buscar_livro
-  - recomendar_livro
-  - listar_livros
-  - agradecimento
-  - tchau
-  - afirmacao
-  - negacao
-  - bot_challenge
+  - buscar_livro_por_autor
+  - autor
+
+slots:
+  nome_autor:
+    type: from_text
 
 responses:
   utter_saudacao:
     - text: "Olá, bem-vindo ao assistente! O que você gostaria?"
 
-  utter_buscar_livro:
-    - text: "Certo! Preciso de algumas informações para fazer a busca:"
-    - text: "Show! Me informe o seguinte:"
-
-  utter_recomendar_livro:
-    - text: "Certo! Preciso de algumas informações para fazer a recomendação:"
-
-  utter_listar_livros:
-    - text: "Certo! Irei listar os nomes dos livros disponiveis:"
-    - text: "Show! Me informe o seguinte:"
-
-  utter_agradecimento:
-    - text: "De nada! Gostaria de algo a mais?"
-
-  utter_finalizacao:
-    - text: "Tchau! Obrigado por utilizar o meu serviço!"
-
-  utter_afirmacao:
-    - text: "Show! Fico feliz em ter lhe ajudado!"
-
-  utter_negacao:
-    - text: "Ok"
-
-  utter_desculpa:
-    - text: "Desculpe não poder te ajudar dessa vez."
-
-  utter_nova_acao:
-    - text: "Você gostaria de realizar uma nova pesquisa?"
+  utter_buscar_livro_por_autor:
+    - text: "Me informe o nome do(a) autor(a)"
 
 actions:
-  - action_listar_nomes_livros
-  # - action_hello_world
+  - action_buscar_livro_por_autor
+  - action_extrair_nome_de_autor_no_input
 
 session_config:
   session_expiration_time: 60

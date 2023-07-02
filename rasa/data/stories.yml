@@ -2,59 +2,32 @@ version: "3.1"
 
 stories:
 
-- story: buscar um livro cominho feliz
+- story: buscar um livro por autor cominho feliz
   steps:
     - intent: saudacao
     - action: utter_saudacao
-    - intent: buscar_livro
-    - action: utter_buscar_livro
-    - intent: agradecimento
-    - action: utter_agradecimento
-    - action: utter_finalizacao
+    - intent: buscar_livro_por_autor
+    - action: utter_buscar_livro_por_autor
+    - intent: autor
+    - action: action_extrair_nome_de_autor_no_input
+    - action: action_buscar_livro_por_autor
 
-- story: buscar um livro caminho triste
-  steps:
-    - intent: saudacao
-    - action: utter_saudacao
-    - intent: buscar_livro
-    - action: utter_buscar_livro
-    - intent: negacao
-    - action: utter_negacao
-    - action: utter_desculpa
-    - action: utter_nova_acao
-    - intent: negacao
-    - action: utter_finalizacao
+# - story: buscar um livro por autor cominho feliz 3
+#   steps:
+#     - intent: autor
+#     - action: action_buscar_livro_por_autor
 
-- story: recomendar um livro caminho feliz
-  steps:
-    - intent: saudacao
-    - action: utter_saudacao
-    - intent: recomendar_livro
-    - action: utter_recomendar_livro
-    - intent: agradecimento
-    - action: utter_agradecimento
-    - action: utter_finalizacao
+# - story: 
+#   steps:
+#     - intent: buscar_livro_por_autor
+#     - action: action_listen
+#     - action: meu_form
+#     - action: utter_buscar_livro_autor
+#     - action: action_listen
+#     - action: action_buscar_livro_por_autor
 
-- story: recomendar um livro caminho triste
+- story: extrair nome do autor
   steps:
-    - intent: saudacao
-    - action: utter_saudacao
-    - intent: recomendar_livro
-    - action: utter_recomendar_livro
-    - intent: negacao
-    - action: utter_negacao
-    - action: utter_desculpa
-    - action: utter_nova_acao
-    - intent: negacao
-    - action: utter_finalizacao
-
-- story: listar nomes de livros caminho feliz
-  steps:
-    - intent: saudacao
-    - action: utter_saudacao
-    - intent: listar_livros
-    - action: utter_listar_livros
-    - action: action_listar_nomes_livros
-    # - action: action_hello_world
-    - intent: agradecimento
-    - action: utter_finalizacao
+    - intent: autor
+    - action: action_extrair_nome_de_autor_no_input
+    - action: action_buscar_livro_por_autor

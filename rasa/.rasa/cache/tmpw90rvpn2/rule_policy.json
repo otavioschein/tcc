@@ -1,0 +1,37 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"autor\"}}]": "autor_nome_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"autor\"}}, {\"active_loop\": {\"name\": \"autor_nome_form\"}, \"prev_action\": {\"action_name\": \"autor_nome_form\"}, \"user\": {\"intent\": \"autor\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"autor_nome_form\"}}]": "action_buscar_livro_por_autor",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"autor_nome_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_buscar_livro_por_autor\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"buscar_livro_form\"}}]": "action_buscar_livro_por_nome",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"buscar_livro_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"action_buscar_livro_por_nome\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saudacao\"}}]": "utter_saudacao",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saudacao\"}}, {\"prev_action\": {\"action_name\": \"utter_saudacao\"}, \"user\": {\"intent\": \"saudacao\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"titulo\"}}]": "buscar_livro_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"titulo\"}}, {\"active_loop\": {\"name\": \"buscar_livro_form\"}, \"prev_action\": {\"action_name\": \"buscar_livro_form\"}, \"user\": {\"intent\": \"titulo\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"listar_livros\"}}]": "utter_listar_livros",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"listar_livros\"}}, {\"prev_action\": {\"action_name\": \"utter_listar_livros\"}, \"user\": {\"intent\": \"listar_livros\"}}]": "action_listar_nomes_livros",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"listar_livros\"}}, {\"prev_action\": {\"action_name\": \"utter_listar_livros\"}, \"user\": {\"intent\": \"listar_livros\"}}, {\"prev_action\": {\"action_name\": \"action_listar_nomes_livros\"}, \"user\": {\"intent\": \"listar_livros\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "autor_nome_form",
+      "buscar_livro_form"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"autor_nome_form\"}, \"prev_action\": {\"action_name\": \"autor_nome_form\"}, \"user\": {\"intent\": \"autor\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"buscar_livro_form\"}, \"prev_action\": {\"action_name\": \"buscar_livro_form\"}, \"user\": {\"intent\": \"titulo\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "predicting default action with intent restart",
+      "predicting default action with intent back",
+      "handling active loops and forms - autor_nome_form",
+      "predicting default action with intent session_start",
+      "handling active loops and forms - buscar_livro_form",
+      "handling active loops and forms - autor_nome_form - action_listen",
+      "handling active loops and forms - buscar_livro_form - action_listen"
+    ]
+  }
+}

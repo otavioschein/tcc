@@ -2,19 +2,23 @@ version: "3.1"
 
 rules:
 
-- rule: Diga tchau toda vez que o usuario dizer tchau
-  steps:
-    - intent: tchau
-    - action: utter_finalizacao
-
 - rule: Pergunte o que o usuario quer fazer toda vez que ele saudar
   steps:
     - intent: saudacao
     - action: utter_saudacao
 
-- rule: Execute a acao action_listar_nomes_livros sempre que utter_listar_livros for executada
+- rule: Execute a acao action_buscar_livro_por_autor sempre que utter_buscar_livro_por_autor for executada
   steps:
-    - intent: listar_livros
-    - action: utter_listar_livros
-    - action: action_listar_nomes_livros
-    # - action: action_hello_world
+    - intent: autor
+    - action: action_extrair_nome_de_autor_no_input
+    - action: action_buscar_livro_por_autor
+
+- rule: livro
+  steps:
+    - intent: buscar_livro_por_autor
+    - action: utter_buscar_livro_por_autor
+
+# - rule: identificar nome de autor
+#   steps:
+#     - intent: autor
+#     - action: action_extrair_nome_de_autor_no_input

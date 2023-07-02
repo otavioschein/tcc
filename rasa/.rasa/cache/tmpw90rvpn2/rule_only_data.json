@@ -1,0 +1,7 @@
+{
+  "rule_only_slots": [],
+  "rule_only_loops": [
+    "autor_nome_form",
+    "buscar_livro_form"
+  ]
+}
