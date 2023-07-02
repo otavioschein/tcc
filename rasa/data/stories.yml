@@ -2,6 +2,27 @@ version: "3.1"
 
 stories:
 
+- story: buscar um livro por titulo caminho feliz 1
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - intent: buscar_livro_por_titulo
+    - action: utter_buscar_livro_por_titulo
+    - intent: livro
+    - action: action_buscar_livro_por_titulo
+
+- story: buscar um livro por titulo caminho feliz 2
+  steps:
+    - intent: buscar_livro_por_titulo
+    - action: utter_buscar_livro_por_titulo
+    - intent: livro
+    - action: action_buscar_livro_por_titulo
+
+- story: buscar um livro por titulo caminho feliz 3
+  steps:
+    - intent: livro
+    - action: action_buscar_livro_por_titulo
+
 - story: buscar um livro por autor cominho feliz 1
   steps:
     - intent: saudacao

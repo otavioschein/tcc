@@ -20,22 +20,31 @@ class ActionListarNomesLivros(Action):
 
         return[]
 
-class ActionBuscarLivroPorNome(Action):
+class ActionBuscarLivroPorTitulo(Action):
     def name(self) -> Text:
-        return "action_buscar_livro_por_nome"
+        return "action_buscar_livro_por_titulo"
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        value = tracker.get_slot("titulo_livro")
+        titulo = tracker.get_slot("titulo_livro")
 
-        response = requests.get(f"http://localhost:8080/assistant/books/titulo?titulo={value}")
-        data = response.json()
+        responseMinhaBiblioteca = requests.get(f"http://localhost:8080/assistant/books/minha-biblioteca/titulo/{titulo}")
+        responsePearson = requests.get(f"http://localhost:8080/assistant/books/pearson-biblioteca/titulo/{titulo}")
 
-        dispatcher.utter_message(text=f"Nomes dos livros que encontrei: {data}")
+        dataMinhaBiblioteca = responseMinhaBiblioteca.json()
+        dataPearson = responsePearson.json()
 
-        return [SlotSet("titulo_livro", value), SlotSet("requested_slot", None)]
+        message = f"Livros que encontrei para o título {titulo} informado: "
+        messageMinhaBiblioteca = f"Na minha biblioteca: {dataMinhaBiblioteca}"
+        messagePearson = f"e na biblioteca Pearson: {dataPearson}"
+
+        dispatcher.utter_message(text=message)
+        dispatcher.utter_message(text=messageMinhaBiblioteca)
+        dispatcher.utter_message(text=messagePearson)
+
+        return [SlotSet("titulo_livro", None)]
     
 class ActionBuscarLivroPorAutor(Action):
     def name(self) -> Text:
@@ -45,12 +54,21 @@ class ActionBuscarLivroPorAutor(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        value = tracker.get_slot("nome_autor")
+        autor = tracker.get_slot("nome_autor")
 
-        response = requests.get(f"http://localhost:8080/assistant/books/autor?autor={value}")
-        data = response.json()
+        responseMinhaBiblioteca = requests.get(f"http://localhost:8080/assistant/books/minha-biblioteca/autor/{autor}")
+        responsePearson = requests.get(f"http://localhost:8080/assistant/books/pearson-biblioteca/autor/{autor}")
 
-        dispatcher.utter_message(text=f"Nomes dos autores que encontrei {data}")
+        dataMinhaBiblioteca = responseMinhaBiblioteca.json()
+        dataPearson = responsePearson.json()
+
+        message = f"Aqui estão alguns livros que encontrei para o autor {autor}:"
+        messageMinhaBiblioteca = f"Na minha biblioteca: {dataMinhaBiblioteca}"
+        messagePearson = f"E na biblioteca pearson: {dataPearson}"
+
+        dispatcher.utter_message(text=message)
+        dispatcher.utter_message(text=messageMinhaBiblioteca)
+        dispatcher.utter_message(text=messagePearson)
         
         return[SlotSet("nome_autor", None)]
 

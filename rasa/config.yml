@@ -1,29 +1,20 @@
-# The config recipe.
-# https://rasa.com/docs/rasa/model-configuration/
 recipe: default.v1
 
-# The assistant project unique identifier
-# This default value must be replaced with a unique assistant name within your deployment
 assistant_id: bibliotecas-faccat-chat-bot
 
-# Configuration for Rasa NLU.
-# https://rasa.com/docs/rasa/nlu/components/
 language: pt_br
 
 pipeline: 
   - name: SpacyNLP
     model: "pt_core_news_md"
   - name: SpacyTokenizer
-  - name: SpacyEntityExtractor
   - name: SpacyFeaturizer
     pooling: mean
   - name: SpacyEntityExtractor
-    dimensions: ["PER"]
-  # - name: WhitespaceTokenizer
+    dimensions: ["PER", "titulo_livro"]
   - name: RegexFeaturizer
     case_sensitive: false
   - name: LexicalSyntacticFeaturizer
-  # - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
     analyzer: char_wb
     min_ngram: 1
@@ -39,8 +30,6 @@ pipeline:
     threshold: 0.3
     ambiguity_threshold: 0.1
 
-# Configuration for Rasa Core.
-# https://rasa.com/docs/rasa/core/policies/
 policies:
   - name: MemoizationPolicy
   - name: RulePolicy
