@@ -14,7 +14,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @Builder
 @Document(indexName = "minha-biblioteca")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MinhaBibliotecaBook {
+public class MinhaBibliotecaBookEntity {
 
     @Id
     private String id;

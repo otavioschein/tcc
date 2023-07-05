@@ -6,8 +6,8 @@ import co.elastic.clients.elasticsearch.core.GetResponse;
 import co.elastic.clients.elasticsearch.core.SearchRequest;
 import co.elastic.clients.elasticsearch.core.SearchResponse;
 import co.elastic.clients.elasticsearch.core.search.Hit;
-import com.example.assistantapi.entity.MinhaBibliotecaBook;
-import com.example.assistantapi.entity.PearsonBibliotecaBook;
+import com.example.assistantapi.entity.MinhaBibliotecaBookEntity;
+import com.example.assistantapi.entity.PearsonBibliotecaBookEntity;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -26,11 +26,11 @@ public class ElasticsearchRepository {
     private static final String INDEX_MINHA_BIBLIOTECA = "minha-biblioteca";
     private static final String INDEX_PEARSON_BIBLIOTECA = "pearson-biblioteca";
 
-    public MinhaBibliotecaBook minhaBibliotecaGetDocumentById(String bookId) throws IOException {
-        MinhaBibliotecaBook bookEntity = null;
-        GetResponse<MinhaBibliotecaBook> response = elasticsearchClient.get(g -> g
+    public MinhaBibliotecaBookEntity minhaBibliotecaGetDocumentById(String bookId) throws IOException {
+        MinhaBibliotecaBookEntity bookEntity = null;
+        GetResponse<MinhaBibliotecaBookEntity> response = elasticsearchClient.get(g -> g
                 .index(INDEX_MINHA_BIBLIOTECA)
-                .id(bookId), MinhaBibliotecaBook.class);
+                .id(bookId), MinhaBibliotecaBookEntity.class);
 
         if (response.found()) {
             bookEntity = response.source();
@@ -44,33 +44,30 @@ public class ElasticsearchRepository {
         return bookEntity;
     }
 
-    public List<String> minhaBibliotecaGetDocumentsByTitulo(String value) {
+    public List<Hit<MinhaBibliotecaBookEntity>> minhaBibliotecaGetDocumentsByTitulo(String value) {
         var searchBuilder = new SearchRequest.Builder();
-        var request = searchBuilder.query(
-                        QueryBuilders.match(m ->
-                                m.field("titulo").query(value)))
-                .index(INDEX_MINHA_BIBLIOTECA).build();
 
-        log.info("Request: {}", request);
+        var requestMatchPhrase = searchBuilder.query(
+                QueryBuilders.matchPhrase(mp ->
+                        mp.field("titulo").query(value))
+        ).index(INDEX_MINHA_BIBLIOTECA).build();
 
-        var searchResponse = makeClientRequest(request, MinhaBibliotecaBook.class);
+        var searchResponse = makeClientRequest(requestMatchPhrase, MinhaBibliotecaBookEntity.class);
 
-        List<Hit<MinhaBibliotecaBook>> hits = searchResponse.hits().hits();
-        List<String> books = new ArrayList<>();
+        List<Hit<MinhaBibliotecaBookEntity>> hits = searchResponse.hits().hits();
+        log.info("1 Hits: {}", hits);
 
-        log.info("Hits da response: {}", hits);
-
-        for (Hit<MinhaBibliotecaBook> object : hits) {
-            log.info("{}", object.source());
-
-            if (object.source() != null) {
-                books.add(object.source().getTitulo());
-            } else {
-                books.add("nenhum livro encontrado.");
-            }
+        if (hits.isEmpty()) {
+            var newSearchBuilder = new SearchRequest.Builder();
+            var requestMatch = newSearchBuilder.query(
+                            QueryBuilders.match(m ->
+                                    m.field("titulo").query(value)))
+                    .index(INDEX_MINHA_BIBLIOTECA).build();
+            var otherResponse = makeClientRequest(requestMatch, MinhaBibliotecaBookEntity.class);
+            log.info("2 hits: {}", otherResponse.hits().hits());
+            return otherResponse.hits().hits();
         }
-
-        return books;
+        return hits;
     }
 
     public List<String> minhaBibliotecaGetDocumentsByAutor(String value) {
@@ -80,12 +77,12 @@ public class ElasticsearchRepository {
                                 m.field("autor").query(value)))
                 .index(INDEX_MINHA_BIBLIOTECA).build();
 
-        var searchResponse = makeClientRequest(request, MinhaBibliotecaBook.class);
+        var searchResponse = makeClientRequest(request, MinhaBibliotecaBookEntity.class);
 
-        List<Hit<MinhaBibliotecaBook>> hits = searchResponse.hits().hits();
+        List<Hit<MinhaBibliotecaBookEntity>> hits = searchResponse.hits().hits();
         List<String> books = new ArrayList<>();
 
-        for (Hit<MinhaBibliotecaBook> object : hits) {
+        for (Hit<MinhaBibliotecaBookEntity> object : hits) {
             log.info("{}", object.source());
 
             assert object.source() != null;
@@ -104,14 +101,14 @@ public class ElasticsearchRepository {
 
         log.info("Request: {}", request);
 
-        var searchResponse = makeClientRequest(request, PearsonBibliotecaBook.class);
+        var searchResponse = makeClientRequest(request, PearsonBibliotecaBookEntity.class);
 
-        List<Hit<PearsonBibliotecaBook>> hits = searchResponse.hits().hits();
+        List<Hit<PearsonBibliotecaBookEntity>> hits = searchResponse.hits().hits();
         List<String> books = new ArrayList<>();
 
         log.info("Hits da response: {}", hits);
 
-        for (Hit<PearsonBibliotecaBook> object : hits) {
+        for (Hit<PearsonBibliotecaBookEntity> object : hits) {
             log.info("{}", object.source());
 
             if (object.source() != null) {
@@ -131,12 +128,12 @@ public class ElasticsearchRepository {
                                 m.field("autor").query(value)))
                 .index(INDEX_PEARSON_BIBLIOTECA).build();
 
-        var searchResponse = makeClientRequest(request, PearsonBibliotecaBook.class);
+        var searchResponse = makeClientRequest(request, PearsonBibliotecaBookEntity.class);
 
-        List<Hit<PearsonBibliotecaBook>> hits = searchResponse.hits().hits();
+        List<Hit<PearsonBibliotecaBookEntity>> hits = searchResponse.hits().hits();
         List<String> books = new ArrayList<>();
 
-        for (Hit<PearsonBibliotecaBook> object : hits) {
+        for (Hit<PearsonBibliotecaBookEntity> object : hits) {
             log.info("{}", object.source());
 
             assert object.source() != null;
