@@ -1,4 +1,4 @@
-package com.example.assistantapi.entity;
+package com.example.assistantapi.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class MinhaBibliotecaResponse {
 
+    private String id;
     private String titulo;
     private String autor;
     private String biblioteca;

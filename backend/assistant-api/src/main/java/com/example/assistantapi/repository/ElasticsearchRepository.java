@@ -13,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -70,77 +69,79 @@ public class ElasticsearchRepository {
         return hits;
     }
 
-    public List<String> minhaBibliotecaGetDocumentsByAutor(String value) {
+    public List<Hit<MinhaBibliotecaBookEntity>> minhaBibliotecaGetDocumentsByAutor(String value) {
         var searchBuilder = new SearchRequest.Builder();
-        var request = searchBuilder.query(
-                        QueryBuilders.match(m ->
+        var requestMatchPhrase = searchBuilder.query(
+                        QueryBuilders.matchPhrase(m ->
                                 m.field("autor").query(value)))
                 .index(INDEX_MINHA_BIBLIOTECA).build();
 
-        var searchResponse = makeClientRequest(request, MinhaBibliotecaBookEntity.class);
+        var searchResponse = makeClientRequest(requestMatchPhrase, MinhaBibliotecaBookEntity.class);
 
         List<Hit<MinhaBibliotecaBookEntity>> hits = searchResponse.hits().hits();
-        List<String> books = new ArrayList<>();
 
-        for (Hit<MinhaBibliotecaBookEntity> object : hits) {
-            log.info("{}", object.source());
-
-            assert object.source() != null;
-            books.add(object.source().getTitulo());
+        if (hits.isEmpty()) {
+            var newSearchBuilder = new SearchRequest.Builder();
+            var requestMatch = newSearchBuilder.query(
+                    QueryBuilders.match(m ->
+                            m.field("autor").query(value))
+            ).index(INDEX_MINHA_BIBLIOTECA).build();
+            var response = makeClientRequest(requestMatch, MinhaBibliotecaBookEntity.class);
+            return response.hits().hits();
         }
 
-        return books;
+        return hits;
     }
 
-    public List<String> pearsonGetDocumentsByTitulo(String value) {
+    public List<Hit<PearsonBibliotecaBookEntity>> pearsonGetDocumentsByTitulo(String value) {
         var searchBuilder = new SearchRequest.Builder();
-        var request = searchBuilder.query(
-                        QueryBuilders.match(m ->
+        var requestPhrase = searchBuilder.query(
+                        QueryBuilders.matchPhrase(m ->
                                 m.field("titulo").query(value)))
                 .index(INDEX_PEARSON_BIBLIOTECA).build();
 
-        log.info("Request: {}", request);
+        log.info("Request: {}", requestPhrase);
 
-        var searchResponse = makeClientRequest(request, PearsonBibliotecaBookEntity.class);
+        var searchResponse = makeClientRequest(requestPhrase, PearsonBibliotecaBookEntity.class);
 
         List<Hit<PearsonBibliotecaBookEntity>> hits = searchResponse.hits().hits();
-        List<String> books = new ArrayList<>();
 
-        log.info("Hits da response: {}", hits);
-
-        for (Hit<PearsonBibliotecaBookEntity> object : hits) {
-            log.info("{}", object.source());
-
-            if (object.source() != null) {
-                books.add(object.source().getTitulo());
-            } else {
-                books.add("nenhum livro encontrado.");
-            }
+        if (hits.isEmpty()) {
+            var newSearchBuilder = new SearchRequest.Builder();
+            var requestMatch = newSearchBuilder.query(
+                    QueryBuilders.match(m ->
+                            m.field("titulo").query(value))
+            ).index(INDEX_PEARSON_BIBLIOTECA).build();
+            var response = makeClientRequest(requestMatch, PearsonBibliotecaBookEntity.class);
+            return response.hits().hits();
         }
 
-        return books;
+        return hits;
     }
 
-    public List<String> pearsonGetDocumentsByAutor(String value) {
+    public List<Hit<PearsonBibliotecaBookEntity>> pearsonGetDocumentsByAutor(String value) {
         var searchBuilder = new SearchRequest.Builder();
-        var request = searchBuilder.query(
+        var requestPhrase = searchBuilder.query(
                         QueryBuilders.match(m ->
                                 m.field("autor").query(value)))
                 .index(INDEX_PEARSON_BIBLIOTECA).build();
 
-        var searchResponse = makeClientRequest(request, PearsonBibliotecaBookEntity.class);
+        var searchResponse = makeClientRequest(requestPhrase, PearsonBibliotecaBookEntity.class);
 
         List<Hit<PearsonBibliotecaBookEntity>> hits = searchResponse.hits().hits();
-        List<String> books = new ArrayList<>();
 
-        for (Hit<PearsonBibliotecaBookEntity> object : hits) {
-            log.info("{}", object.source());
+        if (hits.isEmpty()) {
+            var newSearchBuilder = new SearchRequest.Builder();
+            var requestMatch = newSearchBuilder.query(
+                    QueryBuilders.match(m ->
+                            m.field("autor").query(value))
+            ).index(INDEX_PEARSON_BIBLIOTECA).build();
 
-            assert object.source() != null;
-            books.add(object.source().getTitulo());
+            var response = makeClientRequest(requestMatch, PearsonBibliotecaBookEntity.class);
+            return response.hits().hits();
         }
 
-        return books;
+        return hits;
     }
 
     private <T> SearchResponse<T> makeClientRequest(SearchRequest request, Class<T> classType) {

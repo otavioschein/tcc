@@ -5,6 +5,14 @@ from rasa_sdk.events import SlotSet
 import requests
 import spacy
 
+class LivroObj:
+    def __init__(self, id, autor, titulo, biblioteca, urlAcesso):
+        self.id = id
+        self.autor = autor
+        self.titulo = titulo
+        self.biblioteca = biblioteca
+        self.urlAcesso = urlAcesso
+
 class ActionListarNomesLivros(Action):
     def name(self) -> Text:
         return "action_listar_nomes_livros"
@@ -34,15 +42,46 @@ class ActionBuscarLivroPorTitulo(Action):
         responsePearson = requests.get(f"http://localhost:8080/assistant/books/pearson-biblioteca/titulo/{titulo}")
 
         dataMinhaBiblioteca = responseMinhaBiblioteca.json()
+        livrosMinhaBiblioteca = []
         dataPearson = responsePearson.json()
+        livrosPearson = []
+
+        for livro in dataMinhaBiblioteca:
+            livroObj = LivroObj(
+                id=livro['id'],
+                autor=livro['autor'],
+                titulo=livro['titulo'],
+                biblioteca=livro['biblioteca'],
+                urlAcesso=livro['urlAcesso']
+            )
+            livrosMinhaBiblioteca.append(livroObj)
+
+        for livro in dataPearson:
+            livroObj = LivroObj(
+                id=livro['id'],
+                autor=livro['autor'],
+                titulo=livro['titulo'],
+                biblioteca=livro['biblioteca'],
+                urlAcesso=livro['urlAcesso']
+            )
+            livrosPearson.append(livroObj)
 
         message = f"Livros que encontrei para o título {titulo} informado: "
-        messageMinhaBiblioteca = f"Na minha biblioteca: {dataMinhaBiblioteca}"
-        messagePearson = f"e na biblioteca Pearson: {dataPearson}"
+        messageMinhaBiblioteca = f"Na minha biblioteca: "
+        messagePearson = f"e na biblioteca Pearson: "
 
         dispatcher.utter_message(text=message)
         dispatcher.utter_message(text=messageMinhaBiblioteca)
+
+        for mbLivro in livrosMinhaBiblioteca:
+            textLivro = f"Titulo {mbLivro.titulo}, do autor {mbLivro.autor} e está disponível no link {mbLivro.urlAcesso}"
+            dispatcher.utter_message(text=textLivro)
+
         dispatcher.utter_message(text=messagePearson)
+
+        for prLivro in livrosPearson:
+            textLivro = f"Titulo {prLivro.titulo}, do autor {prLivro.autor} e está disponível no link {prLivro.urlAcesso}"
+            dispatcher.utter_message(text=textLivro)
 
         return [SlotSet("titulo_livro", None)]
     
@@ -60,15 +99,46 @@ class ActionBuscarLivroPorAutor(Action):
         responsePearson = requests.get(f"http://localhost:8080/assistant/books/pearson-biblioteca/autor/{autor}")
 
         dataMinhaBiblioteca = responseMinhaBiblioteca.json()
+        livrosMinhaBiblioteca = []
         dataPearson = responsePearson.json()
+        livrosPearson = []
 
-        message = f"Aqui estão alguns livros que encontrei para o autor {autor}:"
-        messageMinhaBiblioteca = f"Na minha biblioteca: {dataMinhaBiblioteca}"
-        messagePearson = f"E na biblioteca pearson: {dataPearson}"
+        for livro in dataMinhaBiblioteca:
+            livroObj = LivroObj(
+                id=livro['id'],
+                autor=livro['autor'],
+                titulo=livro['titulo'],
+                biblioteca=livro['biblioteca'],
+                urlAcesso=livro['urlAcesso']
+            )
+            livrosMinhaBiblioteca.append(livroObj)
+
+        for livro in dataPearson:
+            livroObj = LivroObj(
+                id=livro['id'],
+                autor=livro['autor'],
+                titulo=livro['titulo'],
+                biblioteca=livro['biblioteca'],
+                urlAcesso=livro['urlAcesso']
+            )
+            livrosPearson.append(livroObj)
+
+        message = f"Livros que encontrei para o autor {autor} informado: "
+        messageMinhaBiblioteca = f"Na minha biblioteca: "
+        messagePearson = f"e na biblioteca Pearson: "
 
         dispatcher.utter_message(text=message)
         dispatcher.utter_message(text=messageMinhaBiblioteca)
+
+        for mbLivro in livrosMinhaBiblioteca:
+            textLivro = f"Titulo {mbLivro.titulo}, do autor {mbLivro.autor} e está disponível no link {mbLivro.urlAcesso}"
+            dispatcher.utter_message(text=textLivro)
+
         dispatcher.utter_message(text=messagePearson)
+
+        for prLivro in livrosPearson:
+            textLivro = f"Titulo {prLivro.titulo}, do autor {prLivro.autor} e está disponível no link {prLivro.urlAcesso}"
+            dispatcher.utter_message(text=textLivro)
         
         return[SlotSet("nome_autor", None)]
 
@@ -90,7 +160,7 @@ class ActionExtrairNomeDeLivroNoInput(Action):
             livro = sentences[0]
             return [SlotSet("titulo_livro", livro)]
         else:
-            dispatcher.utter_message("Nenhum livro mencionado.")
+            dispatcher.utter_message("Desculpe, não entendi.")
         
 class ActionExtrairNomeDeAutorNoInput(Action):
     def name(self) -> Text:
@@ -107,7 +177,5 @@ class ActionExtrairNomeDeAutorNoInput(Action):
         autor = [ent.text for ent in doc.ents if ent.label_ == 'PER']
 
         for a in autor:
-            nome_autor = a
-            dispatcher.utter_message(f"Autor mencionado: {a}.")
-            return [SlotSet("nome_autor", nome_autor)]
+            return [SlotSet("nome_autor", a)]
         

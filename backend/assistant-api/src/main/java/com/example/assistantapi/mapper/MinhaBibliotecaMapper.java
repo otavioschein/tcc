@@ -1,7 +1,7 @@
 package com.example.assistantapi.mapper;
 
 import com.example.assistantapi.entity.MinhaBibliotecaBookEntity;
-import com.example.assistantapi.entity.MinhaBibliotecaResponse;
+import com.example.assistantapi.response.MinhaBibliotecaResponse;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -12,6 +12,7 @@ public class MinhaBibliotecaMapper {
 
     public MinhaBibliotecaResponse mapEntityToResponse(MinhaBibliotecaBookEntity mbEntity) {
         return MinhaBibliotecaResponse.builder()
+                .id(mbEntity.getId())
                 .titulo(mbEntity.getTitulo())
                 .autor(mbEntity.getAutor())
                 .biblioteca(MINHA_BIBLIOTECA)

@@ -20,7 +20,7 @@ public class PearsonBibliotecaBookEntity {
     private String id;
     private String anoDaPublicacao;
     private String autor;
-    private String categaria;
+    private String categoria;
     private String dataDaPublicacao;
     private String descricao;
     private String edicao;

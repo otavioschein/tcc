@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+    <style>
+        .message {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .user {
+            background-color: #eaf6ff;
+        }
+
+        .bot {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chat-container">
+        <div id="message-container"></div>
+        <div id="user-input">
+            <input type="text" id="user-message" placeholder="Type your message...">
+            <button type="button" id="send-button">Send</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@rasa/chatbot"></script>
+    <script src="script.js"></script>
+</body>
+</html>
