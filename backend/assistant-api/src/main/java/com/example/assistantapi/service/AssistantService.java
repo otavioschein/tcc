@@ -1,18 +1,18 @@
 package com.example.assistantapi.service;
 
+import com.example.assistantapi.mapper.FisicaMapper;
 import com.example.assistantapi.mapper.PearsonMapper;
+import com.example.assistantapi.response.FisicaResponse;
 import com.example.assistantapi.response.MinhaBibliotecaResponse;
 import com.example.assistantapi.mapper.MinhaBibliotecaMapper;
 import com.example.assistantapi.repository.ElasticsearchRepository;
 import com.example.assistantapi.response.PearsonResponse;
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
 
-@Slf4j
 @Service
 @AllArgsConstructor
 public class AssistantService {
@@ -73,6 +73,39 @@ public class AssistantService {
                 .filter(hit -> Objects.nonNull(hit.source()))
                 .map(hit -> PearsonMapper.mapEntityToResponse(hit.source()))
                 .toList();
+    }
+
+    //TODO
+    public List<FisicaResponse> getDocumentsByTituloBibliotecaFisica(String titulo) {
+//        return elasticsearchRepository.fisicaGetDocumentsByTitulo(titulo).stream()
+//                .filter(hits -> Objects.nonNull(hits.source()))
+//                .map(hit -> FisicaMapper.mapEntityToResponse(hit.source()))
+//                .toList();
+        return List.of();
+    }
+
+    public List<FisicaResponse> getSimilarDocumentsByTituloBibliotecaFisica(String titulo) {
+//        return elasticsearchRepository.fisicaGetSimilarDocumentsByTitulo(titulo).stream()
+//                .filter(hits -> Objects.nonNull(hits.source()))
+//                .map(hit -> FisicaMapper.mapEntityToResponse(hit.source()))
+//                .toList();
+        return List.of();
+    }
+
+    public List<FisicaResponse> getDocumentsByAutorBibliotecaFisica(String autor) {
+//        return elasticsearchRepository.fisicaGetDocumentsByAutor(autor).stream()
+//                .filter(hit -> Objects.nonNull(hit.source()))
+//                .map(hit -> FisicaMapper.mapEntityToResponse(hit.source()))
+//                .toList();
+        return List.of();
+    }
+
+    public List<FisicaResponse> getSimilarDocumentsByAutorBibliotecaFisica(String autor) {
+//        return elasticsearchRepository.fisicaGetSimilarDocumentsByAutor(autor).stream()
+//                .filter(hit -> Objects.nonNull(hit.source()))
+//                .map(hit -> FisicaMapper.mapEntityToResponse(hit.source()))
+//                .toList();
+        return List.of();
     }
 
 }

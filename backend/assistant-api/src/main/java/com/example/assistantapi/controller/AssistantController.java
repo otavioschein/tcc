@@ -1,5 +1,6 @@
 package com.example.assistantapi.controller;
 
+import com.example.assistantapi.response.FisicaResponse;
 import com.example.assistantapi.response.MinhaBibliotecaResponse;
 import com.example.assistantapi.response.PearsonResponse;
 import com.example.assistantapi.service.AssistantService;
@@ -70,6 +71,31 @@ public class AssistantController {
     @ResponseStatus(HttpStatus.OK)
     public List<PearsonResponse> searchSimilarDocumentsByAutorPearson(@PathVariable String autor) {
         return assistantService.getSimilarDocumentsByAutorPearsonBiblioteca(autor);
+    }
+
+    //TODO
+    @GetMapping(value = "/books/biblioteca-fisica/titulo/{titulo}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<FisicaResponse> searchDocumentsByTituloFisica(@PathVariable String titulo) {
+        return assistantService.getDocumentsByTituloBibliotecaFisica(titulo);
+    }
+
+    @GetMapping(value = "/books/biblioteca-fisica/titulo/semelhante/{titulo}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<FisicaResponse> searchSimilarDocumentsByTituloFisica(@PathVariable String titulo) {
+        return assistantService.getSimilarDocumentsByTituloBibliotecaFisica(titulo);
+    }
+
+    @GetMapping(value = "/books/biblioteca-fisica/autor/{autor}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<FisicaResponse> searchDocumentsByAutorFisica(@PathVariable String autor) {
+        return assistantService.getDocumentsByAutorBibliotecaFisica(autor);
+    }
+
+    @GetMapping(value = "/books/biblioteca-fisica/autor/semelhante/{autor}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<FisicaResponse> searchSimilarDocumentsByAutorFisica(@PathVariable String autor) {
+        return assistantService.getSimilarDocumentsByAutorBibliotecaFisica(autor);
     }
 
 }
