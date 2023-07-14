@@ -26,8 +26,22 @@ public class AssistantService {
                 .toList();
     }
 
+    public List<MinhaBibliotecaResponse> getSimilarDocumentsByTituloMinhaBiblioteca(String autor) {
+        return elasticsearchRepository.minhaBibliotecaGetSimilarDocumentsByTitulo(autor).stream()
+                .filter(hits -> Objects.nonNull(hits.source()))
+                .map(hit -> MinhaBibliotecaMapper.mapEntityToResponse(hit.source()))
+                .toList();
+    }
+
     public List<MinhaBibliotecaResponse> getDocumentsByAutorMinhaBiblioteca(String autor) {
         return elasticsearchRepository.minhaBibliotecaGetDocumentsByAutor(autor).stream()
+                .filter(hits -> Objects.nonNull(hits.source()))
+                .map(hit -> MinhaBibliotecaMapper.mapEntityToResponse(hit.source()))
+                .toList();
+    }
+
+    public List<MinhaBibliotecaResponse> getSimilarDocumentsByAutorMinhaBiblioteca(String autor) {
+        return elasticsearchRepository.minhaBibliotecaGetSimilarDocumentsByAutor(autor).stream()
                 .filter(hits -> Objects.nonNull(hits.source()))
                 .map(hit -> MinhaBibliotecaMapper.mapEntityToResponse(hit.source()))
                 .toList();
@@ -38,11 +52,24 @@ public class AssistantService {
                 .filter(hits -> Objects.nonNull(hits.source()))
                 .map(hit -> PearsonMapper.mapEntityToResponse(hit.source()))
                 .toList();
+    }
 
+    public List<PearsonResponse> getSimilarDocumentsByTituloPearsonBiblioteca(String titulo) {
+        return elasticsearchRepository.pearsonGetSimilarDocumentsByTitulo(titulo).stream()
+                .filter(hits -> Objects.nonNull(hits.source()))
+                .map(hit -> PearsonMapper.mapEntityToResponse(hit.source()))
+                .toList();
     }
 
     public List<PearsonResponse> getDocumentsByAutorPearsonBiblioteca(String autor) {
         return elasticsearchRepository.pearsonGetDocumentsByAutor(autor).stream()
+                .filter(hit -> Objects.nonNull(hit.source()))
+                .map(hit -> PearsonMapper.mapEntityToResponse(hit.source()))
+                .toList();
+    }
+
+    public List<PearsonResponse> getSimilarDocumentsByAutorPearsonBiblioteca(String autor) {
+        return elasticsearchRepository.pearsonGetSimilarDocumentsByAutor(autor).stream()
                 .filter(hit -> Objects.nonNull(hit.source()))
                 .map(hit -> PearsonMapper.mapEntityToResponse(hit.source()))
                 .toList();

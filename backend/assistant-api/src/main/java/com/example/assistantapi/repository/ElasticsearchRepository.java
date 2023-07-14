@@ -25,24 +25,6 @@ public class ElasticsearchRepository {
     private static final String INDEX_MINHA_BIBLIOTECA = "minha-biblioteca";
     private static final String INDEX_PEARSON_BIBLIOTECA = "pearson-biblioteca";
 
-    public MinhaBibliotecaBookEntity minhaBibliotecaGetDocumentById(String bookId) throws IOException {
-        MinhaBibliotecaBookEntity bookEntity = null;
-        GetResponse<MinhaBibliotecaBookEntity> response = elasticsearchClient.get(g -> g
-                .index(INDEX_MINHA_BIBLIOTECA)
-                .id(bookId), MinhaBibliotecaBookEntity.class);
-
-        if (response.found()) {
-            bookEntity = response.source();
-            log.info("Response: {}", response);
-            log.info("Response source: {}", response.source());
-            log.info("Book name {}", bookEntity.getTitulo());
-        } else {
-            log.info("Book not found.");
-        }
-
-        return bookEntity;
-    }
-
     public List<Hit<MinhaBibliotecaBookEntity>> minhaBibliotecaGetDocumentsByTitulo(String value) {
         var searchBuilder = new SearchRequest.Builder();
 
@@ -53,20 +35,18 @@ public class ElasticsearchRepository {
 
         var searchResponse = makeClientRequest(requestMatchPhrase, MinhaBibliotecaBookEntity.class);
 
-        List<Hit<MinhaBibliotecaBookEntity>> hits = searchResponse.hits().hits();
-        log.info("1 Hits: {}", hits);
+        return searchResponse.hits().hits();
+    }
 
-        if (hits.isEmpty()) {
-            var newSearchBuilder = new SearchRequest.Builder();
-            var requestMatch = newSearchBuilder.query(
-                            QueryBuilders.match(m ->
-                                    m.field("titulo").query(value)))
-                    .index(INDEX_MINHA_BIBLIOTECA).build();
-            var otherResponse = makeClientRequest(requestMatch, MinhaBibliotecaBookEntity.class);
-            log.info("2 hits: {}", otherResponse.hits().hits());
-            return otherResponse.hits().hits();
-        }
-        return hits;
+    public List<Hit<MinhaBibliotecaBookEntity>> minhaBibliotecaGetSimilarDocumentsByTitulo(String value) {
+        var searchBuilder = new SearchRequest.Builder();
+        var requestMatch = searchBuilder.query(
+                        QueryBuilders.match(m ->
+                                m.field("titulo").query(value)))
+                .index(INDEX_MINHA_BIBLIOTECA).build();
+        var otherResponse = makeClientRequest(requestMatch, MinhaBibliotecaBookEntity.class);
+        log.info("2 hits: {}", otherResponse.hits().hits());
+        return otherResponse.hits().hits();
     }
 
     public List<Hit<MinhaBibliotecaBookEntity>> minhaBibliotecaGetDocumentsByAutor(String value) {
@@ -78,19 +58,17 @@ public class ElasticsearchRepository {
 
         var searchResponse = makeClientRequest(requestMatchPhrase, MinhaBibliotecaBookEntity.class);
 
-        List<Hit<MinhaBibliotecaBookEntity>> hits = searchResponse.hits().hits();
+        return searchResponse.hits().hits();
+    }
 
-        if (hits.isEmpty()) {
-            var newSearchBuilder = new SearchRequest.Builder();
-            var requestMatch = newSearchBuilder.query(
-                    QueryBuilders.match(m ->
-                            m.field("autor").query(value))
-            ).index(INDEX_MINHA_BIBLIOTECA).build();
-            var response = makeClientRequest(requestMatch, MinhaBibliotecaBookEntity.class);
-            return response.hits().hits();
-        }
-
-        return hits;
+    public List<Hit<MinhaBibliotecaBookEntity>> minhaBibliotecaGetSimilarDocumentsByAutor(String value) {
+        var searchBuilder = new SearchRequest.Builder();
+        var requestMatch = searchBuilder.query(
+                QueryBuilders.match(m ->
+                        m.field("autor").query(value))
+        ).index(INDEX_MINHA_BIBLIOTECA).build();
+        var response = makeClientRequest(requestMatch, MinhaBibliotecaBookEntity.class);
+        return response.hits().hits();
     }
 
     public List<Hit<PearsonBibliotecaBookEntity>> pearsonGetDocumentsByTitulo(String value) {
@@ -104,44 +82,39 @@ public class ElasticsearchRepository {
 
         var searchResponse = makeClientRequest(requestPhrase, PearsonBibliotecaBookEntity.class);
 
-        List<Hit<PearsonBibliotecaBookEntity>> hits = searchResponse.hits().hits();
+        return searchResponse.hits().hits();
+    }
 
-        if (hits.isEmpty()) {
-            var newSearchBuilder = new SearchRequest.Builder();
-            var requestMatch = newSearchBuilder.query(
-                    QueryBuilders.match(m ->
-                            m.field("titulo").query(value))
-            ).index(INDEX_PEARSON_BIBLIOTECA).build();
-            var response = makeClientRequest(requestMatch, PearsonBibliotecaBookEntity.class);
-            return response.hits().hits();
-        }
-
-        return hits;
+    public List<Hit<PearsonBibliotecaBookEntity>> pearsonGetSimilarDocumentsByTitulo(String value) {
+        var searchBuilder = new SearchRequest.Builder();
+        var requestMatch = searchBuilder.query(
+                QueryBuilders.match(m ->
+                        m.field("titulo").query(value))
+        ).index(INDEX_PEARSON_BIBLIOTECA).build();
+        var response = makeClientRequest(requestMatch, PearsonBibliotecaBookEntity.class);
+        return response.hits().hits();
     }
 
     public List<Hit<PearsonBibliotecaBookEntity>> pearsonGetDocumentsByAutor(String value) {
         var searchBuilder = new SearchRequest.Builder();
         var requestPhrase = searchBuilder.query(
-                        QueryBuilders.match(m ->
+                        QueryBuilders.matchPhrase(m ->
                                 m.field("autor").query(value)))
                 .index(INDEX_PEARSON_BIBLIOTECA).build();
 
         var searchResponse = makeClientRequest(requestPhrase, PearsonBibliotecaBookEntity.class);
+        return searchResponse.hits().hits();
+    }
 
-        List<Hit<PearsonBibliotecaBookEntity>> hits = searchResponse.hits().hits();
+    public List<Hit<PearsonBibliotecaBookEntity>> pearsonGetSimilarDocumentsByAutor(String value) {
+        var searchBuilder = new SearchRequest.Builder();
+        var requestMatch = searchBuilder.query(
+                QueryBuilders.match(m ->
+                        m.field("autor").query(value))
+        ).index(INDEX_PEARSON_BIBLIOTECA).build();
 
-        if (hits.isEmpty()) {
-            var newSearchBuilder = new SearchRequest.Builder();
-            var requestMatch = newSearchBuilder.query(
-                    QueryBuilders.match(m ->
-                            m.field("autor").query(value))
-            ).index(INDEX_PEARSON_BIBLIOTECA).build();
-
-            var response = makeClientRequest(requestMatch, PearsonBibliotecaBookEntity.class);
-            return response.hits().hits();
-        }
-
-        return hits;
+        var response = makeClientRequest(requestMatch, PearsonBibliotecaBookEntity.class);
+        return response.hits().hits();
     }
 
     private <T> SearchResponse<T> makeClientRequest(SearchRequest request, Class<T> classType) {
