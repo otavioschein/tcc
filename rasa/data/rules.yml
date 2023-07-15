@@ -7,6 +7,21 @@ rules:
     - intent: saudacao
     - action: utter_saudacao
 
+- rule: Responda ao agradecimento
+  steps: 
+    - intent: agradecimento
+    - action: utter_agradecimento
+
+- rule: Responda a despedida
+  steps:
+    - intent: despedida
+    - action: utter_despedida
+
+- rule: Responda a negativa
+  steps:
+    - intent: negativa
+    - action: utter_negativa
+
 - rule: Execute a chamada a api quando a intent livro for identificada
   steps:
     - intent: livro
@@ -27,3 +42,8 @@ rules:
   steps:
     - intent: buscar_livro_por_autor
     - action: utter_buscar_livro_por_autor
+
+- rule: Procure por títulos semelhantes quando requisitado
+  steps:
+    - intent: livro_semelhante
+    - action: action_buscar_livros_semelhantes

@@ -2,10 +2,14 @@ version: "3.1"
 
 intents:
   - saudacao
+  - agradecimento
+  - despedida
+  - negativa
   - buscar_livro_por_titulo
   - livro
   - buscar_livro_por_autor
   - autor
+  - livro_semelhante
 
 entities:
   - titulo_livro
@@ -24,7 +28,19 @@ slots:
 
 responses:
   utter_saudacao:
-    - text: "Olá, bem-vindo ao assistente! O que você gostaria?"
+    - text: "Olá, bem-vindo ao BookWise! O que você gostaria?"
+
+  utter_agradecimento:
+    - text: "De nada!"
+    - text: "Não há de que!"
+    - text: "Tamo junto bro ;)"
+
+  utter_despedida:
+    - text: "Tchau, obrigado por utilizar meus serviços!"
+    - text: "Quando precisar, só chamar!"
+
+  utter_negativa:
+    - text: "Desculpe, espero poder te ajudar na próxima vez"
 
   utter_buscar_livro_por_titulo:
     - text: "Me informe o nome do livro que você gostaria"
@@ -36,6 +52,7 @@ actions:
   - action_buscar_livro_por_titulo
   - action_buscar_livro_por_autor
   - action_extrair_nome_de_autor_no_input
+  - action_buscar_livros_semelhantes
 
 session_config:
   session_expiration_time: 60

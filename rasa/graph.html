@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rasa Core Visualisation</title>
+    <script src="https://dagrejs.github.io/project/dagre-d3/latest/dagre-d3.min.js"></script>
+    <script src="https://dagrejs.github.io/project/dagre/latest/dagre.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://dagrejs.github.io/project/graphlib-dot/v0.6.3/graphlib-dot.js"></script>
+</head>
+<body>
+<div id="errormsg" style="color: #b00"></div>
+<svg>
+    <style id="graph-style">
+        .node.invisible > rect {
+            display: none;
+        }
+
+        .node.start > rect {
+            fill: #7f7;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node.end > rect {
+            fill: #f77;
+            rx: 30;
+            ry: 18;
+        }
+
+        .node:not(.active) > rect, .node:not(.active) > .label {
+            opacity: 0.4;
+        }
+
+        .edgePath:not(.active) path {
+            opacity: 0.4;
+        }
+
+        .node.ellipsis > rect {
+            fill: #CCC;
+        }
+
+        .node.intent > rect {
+            fill: #7ff;
+        }
+
+        .node.dashed > rect {
+            stroke-dasharray: 5;
+        }
+
+        text {
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serf, serif;
+            font-size: 14px;
+            color: #1f1d1d;
+        }
+
+        .node rect {
+            stroke: #444;
+            fill: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .edgePath path {
+            stroke: #333;
+            stroke-width: 1.5px;
+        }
+
+        svg {
+            position: fixed;
+            top: 10px;
+            left: 0;
+            height: 100%;
+            width: 100%
+        }
+    </style>
+    <g></g>
+</svg>
+<script>
+
+  function serveGraph() {
+    let oldInputGraphValue;
+
+    const url = 'visualization.dot';
+    const refreshInterval = 500;
+
+    // trigger a refresh by fetching an updated graph
+    setInterval(function () {
+      fetch(url).then(r => r.text()).then(dot => {
+        document.getElementById('errormsg').innerHTML = '';
+        if (oldInputGraphValue === dot) return;
+
+        oldInputGraphValue = dot;
+        drawGraph(dot);
+      }).catch(err => {
+        document.getElementById('errormsg').innerHTML =
+          'Failed to update plot. (' + err.message + ')';
+      });
+    }, refreshInterval);
+  }
+
+  function drawGraph(graph) {
+    let g = graphlibDot.read(graph);
+    // Set margins, if not present
+    if (!g.graph().hasOwnProperty("marginx") &&
+      !g.graph().hasOwnProperty("marginy")) {
+      g.graph().marginx = 20;
+      g.graph().marginy = 20;
+    }
+    g.graph().transition = function (selection) {
+      return selection.transition().duration(300);
+    };
+    // Render the graph into svg g
+    d3.select("svg g").call(render, g);
+  }
+  // Set up zoom support
+  const svg = d3.select("svg"),
+    inner = d3.select("svg g"),
+    zoom = d3.zoom().on("zoom", function () {
+      inner.attr("transform", d3.event.transform);
+    });
+  svg.call(zoom);
+
+  // Create and configure the renderer
+  const render = dagreD3.render();
+
+  let isClient = false;
+  isClient = true;
+
+  if (isClient) {
+    // Mark all nodes and their edges as active
+    cssRules = document.getElementById('graph-style').sheet.cssRules;
+    cssRules[3].style.opacity = 1;
+    cssRules[4].style.opacity = 1;
+
+    let graph;
+    graph = `digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class="", fontsize=12, label=utter_saudacao];
+2 [class="", fontsize=12, label=utter_buscar_livro_por_titulo];
+3 [class="", fontsize=12, label=action_buscar_livro_por_titulo];
+9 [class="", fontsize=12, label=action_buscar_livro_por_titulo];
+10 [class="", fontsize=12, label=utter_agradecimento];
+11 [class="", fontsize=12, label=utter_despedida];
+19 [class="", fontsize=12, label=utter_negativa];
+28 [class="", fontsize=12, label=action_buscar_livro_por_titulo];
+29 [class="", fontsize=12, label=utter_negativa];
+32 [class="", fontsize=12, label=utter_buscar_livro_por_autor];
+33 [class="", fontsize=12, label=action_extrair_nome_de_autor_no_input];
+34 [class="", fontsize=12, label=action_buscar_livro_por_autor];
+55 [class="", fontsize=12, label=utter_negativa];
+59 [class="", fontsize=12, label=action_buscar_livros_semelhantes];
+69 [class="", fontsize=12, label="..."];
+70 [class="", fontsize=12, label=utter_saudacao];
+72 [class="", fontsize=12, label=utter_agradecimento];
+83 [class="", fontsize=12, label=utter_buscar_livro_por_titulo];
+85 [class="", fontsize=12, label=utter_buscar_livro_por_autor];
+88 [class=intent, fillcolor=lightblue, label="boa noite", shape=rect, style=filled];
+89 [class=intent, fillcolor=lightblue, label="Finanças empresariais estratégicas", shape=rect, style=filled];
+90 [class=intent, fillcolor=lightblue, label=parecidos, shape=rect, style=filled];
+91 [class=intent, fillcolor=lightblue, label="buscar por nome Série IDP: pesquisa acadêmica - Desentrincheiramento da jurisdição, 1ª edição.constitucional", shape=rect, style=filled];
+92 [class=intent, fillcolor=lightblue, label="Língua Brasileira de Sinais e Tecnologias Digitais", shape=rect, style=filled];
+93 [class=intent, fillcolor=lightblue, label="buscar autora", shape=rect, style=filled];
+94 [class=intent, fillcolor=lightblue, label="Gilza Helena", shape=rect, style=filled];
+95 [class=intent, fillcolor=lightblue, label="buscar por nome Série IDP: pesquisa acadêmica - Desentrincheiramento da jurisdição, 1ª edição.constitucional", shape=rect, style=filled];
+96 [class=intent, fillcolor=lightblue, label="procure por autor", shape=rect, style=filled];
+97 [class=intent, fillcolor=lightblue, label="O Direito à Privacidade e a Proteção dos Dados do Consumidor", shape=rect, style=filled];
+98 [class=intent, fillcolor=lightblue, label="Estruturas e Análise de Balanços - Um Enfoque Econômico-financeiro", shape=rect, style=filled];
+99 [class=intent, fillcolor=lightblue, label=obrigada, shape=rect, style=filled];
+100 [class=intent, fillcolor=lightblue, label="não esperava isso", shape=rect, style=filled];
+101 [class=intent, fillcolor=lightblue, label=adeus, shape=rect, style=filled];
+102 [class=intent, fillcolor=lightblue, label=semelhantes, shape=rect, style=filled];
+103 [class=intent, fillcolor=lightblue, label=adeus, shape=rect, style=filled];
+104 [class=intent, fillcolor=lightblue, label=tchau, shape=rect, style=filled];
+105 [class=intent, fillcolor=lightblue, label="Não era o que queria", shape=rect, style=filled];
+106 [class=intent, fillcolor=lightblue, label=adeus, shape=rect, style=filled];
+107 [class=intent, fillcolor=lightblue, label="Andrei Sapkowski", shape=rect, style=filled];
+108 [class=intent, fillcolor=lightblue, label=obrigada, shape=rect, style=filled];
+109 [class=intent, fillcolor=lightblue, label="não esperava isso", shape=rect, style=filled];
+110 [class=intent, fillcolor=lightblue, label="Não era o que queria", shape=rect, style=filled];
+111 [class=intent, fillcolor=lightblue, label="procure por titulo não específico", shape=rect, style=filled];
+112 [class=intent, fillcolor=lightblue, label="boa tarde", shape=rect, style=filled];
+113 [class=intent, fillcolor=lightblue, label="obrigado!", shape=rect, style=filled];
+114 [class=intent, fillcolor=lightblue, label=adeus, shape=rect, style=filled];
+115 [class=intent, fillcolor=lightblue, label="esperava outra coisa", shape=rect, style=filled];
+116 [class=intent, fillcolor=lightblue, label="Embriologia clínica", shape=rect, style=filled];
+117 [class=intent, fillcolor=lightblue, label="Otávio Muck Schein", shape=rect, style=filled];
+118 [class=intent, fillcolor=lightblue, label="liste livros por titulo Processo Civil", shape=rect, style=filled];
+119 [class=intent, fillcolor=lightblue, label=autora, shape=rect, style=filled];
+120 [class=intent, fillcolor=lightblue, label="procure por titulo não específico", shape=rect, style=filled];
+0 -> 69  [class="", key=NONE, label=""];
+0 -> 88  [class="", key=0];
+0 -> 89  [class="", key=0];
+0 -> 90  [class="", key=0];
+0 -> 91  [class="", key=0];
+0 -> 92  [class="", key=0];
+0 -> 93  [class="", key=0];
+0 -> 94  [class="", key=0];
+1 -> 95  [class="", key=0];
+1 -> 96  [class="", key=0];
+2 -> 97  [class="", key=0];
+2 -> 98  [class="", key=0];
+3 -> "-1"  [class="", key=NONE, label=""];
+9 -> 99  [class="", key=0];
+9 -> 100  [class="", key=0];
+9 -> 101  [class="", key=0];
+9 -> 102  [class="", key=0];
+10 -> 103  [class="", key=0];
+11 -> "-1"  [class="", key=NONE, label=""];
+19 -> "-1"  [class="", key=NONE, label=""];
+19 -> 104  [class="", key=0];
+28 -> 105  [class="", key=0];
+29 -> 106  [class="", key=0];
+32 -> 107  [class="", key=0];
+33 -> 34  [class="", key=NONE, label=""];
+34 -> "-1"  [class="", key=NONE, label=""];
+34 -> 108  [class="", key=0];
+34 -> 109  [class="", key=0];
+34 -> 110  [class="", key=0];
+34 -> 111  [class="", key=0];
+55 -> "-1"  [class="", key=NONE, label=""];
+59 -> "-1"  [class="", key=NONE, label=""];
+69 -> 112  [class="", key=0];
+69 -> 113  [class="", key=0];
+69 -> 114  [class="", key=0];
+69 -> 115  [class="", key=0];
+69 -> 116  [class="", key=0];
+69 -> 117  [class="", key=0];
+69 -> 118  [class="", key=0];
+69 -> 119  [class="", key=0];
+69 -> 120  [class="", key=0];
+70 -> "-1"  [class="", key=NONE, label=""];
+72 -> "-1"  [class="", key=NONE, label=""];
+83 -> "-1"  [class="", key=NONE, label=""];
+85 -> "-1"  [class="", key=NONE, label=""];
+88 -> 1  [class="", key=0];
+89 -> 28  [class="", key=0];
+90 -> 59  [class="", key=0];
+91 -> 2  [class="", key=0];
+92 -> 3  [class="", key=0];
+93 -> 32  [class="", key=0];
+94 -> 33  [class="", key=0];
+95 -> 2  [class="", key=0];
+96 -> 32  [class="", key=0];
+97 -> 3  [class="", key=0];
+98 -> 9  [class="", key=0];
+99 -> 10  [class="", key=0];
+100 -> 19  [class="", key=0];
+101 -> 11  [class="", key=0];
+102 -> 59  [class="", key=0];
+103 -> 11  [class="", key=0];
+104 -> 11  [class="", key=0];
+105 -> 29  [class="", key=0];
+106 -> 11  [class="", key=0];
+107 -> 33  [class="", key=0];
+108 -> 10  [class="", key=0];
+109 -> 29  [class="", key=0];
+110 -> 55  [class="", key=0];
+111 -> 59  [class="", key=0];
+112 -> 70  [class="", key=0];
+113 -> 72  [class="", key=0];
+114 -> 11  [class="", key=0];
+115 -> 55  [class="", key=0];
+116 -> 3  [class="", key=0];
+117 -> 33  [class="", key=0];
+118 -> 83  [class="", key=0];
+119 -> 85  [class="", key=0];
+120 -> 59  [class="", key=0];
+}
+`;
+    drawGraph(graph);
+  } else {
+    serveGraph();
+  }
+
+
+</script>
+</body>
+</html>

@@ -20,14 +20,8 @@
 
 <body>
     <div id="chat-container">
-        <div id="message-container"></div>
-        <div id="user-input">
-            <input type="text" id="user-message" placeholder="Type your message...">
-            <button type="button" id="send-button">Send</button>
-        </div>
+        <div id="rasa-chat-widget" data-websocket-url="http://0.0.0.0:5005/socket.io"></div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/@rasa/chatbot"></script>
-    <script src="script.js"></script>
+<script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
 </body>
 </html>

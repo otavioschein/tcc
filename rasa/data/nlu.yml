@@ -19,6 +19,30 @@ nlu:
     - boa noite
     - boa noite!
 
+- intent: agradecimento
+  examples: |
+    - obrigado!
+    - obrigado
+    - obrigada!
+    - obrigada
+    - agradeço
+    - te agradeço a ajuda
+    - muito obrigado pela ajuda
+    - obrigado pelo serviço
+
+- intent: despedida
+  examples: |
+    - tchau
+    - adeus
+
+- intent: negativa
+  examples: |
+    - Não era isso o que esperava
+    - Não era o que queria
+    - não era isso
+    - esperava outra coisa
+    - não esperava isso
+
 - intent: buscar_livro_por_titulo
   examples: |
     - nome da obra
@@ -177,3 +201,18 @@ nlu:
     - Ricardo
     - Eia Asen
 
+- intent: livro_semelhante
+  examples: |
+    - há títulos semelhantes?
+    - há títulos parecidos?
+    - pode procurar por nomes parecidos?
+    - quero livros semelhantes
+    - quero titulos semelhantes
+    - procure por livros parecidos
+    - procure por titulo não específico
+    - semelhante
+    - semelhantes
+    - semelhantes por favor
+    - parecidos
+    - livros parecidos
+    - queria outro livro
