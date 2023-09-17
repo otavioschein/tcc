@@ -6,19 +6,22 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.mongodb.core.index.TextIndexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(indexName = "minha-biblioteca")
+@Document(collection = "minha-biblioteca")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MinhaBibliotecaBookEntity {
 
     @Id
     private String id;
+    @TextIndexed
     private String titulo;
+    @TextIndexed
     private String autor;
     private String isbnDigital;
     private String isbnImpresso;

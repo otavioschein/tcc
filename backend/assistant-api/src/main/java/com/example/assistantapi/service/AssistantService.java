@@ -1,79 +1,23 @@
 package com.example.assistantapi.service;
 
-import com.example.assistantapi.mapper.FisicaMapper;
+import com.example.assistantapi.entity.MinhaBibliotecaBookEntity;
+import com.example.assistantapi.entity.PearsonBibliotecaBookEntity;
+import com.example.assistantapi.mapper.MinhaBibliotecaMapper;
 import com.example.assistantapi.mapper.PearsonMapper;
+import com.example.assistantapi.repository.BookWiseRepository;
 import com.example.assistantapi.response.FisicaResponse;
 import com.example.assistantapi.response.MinhaBibliotecaResponse;
-import com.example.assistantapi.mapper.MinhaBibliotecaMapper;
-import com.example.assistantapi.repository.ElasticsearchRepository;
 import com.example.assistantapi.response.PearsonResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 
 @Service
 @AllArgsConstructor
 public class AssistantService {
 
-    private final ElasticsearchRepository elasticsearchRepository;
-
-    public List<MinhaBibliotecaResponse> getDocumentsByTituloMinhaBiblioteca(String tituloValue) {
-        return elasticsearchRepository.minhaBibliotecaGetDocumentsByTitulo(tituloValue).stream()
-                .filter(hits -> Objects.nonNull(hits.source()))
-                .map(hit ->  MinhaBibliotecaMapper.mapEntityToResponse(hit.source()))
-                .toList();
-    }
-
-    public List<MinhaBibliotecaResponse> getSimilarDocumentsByTituloMinhaBiblioteca(String autor) {
-        return elasticsearchRepository.minhaBibliotecaGetSimilarDocumentsByTitulo(autor).stream()
-                .filter(hits -> Objects.nonNull(hits.source()))
-                .map(hit -> MinhaBibliotecaMapper.mapEntityToResponse(hit.source()))
-                .toList();
-    }
-
-    public List<MinhaBibliotecaResponse> getDocumentsByAutorMinhaBiblioteca(String autor) {
-        return elasticsearchRepository.minhaBibliotecaGetDocumentsByAutor(autor).stream()
-                .filter(hits -> Objects.nonNull(hits.source()))
-                .map(hit -> MinhaBibliotecaMapper.mapEntityToResponse(hit.source()))
-                .toList();
-    }
-
-    public List<MinhaBibliotecaResponse> getSimilarDocumentsByAutorMinhaBiblioteca(String autor) {
-        return elasticsearchRepository.minhaBibliotecaGetSimilarDocumentsByAutor(autor).stream()
-                .filter(hits -> Objects.nonNull(hits.source()))
-                .map(hit -> MinhaBibliotecaMapper.mapEntityToResponse(hit.source()))
-                .toList();
-    }
-
-    public List<PearsonResponse> getDocumentsByTituloPearsonBiblioteca(String titulo) {
-        return elasticsearchRepository.pearsonGetDocumentsByTitulo(titulo).stream()
-                .filter(hits -> Objects.nonNull(hits.source()))
-                .map(hit -> PearsonMapper.mapEntityToResponse(hit.source()))
-                .toList();
-    }
-
-    public List<PearsonResponse> getSimilarDocumentsByTituloPearsonBiblioteca(String titulo) {
-        return elasticsearchRepository.pearsonGetSimilarDocumentsByTitulo(titulo).stream()
-                .filter(hits -> Objects.nonNull(hits.source()))
-                .map(hit -> PearsonMapper.mapEntityToResponse(hit.source()))
-                .toList();
-    }
-
-    public List<PearsonResponse> getDocumentsByAutorPearsonBiblioteca(String autor) {
-        return elasticsearchRepository.pearsonGetDocumentsByAutor(autor).stream()
-                .filter(hit -> Objects.nonNull(hit.source()))
-                .map(hit -> PearsonMapper.mapEntityToResponse(hit.source()))
-                .toList();
-    }
-
-    public List<PearsonResponse> getSimilarDocumentsByAutorPearsonBiblioteca(String autor) {
-        return elasticsearchRepository.pearsonGetSimilarDocumentsByAutor(autor).stream()
-                .filter(hit -> Objects.nonNull(hit.source()))
-                .map(hit -> PearsonMapper.mapEntityToResponse(hit.source()))
-                .toList();
-    }
+    private final BookWiseRepository bookWiseRepository;
 
     //TODO
     public List<FisicaResponse> getDocumentsByTituloBibliotecaFisica(String titulo) {
@@ -106,6 +50,54 @@ public class AssistantService {
 //                .map(hit -> FisicaMapper.mapEntityToResponse(hit.source()))
 //                .toList();
         return List.of();
+    }
+
+    //TODO
+    public List<PearsonResponse> getDocumentsByTituloPearsonBiblioteca(String titulo) {
+        return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, PearsonBibliotecaBookEntity.class)
+                .stream()
+                .limit(1L)
+                .map(PearsonMapper::mapEntityToResponse)
+                .toList();
+    }
+
+    public List<PearsonResponse> getSimilarDocumentsByTituloPearsonBiblioteca(String titulo) {
+        return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, PearsonBibliotecaBookEntity.class)
+                .stream()
+                .limit(5L)
+                .map(PearsonMapper::mapEntityToResponse)
+                .toList();
+    }
+
+    public List<PearsonResponse> getDocumentsByAutorPearsonBiblioteca(String autor) {
+        return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(autor, PearsonBibliotecaBookEntity.class)
+                .stream()
+                .map(PearsonMapper::mapEntityToResponse)
+                .toList();
+    }
+
+
+    public List<MinhaBibliotecaResponse> getDocumentsByTituloMinhaBiblioteca(String titulo) {
+        return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, MinhaBibliotecaBookEntity.class)
+                .stream()
+                .limit(1L)
+                .map(MinhaBibliotecaMapper::mapEntityToResponse)
+                .toList();
+    }
+
+    public List<MinhaBibliotecaResponse> getSimilarDocumentsByTituloMinhaBiblioteca(String titulo) {
+        return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, MinhaBibliotecaBookEntity.class)
+                .stream()
+                .limit(5L)
+                .map(MinhaBibliotecaMapper::mapEntityToResponse)
+                .toList();
+    }
+
+    public List<MinhaBibliotecaResponse> getDocumentsByAutorMinhaBiblioteca(String autor) {
+        return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(autor, MinhaBibliotecaBookEntity.class)
+                .stream()
+                .map(MinhaBibliotecaMapper::mapEntityToResponse)
+                .toList();
     }
 
 }

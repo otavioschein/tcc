@@ -40,13 +40,6 @@ public class AssistantController {
         return assistantService.getDocumentsByAutorMinhaBiblioteca(autor);
     }
 
-    @GetMapping(value = "/books/minha-biblioteca/autor/semelhante/{autor}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<MinhaBibliotecaResponse> searchSimilarDocumentsByAutorMinhaBiblioteca(@PathVariable String autor) {
-        log.info("Autor a pesquisar: {}", autor);
-        return assistantService.getSimilarDocumentsByAutorMinhaBiblioteca(autor);
-    }
-
     @GetMapping(value = "/books/pearson-biblioteca/titulo/{titulo}")
     @ResponseStatus(HttpStatus.OK)
     public List<PearsonResponse> searchDocumentsByTituloPearson(@PathVariable String titulo) {
@@ -67,13 +60,7 @@ public class AssistantController {
         return assistantService.getDocumentsByAutorPearsonBiblioteca(autor);
     }
 
-    @GetMapping(value = "/books/pearson-biblioteca/autor/semelhante/{autor}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<PearsonResponse> searchSimilarDocumentsByAutorPearson(@PathVariable String autor) {
-        return assistantService.getSimilarDocumentsByAutorPearsonBiblioteca(autor);
-    }
-
-    //TODO
+    //TODO endpoints biblioteca fisica
     @GetMapping(value = "/books/biblioteca-fisica/titulo/{titulo}")
     @ResponseStatus(HttpStatus.OK)
     public List<FisicaResponse> searchDocumentsByTituloFisica(@PathVariable String titulo) {

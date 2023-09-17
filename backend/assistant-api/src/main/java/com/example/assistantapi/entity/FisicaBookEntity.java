@@ -6,13 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(indexName = "fisica-biblioteca")
+@Document(collection = "fisica-biblioteca")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FisicaBookEntity {
 
