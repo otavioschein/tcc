@@ -200,6 +200,7 @@ nlu:
     - João
     - Ricardo
     - Eia Asen
+    - Licia Assbu
 
 - intent: livro_semelhante
   examples: |
