@@ -10,6 +10,7 @@ intents:
   - buscar_livro_por_autor
   - autor
   - livro_semelhante
+  - buscar_livro_por_titulo_com_nome_na_frase
 
 entities:
   - titulo_livro
@@ -53,6 +54,7 @@ actions:
   - action_buscar_livro_por_autor
   - action_extrair_nome_de_autor_no_input
   - action_buscar_livros_semelhantes
+  - action_extrair_nome_de_livro_no_input
 
 session_config:
   session_expiration_time: 60

@@ -60,6 +60,18 @@ stories:
     - intent: despedida
     - action: utter_despedida
 
+- story: buscar um livro por titulo caminho feliz 7
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - intent: buscar_livro_por_titulo_com_nome_na_frase
+    - action: action_extrair_nome_de_livro_no_input
+    - action: action_buscar_livro_por_titulo
+    - intent: agradecimento
+    - action: utter_agradecimento
+    - intent: despedida
+    - action: utter_despedida
+
 - story: buscar um livro por titulo caminho triste 1
   steps:
     - intent: saudacao

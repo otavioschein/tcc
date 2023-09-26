@@ -64,6 +64,23 @@ nlu:
     - pesquise uma obra por nome 
     - liste livros por titulo 
     - liste obras por nome 
+    - procure por titulo
+    - procure por nome
+    - procure um livro por titulo
+    - procure um livro por nome
+    - pesquisar um livro por titulo
+    - pesquisar um livro por nome
+    - buscar por titulo
+    - buscar por nome
+    - pesquise um livro por titulo
+    - pesquise um livro por nome
+    - pesquise uma obra por titulo
+    - pesquise uma obra por nome
+    - liste livros por titulo
+    - liste obras por nome
+
+- intent: buscar_livro_por_titulo_com_nome_na_frase
+  examples: |
     - procure por titulo [1.001 Problemas de Cálculo Para Leigos](titulo_livro)
     - procure por nome [10 Minutos para a Família](titulo_livro)
     - procure um livro por titulo [A Agência de Comunicação Publicitária como Empresa: O Lado Menos Charmoso da Publicidade e Propaganda](titulo_livro)
@@ -88,6 +105,28 @@ nlu:
 
 - intent: livro
   examples: |
+    - [1.001 Problemas de Cálculo Para Leigos](titulo_livro)
+    - [10 Minutos para a Família](titulo_livro)
+    - [A Agência de Comunicação Publicitária como Empresa: O Lado Menos Charmoso da Publicidade e Propaganda](titulo_livro)
+    - [A Paz Perpétua e Outros Opúsculos](titulo_livro)
+    - [Administração Contemporânea](titulo_livro)
+    - [Suicídio: Fatores Inconscientes e Aspectos Socioculturais: uma introdução](titulo_livro)
+    - [Suporte Básico de Vida: Primeiro Atendimento na Emergência para Profissionais da Saúde](titulo_livro)
+    - [Série IDP: pesquisa acadêmica - Desentrincheiramento da jurisdição, 1ª edição.constitucional](titulo_livro)
+    - [Semiologia do direito: tópicos para um debate referenciado pela animalidade e pela cultura](titulo_livro)
+    - [Resorts: Administração e Operação](titulo_livro)
+    - [Psicologia Social do Preconceito e do Racismo](titulo_livro)
+    - [Processo Coletivo Passivo: Uma Proposta de Sistematização e Operacionalização](titulo_livro)
+    - [Processo Civil](titulo_livro)
+    - [Oliveira Vianna entre o espelho e a máscara](titulo_livro)
+    - [Coisas que não quero saber](titulo_livro)
+    - [Citopatologia](titulo_livro)
+    - [Conforto ambiental](titulo_livro)
+    - [Patologia do Trato Genital Inferior](titulo_livro)
+    - [Zugaib obstetrícia básica](titulo_livro)
+    - [Zag](titulo_livro)
+    - [Xadrez para Leigos](titulo_livro)
+    - [o pequeno príncipe](titulo_livro)
     - [O Guia de Investimentos: Aprenda a ganhar dinheiro investindo como os ricos. (O guia do pai rico)](titulo_livro)
     - [O Estado em Juízo no Novo CPC](titulo_livro)
     - [O Direito à Privacidade e a Proteção dos Dados do Consumidor](titulo_livro)
@@ -196,11 +235,27 @@ nlu:
     - Albert Einstein
     - Zenar Pedro Schein
     - Otávio Muck Schein
-    - Thalia Veronese
     - João
     - Ricardo
     - Eia Asen
     - Licia Assbu
+    - Margaret O Mara
+    - José Cláudio Securato
+    - Venetia Young
+    - João Luiz Maximo da Silva
+    - Adriane Shibata
+    - João Eduardo Chagas Sobral
+    - Rogério Faria Tavares
+    - Mauro F. Guillén
+    - Julian Birkinshaw
+    - Ken Mark
+    - Anthony D. Slonim
+    - René Caquet
+    - Editoria Jurídica da Editora Manole
+    - Guilherme Peña de Moraes
+    - Lenio Luiz Streck
+    - Simon Monk
+    - Ligia Bertaggia de Almeida Costa
 
 - intent: livro_semelhante
   examples: |
