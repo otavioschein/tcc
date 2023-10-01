@@ -396,7 +396,7 @@ class ActionExtrairNomeDeLivroNoInput(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        nlp = spacy.load('pt_core_news_md')
+        nlp = spacy.load('pt_core_news_sm')
         mensagem = tracker.latest_message.get('text', '')
         doc = nlp(mensagem)
         
@@ -417,7 +417,7 @@ class ActionExtrairNomeDeAutorNoInput(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        nlp = spacy.load('pt_core_news_md')
+        nlp = spacy.load('pt_core_news_sm')
         mensagem = tracker.latest_message.get('text', '')
         doc = nlp(mensagem)
         
