@@ -23,9 +23,9 @@ class ActionBuscarLivroPorTitulo(Action):
 
         titulo = tracker.get_slot("titulo_livro")
 
-        responseMinhaBiblioteca = requests.get(f"http://3.80.167.35:8080/assistant/books/minha-biblioteca/titulo/{titulo}")
-        responsePearson = requests.get(f"http://3.80.167.35:8080/assistant/books/pearson-biblioteca/titulo/{titulo}")
-        responseFisica = requests.get(f"http://3.80.167.35:8080/assistant/books/biblioteca-fisica/titulo/{titulo}")
+        responseMinhaBiblioteca = requests.get(f"http://54.234.155.67:8080/assistant/books/minha-biblioteca/titulo/{titulo}")
+        responsePearson = requests.get(f"http://54.234.155.67:8080/assistant/books/pearson-biblioteca/titulo/{titulo}")
+        responseFisica = requests.get(f"http://54.234.155.67:8080/assistant/books/biblioteca-fisica/titulo/{titulo}")
 
         dataMinhaBiblioteca = responseMinhaBiblioteca.json()
         livrosMinhaBiblioteca = []
@@ -121,9 +121,9 @@ class ActionBuscarLivroPorAutor(Action):
 
         autor = tracker.get_slot("nome_autor")
 
-        responseMinhaBiblioteca = requests.get(f"http://3.80.167.35:8080/assistant/books/minha-biblioteca/autor/{autor}")
-        responsePearson = requests.get(f"http://3.80.167.35:8080/assistant/books/pearson-biblioteca/autor/{autor}")
-        responseFisica = requests.get(f"http://3.80.167.35:8080/assistant/books/biblioteca-fisica/autor/{autor}")
+        responseMinhaBiblioteca = requests.get(f"http://54.234.155.67:8080/assistant/books/minha-biblioteca/autor/{autor}")
+        responsePearson = requests.get(f"http://54.234.155.67:8080/assistant/books/pearson-biblioteca/autor/{autor}")
+        responseFisica = requests.get(f"http://54.234.155.67:8080/assistant/books/biblioteca-fisica/autor/{autor}")
 
         dataMinhaBiblioteca = responseMinhaBiblioteca.json()
         livrosMinhaBiblioteca = []
@@ -222,9 +222,9 @@ class ActionBuscarLivrosSemelhantes(Action):
         autor = tracker.get_slot("nome_autor")
 
         if titulo != None:
-            responseMinhaBiblioteca = requests.get(f"http://3.80.167.35:8080/assistant/books/minha-biblioteca/titulo/semelhante/{titulo}")
-            responsePearson = requests.get(f"http://3.80.167.35:8080/assistant/books/pearson-biblioteca/titulo/semelhante/{titulo}")
-            responseFisica = requests.get(f"http://3.80.167.35:8080/assistant/books/biblioteca-fisica/titulo/semelhante/{titulo}")
+            responseMinhaBiblioteca = requests.get(f"http://54.234.155.67:8080/assistant/books/minha-biblioteca/titulo/semelhante/{titulo}")
+            responsePearson = requests.get(f"http://54.234.155.67:8080/assistant/books/pearson-biblioteca/titulo/semelhante/{titulo}")
+            responseFisica = requests.get(f"http://54.234.155.67:8080/assistant/books/biblioteca-fisica/titulo/semelhante/{titulo}")
 
             dataMinhaBiblioteca = responseMinhaBiblioteca.json()
             livrosMinhaBiblioteca = []
@@ -302,9 +302,9 @@ class ActionBuscarLivrosSemelhantes(Action):
             return []
         
         else:
-            responseMinhaBiblioteca = requests.get(f"http://3.80.167.35:8080/assistant/books/minha-biblioteca/autor/semelhante/{autor}")
-            responsePearson = requests.get(f"http://3.80.167.35:8080/assistant/books/pearson-biblioteca/autor/semelhante/{autor}")
-            responseFisica = requests.get(f"http://3.80.167.35:8080/assistant/books/biblioteca-fisica/autor/semelhante/{autor}")
+            responseMinhaBiblioteca = requests.get(f"http://54.234.155.67:8080/assistant/books/minha-biblioteca/autor/semelhante/{autor}")
+            responsePearson = requests.get(f"http://54.234.155.67:8080/assistant/books/pearson-biblioteca/autor/semelhante/{autor}")
+            responseFisica = requests.get(f"http://54.234.155.67:8080/assistant/books/biblioteca-fisica/autor/semelhante/{autor}")
 
             dataMinhaBiblioteca = responseMinhaBiblioteca.json()
             livrosMinhaBiblioteca = []
