@@ -6,12 +6,12 @@ language: pt_br
 
 pipeline: 
   - name: SpacyNLP
-    model: "pt_core_news_sm"
+    model: "../python/tunned-model-v2"
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
     pooling: mean
   - name: SpacyEntityExtractor
-    dimensions: ["PER", "titulo_livro"]
+    dimensions: ["PER", "BOOK"]
   - name: RegexFeaturizer
     case_sensitive: false
   - name: LexicalSyntacticFeaturizer
@@ -29,6 +29,11 @@ pipeline:
   - name: FallbackClassifier
     threshold: 0.3
     ambiguity_threshold: 0.1
+  
+data:
+  - data/nlu.yml
+  - data/nlu_autor.yml
+  - data/nlu_livro.yml
 
 policies:
   - name: MemoizationPolicy

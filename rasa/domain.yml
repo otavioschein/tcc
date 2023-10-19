@@ -10,17 +10,12 @@ intents:
   - buscar_livro_por_autor
   - autor
   - livro_semelhante
-  - buscar_livro_por_titulo_com_nome_na_frase
-
-entities:
-  - titulo_livro
 
 slots:
   titulo_livro:
     type: text
     mappings:
-    - type: from_entity
-      entity: titulo_livro
+    - type: from_text
 
   nome_autor:
     type: text
@@ -29,12 +24,12 @@ slots:
 
 responses:
   utter_saudacao:
-    - text: "Olá, bem-vindo ao BookWise! O que você gostaria?"
+    - text: "Olá, bem-vindo ao BookWise! Comigo você pode pesquisar livros por
+    título e por autor, o que você gostaria?"
 
   utter_agradecimento:
     - text: "De nada!"
     - text: "Não há de que!"
-    - text: "Tamo junto bro ;)"
 
   utter_despedida:
     - text: "Tchau, obrigado por utilizar meus serviços!"
@@ -55,6 +50,7 @@ actions:
   - action_extrair_nome_de_autor_no_input
   - action_buscar_livros_semelhantes
   - action_extrair_nome_de_livro_no_input
+  # - action_extrair_entity_from_input
 
 session_config:
   session_expiration_time: 60

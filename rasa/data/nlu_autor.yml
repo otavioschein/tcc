@@ -1,0 +1,925 @@
+version: "3.1"
+
+nlu:
+- intent: autor
+  examples: |
+    - Gilza Helena
+    - Andrei Sapkowski
+    - Albert Einstein
+    - Zenar Pedro Schein
+    - Otávio Muck Schein
+    - João
+    - Ricardo
+    - Eia Asen
+    - Licia Assbu
+    - Margaret O Mara
+    - José Cláudio Securato
+    - Venetia Young
+    - João Luiz Maximo da Silva
+    - Adriane Shibata
+    - João Eduardo Chagas Sobral
+    - Rogério Faria Tavares
+    - Mauro F. Guillén
+    - Julian Birkinshaw
+    - Ken Mark
+    - Anthony D. Slonim
+    - René Caquet
+    - Editoria Jurídica da Editora Manole
+    - Guilherme Peña de Moraes
+    - Lenio Luiz Streck
+    - Simon Monk
+    - Ligia Bertaggia de Almeida Costa
+    - Mariângela Haddad; Sonia Junqueira
+    - Leonardo da Vinci
+    - Nath Finanças
+    - Kate Elizabeth Russell
+    - Blake Crouch
+    - Kate Elizabeth Russell
+    - Blake Crouch
+    - Antonio Scurati
+    - Robert Kirkman
+    - Isabela Freitas
+    - Lara Prescott
+    - Stevie Lewis
+    - Mike Isaac
+    - Adam Christopher
+    - Matt Ruff
+    - Scott Cawthon
+    - Lucy Foley
+    -  Elizabeth Warren 
+    - David Nicholls
+    - Mariana Enriquez
+    - Lucy Foley
+    - Raina Telgemeier
+    - Ransom Riggs
+    - David Eagleman
+    - Niklas Natt och Dag
+    - Matt Ruff
+    - Jenny Han
+    - Jenny Han
+    - Alfredo Nugent Setubal
+    - Jeanine Cummins
+    - Daniel Furlan
+    - Alfredo Nugent Setubal
+    - Ray Dalio
+    - Jeff Lemire
+    - Ransom Riggs
+    - C.J. Tudor
+    - David Nicholls
+    - John M. Barry
+    - S. E. Hinton
+    - Greg James
+    - Michael T. Osterholm
+    - Eva García Sáenz de Urturi
+    - Ann Patchett
+    - Lucy Foley
+    - Rick Riordan
+    - C.J. Tudor
+    - Neil Gaiman
+    - Stephenie Meyer
+    - Josh Malerman
+    - Matt Haig
+    - Robert Iger
+    - Elena Ferrante
+    - Thomas Piketty
+    - Elena Ferrante
+    - Riad Sattouf
+    - Becky Albertalli
+    - Ta-Nehisi Coates
+    - Ann Patchett
+    - Facundo Alvaredo
+    - Daniela Arbex
+    - Nic Stone
+    - Ta-Nehisi Coates
+    -  Emma Jane Unsworth 
+    - Kurt Vonnegut
+    - Jenna Evans Welch
+    - Jenna Evans Welch
+    - Reed Hastings
+    - Matt Ruff
+    - K. A. Applegate
+    - Beth O'Leary
+    - Beth O'Leary
+    - Graham Allison
+    - Deborah Feldman
+    - Monica de Bolle
+    - THOMAS ERIKSON
+    - NEIL GAIMAN
+    - Rick Riordan
+    - Matthew Quick
+    - Neil Gaiman
+    - Joe Biden
+    - Jessica Jung
+    - Mick Kitson
+    - Jill Lepore
+    -  Emma Jane Unsworth 
+    - Min Jin Lee
+    - Beth O'Leary
+    - Pilar Quintana
+    - Papa Francisco
+    - Erik Larson
+    - Chico Otávio
+    - Jeff Lemire
+    - Nicholas Sparks
+    - Felipe Miranda
+    - Deborah Feldman
+    -  Ron Chernow 
+    - Mariko Tamaki
+    - Scott Cawthon
+    - ISABELA FREITAS
+    - Linda Holmes
+    - Linda Holmes
+    - Beth Morrey
+    - Miguel Pinto Guimarães
+    - Min Jin Lee
+    - Patricia Highsmith
+    - Beth O'Leary
+    - Joël Dicker
+    - Joël Dicker
+    - Richard H. Thaler
+    - Jenny Han
+    - Jenny Han
+    - Jenny Han
+    - Richard H. Thaler 
+    - Garrard Conley
+    - Garrard Conley
+    - Val Emmich
+    - Michael Lewis
+    - Daniela Arbex
+    - Michelle Sacks
+    - Markus Zusak
+    - Liane Moriarty 
+    - C.J. Tudor
+    - Roger Zezlany
+    - Val Emmich
+    - Kurt Vonnegut
+    - Patrick Ness
+    - Jake Knapp
+    - Edgar Cantero
+    - Jojo Moyes
+    - Malin Persson Giolito
+    - Jenny Han
+    - Mark Manson
+    - Andréa Pachá
+    - Liane Moriarty 
+    - Whitney Scharer
+    - Robert Kirkman
+    - Richard Feynman
+    - Sharlene Teo
+    - Josh Malerman
+    - Jeff Lemire
+    - E.L. James
+    - Ariano Suassuna
+    - C.J. Tudor
+    - Raquel Landim
+    - Brad Stone
+    - Gwenda Bond
+    - Delia Owens
+    - Edgar Cantero
+    - Delia Owens
+    - Becky Albertalli
+    - Josh Malerman
+    - Karina Sainz Borgo
+    - Mariana Enriquez
+    - Sharlene Teo
+    - Alexandre de Moraes
+    - Jason Reynolds
+    - Clara Savelli
+    - Josh Malerman
+    - Cornelia Maria Funke
+    - Lindsey Fitzharris
+    - Patrick Ness
+    -  Olivier Guez 
+    - Fernando Aramburu
+    - Fernando Aramburu
+    - Edgar Cantero
+    - Mary H.K. Choi
+    - Jason Reynolds
+    - Beth O'Leary
+    - Becky Albertalli 
+    - Andrew Nagorski
+    - Gary John Bishop
+    - Josh Malerman
+    - Felipe Castilho
+    - Chandler Baker
+    - Andre Agassi
+    - Manson Mark
+    - Markus Zusak
+    - Lindsey Fitzharris
+    - Jojo Moyes
+    - Valerio Vidali 
+    - Daniela Arbex
+    - Vinícius Dônola
+    - Rick Riordan
+    - Blake Crouch
+    - Kurt Vonnegut
+    - Chandler Baker
+    - Leander Kahney
+    -  André Aciman 
+    - Jojo Moyes
+    - Jeff Lemire
+    - Andrea Beaty
+    - Kurt Vonnegut
+    - Ryan Holiday
+    - Andréa Pachá
+    - Andrea Beaty
+    - Andrea Beaty
+    - Andrea Beaty
+    - John Green
+    - Lara Prescott
+    - Maria Luíza Filgueiras
+    - Jeff Lemire
+    - Chandler Baker
+    - Lucy Foley
+    - Jojo Moyes
+    - Fernando Aramburu
+    - Gary John Bishop
+    - Raquel Landim
+    - Guillermo del Toro 
+    - Kurt Vonnegut
+    - Josh Malerman
+    - Beth O'Leary
+    - R.J. Palacio
+    - Rick Riordan
+    - Mark Manson
+    - Rick Riordan
+    - Delia Owens
+    - E.L. James
+    - Jojo Moyes
+    - Robert Jordan
+    - E.L. James
+    - André Aciman 
+    - Daniela Arbex
+    - Jojo Moyes
+    - Tom Brady
+    - Molly Bloom
+    - C.J. Tudor
+    - Guillermo del Toro
+    - E L James
+    - Amor Towles
+    - Paolo Cognetti 
+    - Gustavo Magnani
+    - Timothy Ferriss
+    - Molly Bloom
+    - Jeff VanderMeer
+    - André Aciman 
+    - Amor Towles
+    - Francesc Miralles
+    - Bruce Dickinson
+    - Scott Cawthon
+    - Rick Riordan
+    - Anthony Marra
+    - Becky Albertalli
+    - Rick Riordan
+    - Camila Coutinho
+    - Neil Gaiman
+    - Camila Coutinho
+    - Matthew Quick
+    - Nathan Hill
+    - Neil Gaiman
+    - Cressida Cowell
+    - Cressida Cowell
+    - Michael Greger
+    - Michael Greger
+    - Celeste Ng 
+    - Jeff Lemire
+    - Alexandra Bracken
+    - Kelly Weinersmit
+    - Luca D'Andrea
+    - Jennifer Egan
+    - Liane Moriarty 
+    - William Goldman
+    - Josh Malerman
+    - Alexandra Bracken
+    - Matthew Quick
+    - Miriam Leitão
+    - André Aciman 
+    - Becky Albertalli
+    - Del Toro 
+    - Ray Dalio
+    - Pedro Malan
+    - C.J. Tudor
+    - Neil Gaiman
+    - Henry Timms
+    - Ray Dalio
+    - Michiko Kakutani
+    - Kim Smith
+    - Chico Otávio
+    - Walter Isaacson
+    - Matthew Walker 
+    - Michiko Kakutani
+    - Alexandra Bracken
+    - Neil Gaiman
+    - Kim Smith
+    - Gillian Flynn
+    - Jeff Lemire
+    - James R. Hansen
+    - Ransom Riggs
+    - Jeff Lemire
+    - Ildefonso Falcones
+    - Joël Dicker
+    - Lynda La Plante
+    - Stephen Hawking
+    - Jaron Lanier
+    - Andréa Pachá
+    - Val Emmich
+    - Míriam Leitão
+    - Michael Pollan
+    - Markus Zusak
+    - Alexandra Bracken
+    - Alexandra Bracken
+    - Edgar Cantero
+    - Isabela Freitas
+    - Ludmila Monteiro
+    - John Green
+    - Jaron Lanier
+    - Becky Albertalli
+    - Matthew Walker 
+    - Tim Ferriss
+    - Paolo Cognetti
+    - Jojo Moyes
+    - Neil Gaiman
+    - Fiona Barton 
+    - Jojo Moyes
+    - Joël Dicker
+    - Stephanie Perkins
+    - Cressida Cowell
+    - Stephen Hawking
+    - Luiz Fernando Vianna
+    - E.L. James
+    - Donald Sull e Kathleen M. Eisenhardt
+    - Tony DiTerlizzi
+    - Lauren Oliver
+    - E.L. James
+    - Ben Fountain 
+    - Cressida Cowell
+    -  Fiona Barton 
+    - Miriam Leitão
+    - Blake Crouch
+    - Thomas Piketty
+    - Siobhan Vivian
+    - Liane Moriarty 
+    - David Walliams
+    - Geoff Rodkey
+    - R. J. Palacio
+    - Claire Kendal
+    - Herman Koch
+    - Herman Koch
+    - Glennon Doyle Melton
+    - JP Delaney
+    - William Finnegan
+    - Elena Ferrante
+    - Neil Gaiman
+    - Jojo Moyes
+    -  Celeste Ng 
+    - Scott Cawthon
+    - Anthony Doerr
+    - Viih Tube
+    - Geoff Rodkey
+    - Alyson Noël
+    - Liane Moriarty 
+    - Liane Moriarty 
+    - Clare Mackintosh
+    - Clare Mackintosh
+    - Potter Style
+    - Márcia Vieira
+    - Cynthia Bond
+    - Cynthia Bond
+    - Jake Knapp
+    - Jake Knapp
+    - David I. Kertzer
+    - Lauren Oliver
+    - Scott Cawthon
+    - Jenny Han
+    -  Celeste Ng 
+    - Liane Moriarty 
+    - Christian McKay Heidicker
+    - Noah Hawley
+    - Marlon James
+    - Josh Malerman
+    - Meredith Russo
+    - Jojo Moyes
+    - Jojo Moyes
+    - Neil Gaiman
+    - Christian McKay Heidicker
+    - Rick Riordan
+    - Matt Haig
+    - Matheus Leitão
+    - Edmund de Waal
+    - Michael Lewis
+    - Emma Cline
+    - Mariana Enriquez
+    - Sarah Pinborough
+    - Claire Kendal
+    - Peter Brown
+    - Peter Brown
+    - Ashley Poston
+    - Rick Riordan
+    - Maria Semple
+    - Maria Semple
+    - Liane Moriarty 
+    - Mark Olshaker
+    - Jenna Evans Welch
+    - Jason Reynolds
+    - Jason Reynolds
+    - Jenna Evans Welch
+    - Ransom Riggs
+    - Brit Bennett
+    - Brit Bennett
+    - Becky Albertalli
+    - Becky Albertalli
+    - Jojo Moyes
+    - Luiz Fernando Vianna
+    - Stephen Wawking
+    - Riad Sattouf
+    - Allen Eskens
+    - Allen Eskens
+    - Paul Tough
+    - Paul Tough
+    - Brad Stone
+    - Raony Phillips
+    - Angus Deaton
+    - Alain de Botton
+    - Rick Riordan
+    - Martha Hall Kelly
+    - John Green
+    - Ransom Riggs
+    - Jenny Han
+    - Jojo Moyes
+    - Elena Ferrante
+    - David Walliams
+    - Walter Isaacson
+    - Ryan Holiday
+    - Stéphanie Hennette
+    - Jojo Moyes
+    - Cara Delevingne
+    - Keri Smith
+    - Keri Smith
+    - Mariana Enriquez
+    - Jojo Moyes
+    - Scott Kelly
+    - Ransom Riggs
+    - Jack Cheng
+    - Sergio Abramoff
+    - Mark Manson
+    - Ransom Riggs
+    - John Green
+    - Jojo Moyes
+    - Munro Leaf
+    - Felipe Castilho
+    - Jenna Evans Welch
+    - R. J. Palacio
+    - Emma Cline
+    - E.L. James
+    - Blake Crouch
+    - Mark Manson
+    - Isabela Freitas
+    - Joël Dicker
+    - Elena Ferrante
+    - Mark Manson
+    - Jojo Moyes
+    - Jojo Moyes
+    - Jenny Han
+    - Mark Olshaker
+    - Rick Riordan
+    - Rick Riordan
+    - Walter Isaacson
+    - Sergio Abramoff
+    - Jojo Moyes
+    - Rick Riordan
+    - Felipe Castilho
+    - Mark Olshaker
+    - Rick Riordan
+    - Ransom Riggs
+    - Jenny Han
+    - Peter Brown
+    - Joakim Zander
+    - Nick Davies
+    - Jojo Moyes
+    - Michael Punke
+    - Bruce Cook
+    - Cristina Tardáguila
+    - Becky Albertalli
+    - Anna Lyndsey
+    - Stephen Hawking
+    - Melissa Hill
+    - Viih Tube
+    - Geoff Rodkey
+    - Ryan Gattis
+    - Elizabeth Warren 
+    - Moïra Fowley-Doyle
+    - Riad Sattouf
+    - Jeff VanderMeer
+    - Seth Grahame-Smith
+    - Terry Hayes
+    - Fernando Scheller
+    - Jenny Lawson 
+    - Kory Merritt e Jack Chabert
+    - Keri Smith
+    - Lynsey Addario
+    - Kate Bolick
+    - Cristina Tardáguila
+    - Jojo Moyes
+    - Rick Riordan
+    - Ransom Riggs
+    - Chris Anderson
+    - Lauren Groff
+    - Elio Gaspari
+    - Elio Gaspari
+    - Jojo Moyes
+    - Jojo Moyes
+    - Jon Scieszka
+    - Rodrigo Hasbún 
+    - Matthew Quick
+    - Moby
+    - Darrell Huff
+    - Helen Macdonald
+    - Robert Jordan
+    - Fernanda Gentil
+    - Neil Gaiman
+    - Andrew Michael Hurley
+    - Alex Ferguson com Michael Moritz
+    - Tatiana de Rosnay
+    - Jeffrey Cranor
+    - Hampton Sides
+    - Gillian Flynn
+    - Jojo Moyes
+    - Clarice Freire
+    - Jojo Moyes
+    - Sara Pennypacker
+    - Darrell Huff
+    - Lance Rubin
+    - Julian Fellowes
+    - Erik Larson
+    - John Vaillant
+    - Paolo Bacigalupi
+    - Neil Gaiman
+    - James Frey
+    - Rick Riordan
+    - James Frey
+    - Delphine de Vigan
+    - Ransom Riggs
+    - Jory John e Mac Barnett
+    - Bill Browder
+    - Angela Duckworth
+    - E.K. Johnston
+    - Pedro Gabriel
+    - Jojo Moyes
+    - Jojo Moyes
+    - Moïra Fowley-Doyle
+    - J. A. Hazeley e J. P. Morris
+    - Cynthia D'Aprix Sweeney
+    - Ransom Riggs
+    - Pittacus Lore
+    - Jojo Moyes
+    - Hugh Howey
+    - Prof. Steve Peters
+    - Kate Scelsa
+    - Anônimo
+    - Noelle Stevenson
+    - Rick Riordan
+    - Pittacus Lore
+    - Neil Gaiman
+    - Monica de Bolle
+    - Isabela Freitas
+    - Elena Ferrante
+    - Elena Ferrante
+    - Amy Schumer
+    - Tilar J. Mazzeo
+    - Madeline Puckette e Justin Hammack
+    - Gillian Flynn
+    - Robert Jordan
+    - Delphine de Vigan
+    - Joaquim Ferreira dos Santos
+    - Jojo Moyes
+    - Stephenie Meyer
+    - Delphine de Vigan
+    - Dra. Frances E. Jensen com Amy Ellis Nutt
+    - Austin Wright
+    - Darrell Huff
+    - Ted Chiang
+    - Ransom Riggs
+    - Pittacus Lore
+    - Jojo Moyes
+    - Melissa Hill
+    - Gillian Flynn
+    - Jojo Moyes
+    - Julian Fellowes
+    - José de Alencar
+    - E.L. James
+    - Noelle Stevenson
+    - Jason Reynolds
+    - Ransom Riggs
+    - Michael Punke
+    - Elio Gaspari
+    - Chris Anderson
+    - Jojo Moyes
+    - Rick Riordan
+    - Stephen Hawking
+    - Elio Gaspari
+    - Becky Albertalli
+    - Neil Gaiman
+    - Jenny Lawson
+    - Fernando Scheller
+    - Jojo Moyes
+    - Stephenie Meyer
+    - Rodrigo Hasbún 
+    - Julian Fellowes
+    - Rick Riordan
+    - Jeff VanderMeer
+    - Rick Riordan
+    - Laini Taylor
+    - Doug Dorst
+    - Max Barry
+    - Jeff VanderMeer
+    - John Green
+    - Sally Green
+    - Rick Riordan
+    - Chris Kyle
+    - Lionel Shriver
+    - Andrew Fukuda
+    - Jojo Moyes
+    - Thomas Piketty
+    - Josh Malerman
+    - Gillian Flynn
+    - Eric Schmidt
+    - Samantha Hayes
+    - Matt Kuhn
+    - Stephen Hawking
+    - Matthew Quick
+    - Neil Gaiman
+    - Pittacus Lore
+    - Liane Moriarty 
+    - Hugh Howey
+    - Andrew Smith
+    - Seth Casteel
+    - Amanda Palmer
+    - Fabio Stassi 
+    - Jennifer Egan
+    - Miguel Sanches Neto
+    - Betty Halbreich 
+    - David Walliams
+    - Anthony Doerr
+    - Meg Medina
+    - Neil Gaiman
+    - Keri Smith
+    - Neill Lochery
+    - Jon Scieszka
+    - Joël Dicker
+    - Riad Sattouf
+    - James Frey
+    - David Nicholls
+    - Becca Fitzpatrick
+    - Letícia Wierzchowski
+    - Michael Moss
+    - Justin Go
+    - Jenny Han
+    - Gillian Flynn
+    - Andrew Knapp
+    - B.J. Novak
+    - Peter Evans
+    - John Green
+    - Meghan Doherty
+    - Robert Jordan
+    - Seth Casteel
+    - Stephanie Perkins
+    - Emily St. John Mandel
+    - Clóvis Bulcão
+    - John Green
+    - Isabela Freitas
+    - Nic Pizzolatto 
+    - Jory John
+    - Michael Lewis
+    - Ron Rash
+    - Alyson Noël
+    - Rick Riordan
+    - Miguel Sanches Neto
+    - E.L. James
+    - Sally Green
+    - James Frey
+    - David Arnold
+    - Anne-Sophie Girard
+    - Alain de Botton
+    - Stephen Witt
+    - Leif GW Persson
+    - Miriam Leitão
+    - R. J. Palacio
+    - Keri Smith
+    - Rick Riordan
+    - Brent Schlender e Rick Tetzeli
+    - Herman Koch
+    - Beck Weathers
+    - Megan Abbott 
+    - Peter Brown
+    - Matthew Quick
+    - Elizabeth Kolbert
+    - Jeff VanderMeer
+    - Maurício Gomyde
+    - David Walliams
+    - Neil Gaiman
+    - M. O. Walsh 
+    - Jean-Paul Didierlaurent
+    - Blake J. Harris
+    - Mitch Cullin
+    - Ashlee Vance
+    - Rafael Mantesso
+    - Jon Scieszka 
+    - Vanessa Barbara
+    - Thomas Piketty
+    - Dick Lehr
+    - Andrew Marr
+    - Wednesday Martin
+    - Erik Larson
+    - Jessie Burton
+    - Stephenie Meyer
+    - Isabela Freitas
+    - Pittacus Lore
+    - R. J. Palacio
+    - Amanda Nori
+    - Guillermo del Toro
+    - Potter Style
+    - Grégory Samak
+    - Joyce Pascowitch
+    - Miriam Leitão
+    - Gillian Flynn
+    - Stephenie Meyer
+    - David Walliams
+    - Josh Malerman
+    - Gillian Flynn
+    - Meg Medina
+    - Neil Gaiman
+    - Meghan Doherty
+    - Rick Riordan
+    - Stephen Hawking
+    - Thomas Piketty
+    - Isabela Freitas
+    - R. J. Palacio
+    - E.L. James
+    - Berney Stinson
+    - Stephenie Meyer
+    - M. O. Walsh
+    - Stephenie Meyer
+    - Jenny Han
+    - Brent Schlender e Rick Tetzeli
+    - Ashlee Vance
+    - Gillian Flynn
+    - Osny Mattano Junior
+    - György Dragomán
+    - Josh Malerman
+    - Vanessa Barbara
+    - Pittacus Lore
+    - James Frey
+    - Dick Lehr
+    - Andrew Marr
+    - Neil Gaiman
+    - Jean-Paul Didierlaurent
+    - Rick Riordan
+    - Andrew Marr
+    - Jeff VanderMeer
+    - Jenny Han
+    - Stephenie Meyer
+    - Rick Riordan
+    - Robert Jordan
+    - Rick Riordan
+    - Robert Jordan
+    - Cressida Cowell
+    - Jojo Moyes
+    - Esther Earl
+    - Andrew Kaplan
+    - Hugh Howey
+    - Michelle Paver
+    - Cat Patrick
+    - Matt Kuhn
+    - Shane Salerno
+    - Elio Gaspari
+    - Jennifer Egan
+    - David B. Agus
+    - Pittacus Lore
+    - Liane Moriarty 
+    - Rick Riordan
+    - Amity Gaige
+    - Paul Tough
+    - Elizabeth Haynes
+    - Ayana Mathis 
+    - Naoki Higashida
+    - R. J. Palacio
+    - Brad Stone
+    - Neil Gaiman
+    - Karen Harrington
+    - Lauren Beukes
+    - Max Hastings
+    - Robert W. Chambers
+    - A.S.A. Harrison
+    - Lauren Oliver
+    - Joël Dicker
+    - John Green
+    - Miriam Leitão
+    - Piper Kerman
+    - Anton DiSclafani
+    - Fred Vogelstein
+    - David Walliams
+    - Cressida Cowell
+    - Isabela Freitas
+    - Rachel Khoo
+    - Crystal Chan
+    - Timur Vermes
+    - Don Winslow
+    - Amanda Grace
+    - Thomas Piketty
+    - Jeff VanderMeer
+    - Sally Green
+    - Catherine Fisher
+    - Michael Pollan
+    - Rick Riordan
+    - Tom Perrotta
+    - Rachel Kushner
+    - Jason Reynolds
+    - John Green
+    - Clarice Freire
+    - Cressida Cowell
+    - Michael Lewis
+    - Anthony Marra
+    - Daniel Yergin
+    - Juliet Macur
+    - Keri Smith
+    - Keri Smith
+    - Rick Riordan
+    - Virgil Gheorghiu
+    - Keri Smith
+    - Rick Riordan
+    - Pittacus Lore
+    - Rick Riordan
+    - Gillian Flynn
+    - Rhidian Brook
+    - David Walliams
+    - Adriana Falcão 
+    - R. J. Palacio
+    - James Frey
+    - Lisa Nola
+    - Andrew Knapp
+    - David Walliams
+    - Alain de Botton
+    - Pedro Gabriel
+    - Lena Dunham
+    - Marisha Pessl
+    - Lauren Oliver
+    - A. Scott Berg
+    - Seth Casteel
+    - Stephanie Perkins
+    - Thomas Meehan
+    - Rick Riordan
+    - Markus Zusak
+    - James Frey
+    - John Green
+    - Rick Riordan
+    - R. J. Palacio
+    - Miriam Leitão
+    - Jason Reynolds
+    - Robert W. Chambers
+    - John Green
+    - Lena Dunhan
+    - Becca Fitzpatrick
+    - Pittacus Lore
+    - Adriana Falcão 
+    - Claire Kendal
+    - Lionel Shriver
+    - Thomas Piketty
+    - Liane Moriarty
+    - E.L. James
+    - Keri Smith
+    - Rick Riordan
+    - E.L. James
+    - Gillian Flynn
+    - Barney Stinson
+    - Isabela Freitas
+    - Timur Vermes
+    - Elio Gaspari
+    - Jeff VanderMeer
+    - Matthew Quick
+    - Robert Jordan
+    - Michael Pollan
+    - A. Scott Berg
+    - Anton Disclafani
+    - John Green
+    - Brad Stone
+    - Max Hastings
+    - Elio Gaspari
+    - Jenny Han
+    - Jeff VanderMeer
+    - Robert Jordan
+    - Rick Riordan
+    - Cressida Cowell
+    - Rick Riordan
+    - Lauren Oliver
+    - Becca Fitzpatrick
+    - Andrew Lane
+    - John Green
+    - Rick Riordan
+    - Pittacus Lore
+    - Salman Khan
+    - Stephen Rebello 
+    - Janet Foxley
+    - John Green
+    - Damien Echols
+    - R. J. Palacio
+    - Nils Johnson-Shelton

@@ -59,6 +59,7 @@ public class AssistantService {
     //TODO
     public List<PearsonResponse> getDocumentsByTituloPearsonBiblioteca(String titulo) {
         var regexPattern = getRegexPattern(titulo);
+        log.info("Regex pattern: {}", regexPattern);
         return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, PearsonBibliotecaBookEntity.class)
                 .stream()
                 .filter(livro -> regexPattern.matcher(livro.getTitulo()).find())
@@ -76,6 +77,7 @@ public class AssistantService {
 
     public List<PearsonResponse> getDocumentsByAutorPearsonBiblioteca(String autor) {
         var regexPattern = getRegexPattern(autor);
+        log.info("Regex pattern: {}", regexPattern);
         return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(autor, PearsonBibliotecaBookEntity.class)
                 .stream()
                 .filter(livro -> regexPattern.matcher(livro.getAutor()).find())
@@ -86,6 +88,7 @@ public class AssistantService {
 
     public List<MinhaBibliotecaResponse> getDocumentsByTituloMinhaBiblioteca(String titulo) {
         var regexPattern = getRegexPattern(titulo);
+        log.info("Regex pattern: {}", regexPattern);
         return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, MinhaBibliotecaBookEntity.class)
                 .stream()
                 .filter(livro -> regexPattern.matcher(livro.getTitulo()).find())
@@ -112,7 +115,7 @@ public class AssistantService {
 
     private Pattern getRegexPattern(String term) {
         List<String> splittedTerm = Arrays.stream(term.split(" ")).toList();
-        var regex = String.join(".*?", splittedTerm);
+        var regex = ".*?" + String.join(".*?", splittedTerm);
         return Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
     }
 

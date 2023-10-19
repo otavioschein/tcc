@@ -25,6 +25,7 @@ rules:
 - rule: Execute a chamada a api quando a intent livro for identificada
   steps:
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
 
 - rule: Execute a acao action_buscar_livro_por_autor sempre que a action_extrair_nome_de_autor_no_input for executada
@@ -37,12 +38,6 @@ rules:
   steps:
     - intent: buscar_livro_por_titulo
     - action: utter_buscar_livro_por_titulo
-
-- rule: Busque um livro quando o usuario digitar o nome do livro
-  steps:
-    - intent: buscar_livro_por_titulo_com_nome_na_frase
-    - action: action_extrair_nome_de_livro_no_input
-    - action: action_buscar_livro_por_titulo
 
 - rule: Pergunte o nome do autor sempre que o usuário quiser pesquisar um livro por nome de autor
   steps:

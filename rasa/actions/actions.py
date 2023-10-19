@@ -23,9 +23,9 @@ class ActionBuscarLivroPorTitulo(Action):
 
         titulo = tracker.get_slot("titulo_livro")
 
-        responseMinhaBiblioteca = requests.get(f"http://54.234.155.67:8080/assistant/books/minha-biblioteca/titulo/{titulo}")
-        responsePearson = requests.get(f"http://54.234.155.67:8080/assistant/books/pearson-biblioteca/titulo/{titulo}")
-        responseFisica = requests.get(f"http://54.234.155.67:8080/assistant/books/biblioteca-fisica/titulo/{titulo}")
+        responseMinhaBiblioteca = requests.get(f"http://localhost:8080/assistant/books/minha-biblioteca/titulo/{titulo}")
+        responsePearson = requests.get(f"http://localhost:8080/assistant/books/pearson-biblioteca/titulo/{titulo}")
+        responseFisica = requests.get(f"http://localhost:8080/assistant/books/biblioteca-fisica/titulo/{titulo}")
 
         dataMinhaBiblioteca = responseMinhaBiblioteca.json()
         livrosMinhaBiblioteca = []
@@ -121,9 +121,9 @@ class ActionBuscarLivroPorAutor(Action):
 
         autor = tracker.get_slot("nome_autor")
 
-        responseMinhaBiblioteca = requests.get(f"http://54.234.155.67:8080/assistant/books/minha-biblioteca/autor/{autor}")
-        responsePearson = requests.get(f"http://54.234.155.67:8080/assistant/books/pearson-biblioteca/autor/{autor}")
-        responseFisica = requests.get(f"http://54.234.155.67:8080/assistant/books/biblioteca-fisica/autor/{autor}")
+        responseMinhaBiblioteca = requests.get(f"http://localhost:8080/assistant/books/minha-biblioteca/autor/{autor}")
+        responsePearson = requests.get(f"http://localhost:8080/assistant/books/pearson-biblioteca/autor/{autor}")
+        responseFisica = requests.get(f"http://localhost:8080/assistant/books/biblioteca-fisica/autor/{autor}")
 
         dataMinhaBiblioteca = responseMinhaBiblioteca.json()
         livrosMinhaBiblioteca = []
@@ -222,9 +222,9 @@ class ActionBuscarLivrosSemelhantes(Action):
         autor = tracker.get_slot("nome_autor")
 
         if titulo != None:
-            responseMinhaBiblioteca = requests.get(f"http://54.234.155.67:8080/assistant/books/minha-biblioteca/titulo/semelhante/{titulo}")
-            responsePearson = requests.get(f"http://54.234.155.67:8080/assistant/books/pearson-biblioteca/titulo/semelhante/{titulo}")
-            responseFisica = requests.get(f"http://54.234.155.67:8080/assistant/books/biblioteca-fisica/titulo/semelhante/{titulo}")
+            responseMinhaBiblioteca = requests.get(f"http://localhost:8080/assistant/books/minha-biblioteca/titulo/semelhante/{titulo}")
+            responsePearson = requests.get(f"http://localhost:8080/assistant/books/pearson-biblioteca/titulo/semelhante/{titulo}")
+            responseFisica = requests.get(f"http://localhost:8080/assistant/books/biblioteca-fisica/titulo/semelhante/{titulo}")
 
             dataMinhaBiblioteca = responseMinhaBiblioteca.json()
             livrosMinhaBiblioteca = []
@@ -302,9 +302,9 @@ class ActionBuscarLivrosSemelhantes(Action):
             return []
         
         else:
-            responseMinhaBiblioteca = requests.get(f"http://54.234.155.67:8080/assistant/books/minha-biblioteca/autor/semelhante/{autor}")
-            responsePearson = requests.get(f"http://54.234.155.67:8080/assistant/books/pearson-biblioteca/autor/semelhante/{autor}")
-            responseFisica = requests.get(f"http://54.234.155.67:8080/assistant/books/biblioteca-fisica/autor/semelhante/{autor}")
+            responseMinhaBiblioteca = requests.get(f"http://localhost:8080/assistant/books/minha-biblioteca/autor/semelhante/{autor}")
+            responsePearson = requests.get(f"http://localhost:8080/assistant/books/pearson-biblioteca/autor/semelhante/{autor}")
+            responseFisica = requests.get(f"http://localhost:8080/assistant/books/biblioteca-fisica/autor/semelhante/{autor}")
 
             dataMinhaBiblioteca = responseMinhaBiblioteca.json()
             livrosMinhaBiblioteca = []
@@ -396,17 +396,14 @@ class ActionExtrairNomeDeLivroNoInput(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        nlp = spacy.load('pt_core_news_sm')
+        nlp = spacy.load('../python/tunned-model')
         mensagem = tracker.latest_message.get('text', '')
         doc = nlp(mensagem)
         
-        sentences = [ent.text for ent in doc.ents if ent.label_ == 'titulo_livro']
+        sentences = [ent.text for ent in doc.ents if ent.label_ == 'BOOK']
 
-        if sentences:
-            livro = sentences[0]
-            return [SlotSet("titulo_livro", livro)]
-        else:
-            dispatcher.utter_message("Desculpe, não entendi.")
+        for s in sentences:
+            return [SlotSet("titulo_livro", s)]
         
 
 class ActionExtrairNomeDeAutorNoInput(Action):
@@ -417,7 +414,7 @@ class ActionExtrairNomeDeAutorNoInput(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        nlp = spacy.load('pt_core_news_sm')
+        nlp = spacy.load('../python/tunned-model')
         mensagem = tracker.latest_message.get('text', '')
         doc = nlp(mensagem)
         
@@ -426,3 +423,23 @@ class ActionExtrairNomeDeAutorNoInput(Action):
         for a in autor:
             return [SlotSet("nome_autor", a)]
         
+
+class ActionExtraiNomeDeLivro(Action):
+    def name(self) -> Text:
+        return "actions_extrai_nome_de_livro"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        nlp = spacy.load('../python/tunned-model-v2')
+        mensagem = tracker.latest_message.get('text', '')
+        doc = nlp(mensagem)
+
+        sentences = [ent.text for ent in doc.ents if ent.label_ == 'BOOK']
+
+        if sentences:
+            for s in sentences:
+                return [SlotSet("titulo_livro", s)]
+        else:
+            dispatcher.utter_message("Informe o nome do livro que você quer")

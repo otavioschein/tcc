@@ -9,18 +9,13 @@ stories:
     - intent: buscar_livro_por_titulo
     - action: utter_buscar_livro_por_titulo
     - intent: livro
-    - action: action_buscar_livro_por_titulo
-
-- story: buscar um livro por titulo caminho feliz 2
-  steps:
-    - intent: buscar_livro_por_titulo
-    - action: utter_buscar_livro_por_titulo
-    - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
 
 - story: buscar um livro por titulo caminho feliz 3
   steps:
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
 
 - story: buscar um livro por titulo caminho feliz 4
@@ -30,6 +25,7 @@ stories:
     - intent: buscar_livro_por_titulo
     - action: utter_buscar_livro_por_titulo
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
     - intent: agradecimento
     - action: utter_agradecimento
@@ -43,6 +39,7 @@ stories:
     - intent: buscar_livro_por_titulo
     - action: utter_buscar_livro_por_titulo
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
     - intent: despedida
     - action: utter_despedida
@@ -54,17 +51,18 @@ stories:
     - intent: buscar_livro_por_titulo
     - action: utter_buscar_livro_por_titulo
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
     - intent: agradecimento
     - action: utter_agradecimento
     - intent: despedida
     - action: utter_despedida
 
-- story: buscar um livro por titulo caminho feliz 7
+- story: buscar um livro por titulo caminho feliz 8
   steps:
     - intent: saudacao
     - action: utter_saudacao
-    - intent: buscar_livro_por_titulo_com_nome_na_frase
+    - intent: livro
     - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
     - intent: agradecimento
@@ -79,6 +77,7 @@ stories:
     - intent: buscar_livro_por_titulo
     - action: utter_buscar_livro_por_titulo
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
     - intent: negativa
     - action: utter_negativa
@@ -92,6 +91,7 @@ stories:
     - intent: buscar_livro_por_titulo
     - action: utter_buscar_livro_por_titulo
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
     - intent: negativa
     - action: utter_negativa
@@ -101,6 +101,7 @@ stories:
     - intent: buscar_livro_por_titulo
     - action: utter_buscar_livro_por_titulo
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
     - intent: negativa
     - action: utter_negativa
@@ -108,6 +109,7 @@ stories:
 - story: buscar um livro por titulo caminho triste 4
   steps:
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
     - intent: negativa
     - action: utter_negativa
@@ -196,6 +198,7 @@ stories:
     - intent: buscar_livro_por_titulo
     - action: utter_buscar_livro_por_titulo
     - intent: livro
+    - action: action_extrair_nome_de_livro_no_input
     - action: action_buscar_livro_por_titulo
     - intent: livro_semelhante
     - action: action_buscar_livros_semelhantes
