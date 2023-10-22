@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 @Slf4j
@@ -62,6 +63,7 @@ public class AssistantService {
         log.info("Regex pattern: {}", regexPattern);
         return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, PearsonBibliotecaBookEntity.class)
                 .stream()
+                .filter(livro -> Objects.nonNull(livro.getTitulo()))
                 .filter(livro -> regexPattern.matcher(livro.getTitulo()).find())
                 .map(PearsonMapper::mapEntityToResponse)
                 .toList();
@@ -80,6 +82,7 @@ public class AssistantService {
         log.info("Regex pattern: {}", regexPattern);
         return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(autor, PearsonBibliotecaBookEntity.class)
                 .stream()
+                .filter(livro -> Objects.nonNull(livro.getAutor()))
                 .filter(livro -> regexPattern.matcher(livro.getAutor()).find())
                 .map(PearsonMapper::mapEntityToResponse)
                 .toList();
@@ -91,6 +94,7 @@ public class AssistantService {
         log.info("Regex pattern: {}", regexPattern);
         return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, MinhaBibliotecaBookEntity.class)
                 .stream()
+                .filter(livro -> Objects.nonNull(livro.getTitulo()))
                 .filter(livro -> regexPattern.matcher(livro.getTitulo()).find())
                 .map(MinhaBibliotecaMapper::mapEntityToResponse)
                 .toList();
@@ -108,6 +112,7 @@ public class AssistantService {
         log.info("Regex pattern: {}", regexPattern);
         return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(autor, MinhaBibliotecaBookEntity.class)
                 .stream()
+                .filter(livro -> Objects.nonNull(livro.getAutor()))
                 .filter(livro -> regexPattern.matcher(livro.getAutor()).find())
                 .map(MinhaBibliotecaMapper::mapEntityToResponse)
                 .toList();
