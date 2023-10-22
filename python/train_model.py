@@ -1,4 +1,4 @@
-from train_data_model import TRAIN_DATA
+from train_data_model_3 import TRAIN_DATA
 import spacy
 from spacy.util import minibatch, compounding
 import random
@@ -13,7 +13,7 @@ if "BOOK" not in ner.labels:
 other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
 with nlp.disable_pipes(*other_pipes):
     optimizer = nlp.resume_training()
-    for epoch in range(10):
+    for epoch in range(12):
         random.shuffle(TRAIN_DATA)
         losses = {}
 
@@ -23,6 +23,6 @@ with nlp.disable_pipes(*other_pipes):
             nlp.update([example], drop=0.5, losses=losses)
         print(f"Iteration {epoch + 1}, Losses {losses}")
 
-output_dir = "./tunned-model-v2"
+output_dir = "./tunned-model-v3"
 nlp.to_disk(output_dir)
 print("Processo finalizado.")

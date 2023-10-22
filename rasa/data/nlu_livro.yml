@@ -1,3 +1,6 @@
+version: "3.1"
+
+nlu:
 - intent: livro
   examples: |
     - A arte de fazer um jornal diário
@@ -298,7 +301,6 @@
     - Naturalmente mais jovem
     - As 8 leis espirituais da saúde
     - Pequenas ideias para futuras mamães
-    - Luigis
     - Diário de um zumbi do Minecraft
     - Diário de um bárbaro covarde
     - Você pode falar com Deus
@@ -385,14 +387,12 @@
     - Diário de um zumbi do Minecraft
     - Selva Mágica
     - Salsichas Galácticas
-    - Salsichas Galácticas
     - Platão para Sonhadores
     - A História Secreta da Criatividade
     - Liderar com o Coração
-    - Muito Amor, Por Favor
     - Praticando o Poder do Agora
     - Se meu cachorro falasse
-    - 30 dias para mudar  The Whole30
+    - 30 dias para mudar The Whole30
     - A coragem de ser imperfeito
     - A maior de todas as mágicas
     - Diário de Um Zumbi do Minecraft
@@ -942,5 +942,3 @@
     - O Outro Lado da Vida
     - Como se tornar um bom negociador
     - As Regras de Ouro da Conduta Profissional
-    - 
-    - 

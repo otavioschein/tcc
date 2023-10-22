@@ -1,0 +1,13 @@
+Iteration 1, Losses {'ner': 9632.539504584209}
+Iteration 2, Losses {'ner': 2571.7723640811455}
+Iteration 3, Losses {'ner': 1825.417474743029}
+Iteration 4, Losses {'ner': 1578.328482128029}
+Iteration 5, Losses {'ner': 1387.9439969489545}
+Iteration 6, Losses {'ner': 1240.7426073177892}
+Iteration 7, Losses {'ner': 1150.649094507752}
+Iteration 8, Losses {'ner': 1148.5259779239834}
+Iteration 9, Losses {'ner': 1166.9175262462547}
+Iteration 10, Losses {'ner': 1108.8394622953324}
+Iteration 11, Losses {'ner': 1169.265046478573}
+Iteration 12, Losses {'ner': 1092.7633218756196}
+Processo finalizado.

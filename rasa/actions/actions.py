@@ -21,6 +21,8 @@ class ActionBuscarLivroPorTitulo(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        dispatcher.utter_message("Buscando livros...")
+
         titulo = tracker.get_slot("titulo_livro")
 
         responseMinhaBiblioteca = requests.get(f"http://localhost:8080/assistant/books/minha-biblioteca/titulo/{titulo}")
@@ -118,6 +120,8 @@ class ActionBuscarLivroPorAutor(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message("Buscando livros...")
 
         autor = tracker.get_slot("nome_autor")
 
@@ -218,6 +222,8 @@ class ActionBuscarLivrosSemelhantes(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
+        dispatcher.utter_message("Buscando livros...")
+
         titulo = tracker.get_slot("titulo_livro")
         autor = tracker.get_slot("nome_autor")
 
@@ -396,7 +402,7 @@ class ActionExtrairNomeDeLivroNoInput(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        nlp = spacy.load('../python/tunned-model')
+        nlp = spacy.load('../python/tunned-model-v2')
         mensagem = tracker.latest_message.get('text', '')
         doc = nlp(mensagem)
         
@@ -414,7 +420,7 @@ class ActionExtrairNomeDeAutorNoInput(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        nlp = spacy.load('../python/tunned-model')
+        nlp = spacy.load('../python/tunned-model-v2')
         mensagem = tracker.latest_message.get('text', '')
         doc = nlp(mensagem)
         
@@ -432,14 +438,24 @@ class ActionExtraiNomeDeLivro(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        nlp = spacy.load('../python/tunned-model-v2')
+        nlp = spacy.load('../python/tunned-model-v3')
         mensagem = tracker.latest_message.get('text', '')
         doc = nlp(mensagem)
 
+        for it in doc.ents:
+            print(f'entity: {it}, label: {it.label_}')
+
         sentences = [ent.text for ent in doc.ents if ent.label_ == 'BOOK']
+        autor = [ent.text for ent in doc.ents if ent.label_ == 'PER']
 
         if sentences:
             for s in sentences:
                 return [SlotSet("titulo_livro", s)]
+            return []
+        elif autor:
+            for a in autor:
+                return [SlotSet("nome_autor", a)]
+            return []
         else:
-            dispatcher.utter_message("Informe o nome do livro que você quer")
+            dispatcher.utter_message("Informe o nome do livro ou do autor que você quer")
+            return []  
