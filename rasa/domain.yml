@@ -9,7 +9,6 @@ intents:
   - livro
   - buscar_livro_por_autor
   - autor
-  - livro_semelhante
 
 slots:
   titulo_livro:
@@ -21,6 +20,12 @@ slots:
     type: text
     mappings:
     - type: from_text
+
+  # session_id:
+  #   type: text
+  #   influence_conversation: false
+  #   mappings:
+  #   - type: custom
 
 responses:
   utter_saudacao:
@@ -45,13 +50,12 @@ responses:
     - text: "Me informe o nome do(a) autor(a)"
 
 actions:
+  # - action_session_start
   - action_buscar_livro_por_titulo
   - action_buscar_livro_por_autor
-  # - action_extrair_nome_de_autor_no_input
   - action_buscar_livros_semelhantes
-  # - action_extrair_nome_de_livro_no_input
   - actions_extrai_nome_de_livro
 
 session_config:
   session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  carry_over_slots_to_new_session: false

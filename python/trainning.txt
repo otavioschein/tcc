@@ -1,3 +1,4 @@
+~10k dados
 Iteration 1, Losses {'ner': 9632.539504584209}
 Iteration 2, Losses {'ner': 2571.7723640811455}
 Iteration 3, Losses {'ner': 1825.417474743029}
@@ -11,3 +12,33 @@ Iteration 10, Losses {'ner': 1108.8394622953324}
 Iteration 11, Losses {'ner': 1169.265046478573}
 Iteration 12, Losses {'ner': 1092.7633218756196}
 Processo finalizado.
+
+
+
+md v1 ~23k dados
+Iteration 1, Losses {'ner': 6780.210049541124}
+Iteration 2, Losses {'ner': 2469.0020194998715}
+Iteration 3, Losses {'ner': 1532.9679226325757}
+Iteration 4, Losses {'ner': 1240.6266015519373}
+Iteration 5, Losses {'ner': 941.059164480339}
+Iteration 6, Losses {'ner': 876.3240358073095}
+Iteration 7, Losses {'ner': 789.286049120535}
+Iteration 8, Losses {'ner': 790.8024151248131}
+Iteration 9, Losses {'ner': 749.0638180106346}
+Iteration 10, Losses {'ner': 666.89702369274}
+Iteration 11, Losses {'ner': 636.9107045124812}
+Iteration 12, Losses {'ner': 619.8597114157722}
+
+md v2 ~5k dados
+Iteration 1, Losses {'ner': 225.30320862669006}
+Iteration 2, Losses {'ner': 128.62367434568984}
+Iteration 3, Losses {'ner': 89.41774971649421}
+Iteration 4, Losses {'ner': 89.33391235234393}
+Iteration 5, Losses {'ner': 83.07409798683096}
+Iteration 6, Losses {'ner': 68.89199990304549}
+Iteration 7, Losses {'ner': 73.90838445760215}
+Iteration 8, Losses {'ner': 54.46690469179559}
+Iteration 9, Losses {'ner': 91.11737903765248}
+Iteration 10, Losses {'ner': 47.64762359883488}
+Iteration 11, Losses {'ner': 70.24010550849076}
+Iteration 12, Losses {'ner': 64.94132807702314}

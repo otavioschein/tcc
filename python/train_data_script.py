@@ -1,6 +1,6 @@
 import csv
 import random
-from initial_phrase import INITIAL_PHRASE
+from initial_phrase_v2 import INITIAL_PHRASE
 from end_phrase import END_PHRASE
 
 with open('../../../dataset-livros.csv', 'r', encoding='utf-8') as dataset_csv:
@@ -10,16 +10,17 @@ with open('../../../dataset-livros.csv', 'r', encoding='utf-8') as dataset_csv:
 TRAIN_DATA = []
 
 for titulo in titulos:
-    random_index_initial = random.randint(0, 143)
-    random_index_end = random.randint(0, 143)
-    frase = INITIAL_PHRASE[random_index_initial] + titulo + END_PHRASE[random_index_end]
+    random_index_initial = random.randint(0, 61)
+    # random_index_end = random.randint(0, 143)
+    frase = INITIAL_PHRASE[random_index_initial] + titulo 
+    # + END_PHRASE[random_index_end]
     start_index = frase.find(titulo)
     end_index = start_index + len(titulo)
 
     TRAIN_DATA.append((frase, {"entities": [(start_index, end_index, "BOOK")]}))
     TRAIN_DATA.append((frase.lower(), {"entities": [(start_index, end_index, "BOOK")]}))
 
-output_filename = 'train_data_model_3.py'
+output_filename = 'train_data_model_md_2.py'
 
 with open(output_filename, 'w', encoding='utf-8') as output_file:
     output_file.write("TRAIN_DATA = [\n")

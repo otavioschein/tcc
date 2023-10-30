@@ -6,7 +6,7 @@ language: pt_br
 
 pipeline: 
   - name: SpacyNLP
-    model: "../python/tunned-model-v3"
+    model: "../python/tunned-model-md-v2"
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
     pooling: mean

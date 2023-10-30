@@ -12,12 +12,13 @@ stories:
     - action: actions_extrai_nome_de_livro
     - action: action_buscar_livro_por_titulo
 
-- story: buscar um livro por titulo caminho feliz 2
-  steps:
-    - intent: saudacao
-    - action: utter_saudacao
-    - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+# - story: buscar um livro por titulo caminho feliz 2
+#   steps:
+#     - intent: saudacao
+#     - action: utter_saudacao
+#     - intent: buscar_livro_por_titulo
+#     - action: actions_extrai_nome_de_livro
+#     - action: action_buscar_livro_por_titulo
 
 - story: buscar um livro por titulo caminho feliz 3
   steps:
@@ -130,6 +131,7 @@ stories:
     - intent: despedida
     - action: utter_despedida
 
+# autor
 - story: buscar um livro por autor cominho feliz 1
   steps:
     - intent: saudacao
@@ -168,17 +170,33 @@ stories:
     - intent: despedida
     - action: utter_despedida
 
-- story: buscar um livro por autor cominho feliz 5
-  steps:
-    - intent: saudacao
-    - action: utter_saudacao
-    - intent: buscar_livro_por_autor
-    - action: actions_extrai_nome_de_livro
+# - story: buscar um livro por autor cominho feliz 5
+#   steps:
+#     - intent: saudacao
+#     - action: utter_saudacao
+#     - intent: buscar_livro_por_autor
+#     - action: actions_extrai_nome_de_livro
+#     - action: action_buscar_livro_por_autor
 
-- story: buscar um livro por autor cominho feliz 6
+# - story: buscar um livro por autor cominho feliz 6
+#   steps:
+#     - intent: buscar_livro_por_autor
+#     - action: actions_extrai_nome_de_livro
+#     - action: action_buscar_livro_por_autor
+
+- story: buscar um livro por autor cominho feliz 7
   steps:
     - intent: buscar_livro_por_autor
     - action: actions_extrai_nome_de_livro
+    - intent: autor
+    - action: actions_extrai_nome_de_livro
+    - action: action_buscar_livro_por_autor
+
+# - story: buscar um livro por autor cominho feliz 8
+#   steps:
+#     - intent: buscar_livro_por_autor
+#     - action: actions_extrai_nome_de_livro
+#     - action: action_buscar_livro_por_autor
 
 - story: buscar um livro por autor cominho triste 1
   steps:
@@ -211,33 +229,4 @@ stories:
     - action: action_buscar_livro_por_autor
     - intent: negativa
     - action: utter_negativa
-
-- story: buscar um livro semelhante 1
-  steps:
-    - intent: livro_semelhante
-    - action: action_buscar_livros_semelhantes
-
-- story: buscar um livro semelhante 2
-  steps:
-    - intent: saudacao
-    - action: utter_saudacao
-    - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
-    - intent: livro
-    - action: actions_extrai_nome_de_livro
-    - action: action_buscar_livro_por_titulo
-    - intent: livro_semelhante
-    - action: action_buscar_livros_semelhantes
-
-- story: buscar um livro semelhante 3
-  steps:
-    - intent: saudacao
-    - action: utter_saudacao
-    - intent: buscar_livro_por_autor
-    - action: actions_extrai_nome_de_livro
-    - intent: autor
-    - action: actions_extrai_nome_de_livro
-    - action: action_buscar_livro_por_autor
-    - intent: livro_semelhante
-    - action: action_buscar_livros_semelhantes
 
