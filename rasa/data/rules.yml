@@ -2,16 +2,10 @@ version: "3.1"
 
 rules:
 
-# - rule: Execute a acao action_nova_conversa ao iniciar o chatbot
-#   conversation_start: true
-#   steps:
-#     - action: action_session_start
-#     - action: utter_saudacao
-
-# - rule: Execute a acao action_session_start sempre que iniciar uma nova sessao
-#   steps:
-#     - intent: session_started
-#     - action: action_session_start
+- rule: Execute a acao action_session_start sempre que iniciar uma nova sessao
+  steps:
+    - intent: session_started
+    - action: action_session_start
 
 - rule: Pergunte o que o usuario quer fazer toda vez que ele saudar
   steps:
@@ -54,3 +48,8 @@ rules:
   steps:
     - intent: buscar_livro_por_autor
     - action: actions_extrai_nome_de_livro
+
+- rule: Execute a acao buscar_mais_opcoes sempre que a intent buscar_mais_opcoes for identificada
+  steps:
+    - intent: buscar_mais_opcoes
+    - action: action_buscar_mais_opcoes

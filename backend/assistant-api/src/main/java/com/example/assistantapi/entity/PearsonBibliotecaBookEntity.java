@@ -19,6 +19,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class PearsonBibliotecaBookEntity {
 
     @Id
+    private String _id;
     private String id;
     @TextIndexed
     private String titulo;
@@ -37,5 +38,4 @@ public class PearsonBibliotecaBookEntity {
     private String selo;
     private String status;
     private String tags;
-
 }

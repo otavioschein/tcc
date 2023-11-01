@@ -1,8 +1,7 @@
 package com.example.assistantapi.controller;
 
-import com.example.assistantapi.response.FisicaResponse;
-import com.example.assistantapi.response.MinhaBibliotecaResponse;
-import com.example.assistantapi.response.PearsonResponse;
+import com.example.assistantapi.response.AssistantResponse;
+import com.example.assistantapi.response.LivroResponse;
 import com.example.assistantapi.service.AssistantService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,70 +18,54 @@ public class AssistantController {
 
     private final AssistantService assistantService;
 
-    @GetMapping(value = "/books/minha-biblioteca/titulo/{titulo}")
+    @GetMapping(value = "{sessionId}/books/minha-biblioteca/titulo/{titulo}")
     @ResponseStatus(HttpStatus.OK)
-    public List<MinhaBibliotecaResponse> searchDocumentsByTitulo(@PathVariable String titulo) {
-        log.info("titulo: {}", titulo);
-        return assistantService.getDocumentsByTituloMinhaBiblioteca(titulo);
-    }
-
-    @GetMapping(value = "/books/minha-biblioteca/titulo/semelhante/{titulo}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<MinhaBibliotecaResponse> searchSimilarDocumentsByTitulo(@PathVariable String titulo) {
-        log.info("titulo: {}", titulo);
-        return assistantService.getSimilarDocumentsByTituloMinhaBiblioteca(titulo);
+    public AssistantResponse searchDocumentsByTitulo(@PathVariable String sessionId, @PathVariable String titulo) {
+        log.info("Minha biblioteca, titulo: {}", titulo);
+        return assistantService.getDocumentsByTituloMinhaBiblioteca(sessionId, titulo);
     }
 
     @GetMapping(value = "/books/minha-biblioteca/autor/{autor}")
     @ResponseStatus(HttpStatus.OK)
-    public List<MinhaBibliotecaResponse> searchDocumentsByAutorMinhaBiblioteca(@PathVariable String autor) {
-        log.info("Autor a pesquisar: {}", autor);
+    public List<LivroResponse> searchDocumentsByAutorMinhaBiblioteca(@PathVariable String autor) {
+        log.info("Minha biblioteca, autor: {}", autor);
         return assistantService.getDocumentsByAutorMinhaBiblioteca(autor);
     }
 
-    @GetMapping(value = "/books/pearson-biblioteca/titulo/{titulo}")
+    @GetMapping(value = "{sessionId}/books/pearson-biblioteca/titulo/{titulo}")
     @ResponseStatus(HttpStatus.OK)
-    public List<PearsonResponse> searchDocumentsByTituloPearson(@PathVariable String titulo) {
-        log.info("titulo: {}", titulo);
-        return assistantService.getDocumentsByTituloPearsonBiblioteca(titulo);
+    public AssistantResponse searchDocumentsByTituloPearson(@PathVariable String sessionId, @PathVariable String titulo) {
+        log.info("Biblioteca pearson, titulo: {}", titulo);
+        return assistantService.getDocumentsByTituloPearsonBiblioteca(sessionId, titulo);
     }
 
-    @GetMapping(value = "/books/pearson-biblioteca/titulo/semelhante/{titulo}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<PearsonResponse> searchSimilarDocumentsByTituloPearson(@PathVariable String titulo) {
-        log.info("titulo: {}", titulo);
-        return assistantService.getSimilarDocumentsByTituloPearsonBiblioteca(titulo);
-    }
 
     @GetMapping(value = "/books/pearson-biblioteca/autor/{autor}")
     @ResponseStatus(HttpStatus.OK)
-    public List<PearsonResponse> searchDocumentsByAutorPearson(@PathVariable String autor) {
+    public List<LivroResponse> searchDocumentsByAutorPearson(@PathVariable String autor) {
+        log.info("Biblioteca pearson, autor: {}", autor);
         return assistantService.getDocumentsByAutorPearsonBiblioteca(autor);
     }
 
-    //TODO endpoints biblioteca fisica
-    @GetMapping(value = "/books/biblioteca-fisica/titulo/{titulo}")
+    @GetMapping(value = "{sessionId}/books/biblioteca-fisica/titulo/{titulo}")
     @ResponseStatus(HttpStatus.OK)
-    public List<FisicaResponse> searchDocumentsByTituloFisica(@PathVariable String titulo) {
-        return assistantService.getDocumentsByTituloBibliotecaFisica(titulo);
-    }
-
-    @GetMapping(value = "/books/biblioteca-fisica/titulo/semelhante/{titulo}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<FisicaResponse> searchSimilarDocumentsByTituloFisica(@PathVariable String titulo) {
-        return assistantService.getSimilarDocumentsByTituloBibliotecaFisica(titulo);
+    public AssistantResponse searchDocumentsByTituloFisica(@PathVariable String sessionId, @PathVariable String titulo) {
+        log.info("Biblioteca física, titulo: {}", titulo);
+        return assistantService.getDocumentsByTituloBibliotecaFisica(sessionId, titulo);
     }
 
     @GetMapping(value = "/books/biblioteca-fisica/autor/{autor}")
     @ResponseStatus(HttpStatus.OK)
-    public List<FisicaResponse> searchDocumentsByAutorFisica(@PathVariable String autor) {
+    public List<LivroResponse> searchDocumentsByAutorFisica(@PathVariable String autor) {
+        log.info("Biblioteca física, autor: {}", autor);
         return assistantService.getDocumentsByAutorBibliotecaFisica(autor);
     }
 
-    @GetMapping(value = "/books/biblioteca-fisica/autor/semelhante/{autor}")
+    @GetMapping(value = "{sessionId}/books/mais-opcoes")
     @ResponseStatus(HttpStatus.OK)
-    public List<FisicaResponse> searchSimilarDocumentsByAutorFisica(@PathVariable String autor) {
-        return assistantService.getSimilarDocumentsByAutorBibliotecaFisica(autor);
+    public List<LivroResponse> getCachedPearsonBooks(@PathVariable String sessionId) {
+        log.info("Buscando mais opções para a sessão: {}", sessionId);
+        return assistantService.getCachedDocuments(sessionId);
     }
 
 }

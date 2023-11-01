@@ -47,7 +47,8 @@ nlu:
   examples: |
     - nome da obra
     - nome de obra
-    - titulo 
+    - titulo
+    - título
     - titulo da obra
     - livro
     - procure por titulo
@@ -59,11 +60,11 @@ nlu:
     - buscar por titulo
     - buscar por nome
     - pesquise um livro por titulo
-    - pesquise um livro por nome 
+    - pesquise um livro por nome
     - pesquise uma obra por titulo
-    - pesquise uma obra por nome 
-    - liste livros por titulo 
-    - liste obras por nome 
+    - pesquise uma obra por nome
+    - liste livros por titulo
+    - liste obras por nome
     - procure por titulo
     - procure por nome
     - procure um livro por titulo
@@ -100,3 +101,10 @@ nlu:
     - nome da autora
     - autor
     - autora
+
+- intent: buscar_mais_opcoes
+  examples: |
+    - mais opções
+    - mais opcoes
+    - opcoes
+    - opções

@@ -9,6 +9,7 @@ intents:
   - livro
   - buscar_livro_por_autor
   - autor
+  - buscar_mais_opcoes
 
 slots:
   titulo_livro:
@@ -21,11 +22,11 @@ slots:
     mappings:
     - type: from_text
 
-  # session_id:
-  #   type: text
-  #   influence_conversation: false
-  #   mappings:
-  #   - type: custom
+  session_id:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
 
 responses:
   utter_saudacao:
@@ -50,11 +51,12 @@ responses:
     - text: "Me informe o nome do(a) autor(a)"
 
 actions:
-  # - action_session_start
+  - action_session_start
   - action_buscar_livro_por_titulo
   - action_buscar_livro_por_autor
   - action_buscar_livros_semelhantes
   - actions_extrai_nome_de_livro
+  - action_buscar_mais_opcoes
 
 session_config:
   session_expiration_time: 60

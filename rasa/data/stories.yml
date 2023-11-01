@@ -230,3 +230,32 @@ stories:
     - intent: negativa
     - action: utter_negativa
 
+
+- story: buscar mais opcoes de livros caminho feliz 1
+  steps:
+    - intent: buscar_mais_opcoes
+    - action: action_buscar_mais_opcoes
+
+- story: buscar mais opcoes de livros caminho feliz 2
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - intent: buscar_livro_por_titulo
+    - action: actions_extrai_nome_de_livro
+    - intent: livro
+    - action: actions_extrai_nome_de_livro
+    - action: action_buscar_livro_por_titulo
+    - intent: buscar_mais_opcoes
+    - action: action_buscar_mais_opcoes
+
+- story: buscar mais opcoes de livros caminho feliz 3
+  steps:
+    - intent: saudacao
+    - action: utter_saudacao
+    - intent: buscar_livro_por_autor
+    - action: actions_extrai_nome_de_livro
+    - intent: livro
+    - action: actions_extrai_nome_de_livro
+    - action: action_buscar_livro_por_titulo
+    - intent: buscar_mais_opcoes
+    - action: action_buscar_mais_opcoes

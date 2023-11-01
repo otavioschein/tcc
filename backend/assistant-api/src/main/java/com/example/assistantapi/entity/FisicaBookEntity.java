@@ -17,8 +17,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class FisicaBookEntity {
 
     @Id
-    private String id;
+    private String _id;
     private String titulo;
     private String autor;
+    private String numeroDeChamada;
 
 }
