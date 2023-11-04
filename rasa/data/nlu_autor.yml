@@ -3,923 +3,922 @@ version: "3.1"
 nlu:
 - intent: autor
   examples: |
-    - Gilza Helena
-    - Andrei Sapkowski
-    - Albert Einstein
-    - Zenar Pedro Schein
-    - Otávio Muck Schein
-    - João
-    - Ricardo
-    - Eia Asen
-    - Licia Assbu
-    - Margaret O Mara
-    - José Cláudio Securato
-    - Venetia Young
-    - João Luiz Maximo da Silva
-    - Adriane Shibata
-    - João Eduardo Chagas Sobral
-    - Rogério Faria Tavares
-    - Mauro F. Guillén
-    - Julian Birkinshaw
-    - Ken Mark
-    - Anthony D. Slonim
-    - René Caquet
-    - Editoria Jurídica da Editora Manole
-    - Guilherme Peña de Moraes
-    - Lenio Luiz Streck
-    - Simon Monk
-    - Ligia Bertaggia de Almeida Costa
-    - Mariângela Haddad; Sonia Junqueira
-    - Leonardo da Vinci
-    - Nath Finanças
-    - Kate Elizabeth Russell
-    - Blake Crouch
-    - Kate Elizabeth Russell
-    - Blake Crouch
-    - Antonio Scurati
-    - Robert Kirkman
-    - Isabela Freitas
-    - Lara Prescott
-    - Stevie Lewis
-    - Mike Isaac
-    - Adam Christopher
-    - Matt Ruff
-    - Scott Cawthon
-    - Lucy Foley
-    -  Elizabeth Warren 
-    - David Nicholls
-    - Mariana Enriquez
-    - Lucy Foley
-    - Raina Telgemeier
-    - Ransom Riggs
-    - David Eagleman
-    - Niklas Natt och Dag
-    - Matt Ruff
-    - Jenny Han
-    - Jenny Han
-    - Alfredo Nugent Setubal
-    - Jeanine Cummins
-    - Daniel Furlan
-    - Alfredo Nugent Setubal
-    - Ray Dalio
-    - Jeff Lemire
-    - Ransom Riggs
-    - C.J. Tudor
-    - David Nicholls
-    - John M. Barry
-    - S. E. Hinton
-    - Greg James
-    - Michael T. Osterholm
-    - Eva García Sáenz de Urturi
-    - Ann Patchett
-    - Lucy Foley
-    - Rick Riordan
-    - C.J. Tudor
-    - Neil Gaiman
-    - Stephenie Meyer
-    - Josh Malerman
-    - Matt Haig
-    - Robert Iger
-    - Elena Ferrante
-    - Thomas Piketty
-    - Elena Ferrante
-    - Riad Sattouf
-    - Becky Albertalli
-    - Ta-Nehisi Coates
-    - Ann Patchett
-    - Facundo Alvaredo
-    - Daniela Arbex
-    - Nic Stone
-    - Ta-Nehisi Coates
-    -  Emma Jane Unsworth 
-    - Kurt Vonnegut
-    - Jenna Evans Welch
-    - Jenna Evans Welch
-    - Reed Hastings
-    - Matt Ruff
-    - K. A. Applegate
-    - Beth O'Leary
-    - Beth O'Leary
-    - Graham Allison
-    - Deborah Feldman
-    - Monica de Bolle
-    - THOMAS ERIKSON
-    - NEIL GAIMAN
-    - Rick Riordan
-    - Matthew Quick
-    - Neil Gaiman
-    - Joe Biden
-    - Jessica Jung
-    - Mick Kitson
-    - Jill Lepore
-    -  Emma Jane Unsworth 
-    - Min Jin Lee
-    - Beth O'Leary
-    - Pilar Quintana
-    - Papa Francisco
-    - Erik Larson
-    - Chico Otávio
-    - Jeff Lemire
-    - Nicholas Sparks
-    - Felipe Miranda
-    - Deborah Feldman
-    -  Ron Chernow 
-    - Mariko Tamaki
-    - Scott Cawthon
-    - ISABELA FREITAS
-    - Linda Holmes
-    - Linda Holmes
-    - Beth Morrey
-    - Miguel Pinto Guimarães
-    - Min Jin Lee
-    - Patricia Highsmith
-    - Beth O'Leary
-    - Joël Dicker
-    - Joël Dicker
-    - Richard H. Thaler
-    - Jenny Han
-    - Jenny Han
-    - Jenny Han
-    - Richard H. Thaler 
-    - Garrard Conley
-    - Garrard Conley
-    - Val Emmich
-    - Michael Lewis
-    - Daniela Arbex
-    - Michelle Sacks
-    - Markus Zusak
-    - Liane Moriarty 
-    - C.J. Tudor
-    - Roger Zezlany
-    - Val Emmich
-    - Kurt Vonnegut
-    - Patrick Ness
-    - Jake Knapp
-    - Edgar Cantero
-    - Jojo Moyes
-    - Malin Persson Giolito
-    - Jenny Han
-    - Mark Manson
-    - Andréa Pachá
-    - Liane Moriarty 
-    - Whitney Scharer
-    - Robert Kirkman
-    - Richard Feynman
-    - Sharlene Teo
-    - Josh Malerman
-    - Jeff Lemire
-    - E.L. James
-    - Ariano Suassuna
-    - C.J. Tudor
-    - Raquel Landim
-    - Brad Stone
-    - Gwenda Bond
-    - Delia Owens
-    - Edgar Cantero
-    - Delia Owens
-    - Becky Albertalli
-    - Josh Malerman
-    - Karina Sainz Borgo
-    - Mariana Enriquez
-    - Sharlene Teo
-    - Alexandre de Moraes
-    - Jason Reynolds
-    - Clara Savelli
-    - Josh Malerman
-    - Cornelia Maria Funke
-    - Lindsey Fitzharris
-    - Patrick Ness
-    -  Olivier Guez 
-    - Fernando Aramburu
-    - Fernando Aramburu
-    - Edgar Cantero
-    - Mary H.K. Choi
-    - Jason Reynolds
-    - Beth O'Leary
-    - Becky Albertalli 
-    - Andrew Nagorski
-    - Gary John Bishop
-    - Josh Malerman
-    - Felipe Castilho
-    - Chandler Baker
-    - Andre Agassi
-    - Manson Mark
-    - Markus Zusak
-    - Lindsey Fitzharris
-    - Jojo Moyes
-    - Valerio Vidali 
-    - Daniela Arbex
-    - Vinícius Dônola
-    - Rick Riordan
-    - Blake Crouch
-    - Kurt Vonnegut
-    - Chandler Baker
-    - Leander Kahney
-    -  André Aciman 
-    - Jojo Moyes
-    - Jeff Lemire
-    - Andrea Beaty
-    - Kurt Vonnegut
-    - Ryan Holiday
-    - Andréa Pachá
-    - Andrea Beaty
-    - Andrea Beaty
-    - Andrea Beaty
-    - John Green
-    - Lara Prescott
-    - Maria Luíza Filgueiras
-    - Jeff Lemire
-    - Chandler Baker
-    - Lucy Foley
-    - Jojo Moyes
-    - Fernando Aramburu
-    - Gary John Bishop
-    - Raquel Landim
-    - Guillermo del Toro 
-    - Kurt Vonnegut
-    - Josh Malerman
-    - Beth O'Leary
-    - R.J. Palacio
-    - Rick Riordan
-    - Mark Manson
-    - Rick Riordan
-    - Delia Owens
-    - E.L. James
-    - Jojo Moyes
-    - Robert Jordan
-    - E.L. James
-    - André Aciman 
-    - Daniela Arbex
-    - Jojo Moyes
-    - Tom Brady
-    - Molly Bloom
-    - C.J. Tudor
-    - Guillermo del Toro
-    - E L James
-    - Amor Towles
-    - Paolo Cognetti 
-    - Gustavo Magnani
-    - Timothy Ferriss
-    - Molly Bloom
-    - Jeff VanderMeer
-    - André Aciman 
-    - Amor Towles
-    - Francesc Miralles
-    - Bruce Dickinson
-    - Scott Cawthon
-    - Rick Riordan
-    - Anthony Marra
-    - Becky Albertalli
-    - Rick Riordan
-    - Camila Coutinho
-    - Neil Gaiman
-    - Camila Coutinho
-    - Matthew Quick
-    - Nathan Hill
-    - Neil Gaiman
-    - Cressida Cowell
-    - Cressida Cowell
-    - Michael Greger
-    - Michael Greger
-    - Celeste Ng 
-    - Jeff Lemire
-    - Alexandra Bracken
-    - Kelly Weinersmit
-    - Luca D'Andrea
-    - Jennifer Egan
-    - Liane Moriarty 
-    - William Goldman
-    - Josh Malerman
-    - Alexandra Bracken
-    - Matthew Quick
-    - Miriam Leitão
-    - André Aciman 
-    - Becky Albertalli
-    - Del Toro 
-    - Ray Dalio
-    - Pedro Malan
-    - C.J. Tudor
-    - Neil Gaiman
-    - Henry Timms
-    - Ray Dalio
-    - Michiko Kakutani
-    - Kim Smith
-    - Chico Otávio
-    - Walter Isaacson
-    - Matthew Walker 
-    - Michiko Kakutani
-    - Alexandra Bracken
-    - Neil Gaiman
-    - Kim Smith
-    - Gillian Flynn
-    - Jeff Lemire
-    - James R. Hansen
-    - Ransom Riggs
-    - Jeff Lemire
-    - Ildefonso Falcones
-    - Joël Dicker
-    - Lynda La Plante
-    - Stephen Hawking
-    - Jaron Lanier
-    - Andréa Pachá
-    - Val Emmich
-    - Míriam Leitão
-    - Michael Pollan
-    - Markus Zusak
-    - Alexandra Bracken
-    - Alexandra Bracken
-    - Edgar Cantero
-    - Isabela Freitas
-    - Ludmila Monteiro
-    - John Green
-    - Jaron Lanier
-    - Becky Albertalli
-    - Matthew Walker 
-    - Tim Ferriss
-    - Paolo Cognetti
-    - Jojo Moyes
-    - Neil Gaiman
-    - Fiona Barton 
-    - Jojo Moyes
-    - Joël Dicker
-    - Stephanie Perkins
-    - Cressida Cowell
-    - Stephen Hawking
-    - Luiz Fernando Vianna
-    - E.L. James
-    - Donald Sull e Kathleen M. Eisenhardt
-    - Tony DiTerlizzi
-    - Lauren Oliver
-    - E.L. James
-    - Ben Fountain 
-    - Cressida Cowell
-    -  Fiona Barton 
-    - Miriam Leitão
-    - Blake Crouch
-    - Thomas Piketty
-    - Siobhan Vivian
-    - Liane Moriarty 
-    - David Walliams
-    - Geoff Rodkey
-    - R. J. Palacio
-    - Claire Kendal
-    - Herman Koch
-    - Herman Koch
-    - Glennon Doyle Melton
-    - JP Delaney
-    - William Finnegan
-    - Elena Ferrante
-    - Neil Gaiman
-    - Jojo Moyes
-    -  Celeste Ng 
-    - Scott Cawthon
-    - Anthony Doerr
-    - Viih Tube
-    - Geoff Rodkey
-    - Alyson Noël
-    - Liane Moriarty 
-    - Liane Moriarty 
-    - Clare Mackintosh
-    - Clare Mackintosh
-    - Potter Style
-    - Márcia Vieira
-    - Cynthia Bond
-    - Cynthia Bond
-    - Jake Knapp
-    - Jake Knapp
-    - David I. Kertzer
-    - Lauren Oliver
-    - Scott Cawthon
-    - Jenny Han
-    -  Celeste Ng 
-    - Liane Moriarty 
-    - Christian McKay Heidicker
-    - Noah Hawley
-    - Marlon James
-    - Josh Malerman
-    - Meredith Russo
-    - Jojo Moyes
-    - Jojo Moyes
-    - Neil Gaiman
-    - Christian McKay Heidicker
-    - Rick Riordan
-    - Matt Haig
-    - Matheus Leitão
-    - Edmund de Waal
-    - Michael Lewis
-    - Emma Cline
-    - Mariana Enriquez
-    - Sarah Pinborough
-    - Claire Kendal
-    - Peter Brown
-    - Peter Brown
-    - Ashley Poston
-    - Rick Riordan
-    - Maria Semple
-    - Maria Semple
-    - Liane Moriarty 
-    - Mark Olshaker
-    - Jenna Evans Welch
-    - Jason Reynolds
-    - Jason Reynolds
-    - Jenna Evans Welch
-    - Ransom Riggs
-    - Brit Bennett
-    - Brit Bennett
-    - Becky Albertalli
-    - Becky Albertalli
-    - Jojo Moyes
-    - Luiz Fernando Vianna
-    - Stephen Wawking
-    - Riad Sattouf
-    - Allen Eskens
-    - Allen Eskens
-    - Paul Tough
-    - Paul Tough
-    - Brad Stone
-    - Raony Phillips
-    - Angus Deaton
-    - Alain de Botton
-    - Rick Riordan
-    - Martha Hall Kelly
-    - John Green
-    - Ransom Riggs
-    - Jenny Han
-    - Jojo Moyes
-    - Elena Ferrante
-    - David Walliams
-    - Walter Isaacson
-    - Ryan Holiday
-    - Stéphanie Hennette
-    - Jojo Moyes
-    - Cara Delevingne
-    - Keri Smith
-    - Keri Smith
-    - Mariana Enriquez
-    - Jojo Moyes
-    - Scott Kelly
-    - Ransom Riggs
-    - Jack Cheng
-    - Sergio Abramoff
-    - Mark Manson
-    - Ransom Riggs
-    - John Green
-    - Jojo Moyes
-    - Munro Leaf
-    - Felipe Castilho
-    - Jenna Evans Welch
-    - R. J. Palacio
-    - Emma Cline
-    - E.L. James
-    - Blake Crouch
-    - Mark Manson
-    - Isabela Freitas
-    - Joël Dicker
-    - Elena Ferrante
-    - Mark Manson
-    - Jojo Moyes
-    - Jojo Moyes
-    - Jenny Han
-    - Mark Olshaker
-    - Rick Riordan
-    - Rick Riordan
-    - Walter Isaacson
-    - Sergio Abramoff
-    - Jojo Moyes
-    - Rick Riordan
-    - Felipe Castilho
-    - Mark Olshaker
-    - Rick Riordan
-    - Ransom Riggs
-    - Jenny Han
-    - Peter Brown
-    - Joakim Zander
-    - Nick Davies
-    - Jojo Moyes
-    - Michael Punke
-    - Bruce Cook
-    - Cristina Tardáguila
-    - Becky Albertalli
-    - Anna Lyndsey
-    - Stephen Hawking
-    - Melissa Hill
-    - Viih Tube
-    - Geoff Rodkey
-    - Ryan Gattis
-    - Elizabeth Warren 
-    - Moïra Fowley-Doyle
-    - Riad Sattouf
-    - Jeff VanderMeer
-    - Seth Grahame-Smith
-    - Terry Hayes
-    - Fernando Scheller
-    - Jenny Lawson 
-    - Kory Merritt e Jack Chabert
-    - Keri Smith
-    - Lynsey Addario
-    - Kate Bolick
-    - Cristina Tardáguila
-    - Jojo Moyes
-    - Rick Riordan
-    - Ransom Riggs
-    - Chris Anderson
-    - Lauren Groff
-    - Elio Gaspari
-    - Elio Gaspari
-    - Jojo Moyes
-    - Jojo Moyes
-    - Jon Scieszka
-    - Rodrigo Hasbún 
-    - Matthew Quick
-    - Moby
-    - Darrell Huff
-    - Helen Macdonald
-    - Robert Jordan
-    - Fernanda Gentil
-    - Neil Gaiman
-    - Andrew Michael Hurley
-    - Alex Ferguson com Michael Moritz
-    - Tatiana de Rosnay
-    - Jeffrey Cranor
-    - Hampton Sides
-    - Gillian Flynn
-    - Jojo Moyes
-    - Clarice Freire
-    - Jojo Moyes
-    - Sara Pennypacker
-    - Darrell Huff
-    - Lance Rubin
-    - Julian Fellowes
-    - Erik Larson
-    - John Vaillant
-    - Paolo Bacigalupi
-    - Neil Gaiman
-    - James Frey
-    - Rick Riordan
-    - James Frey
-    - Delphine de Vigan
-    - Ransom Riggs
-    - Jory John e Mac Barnett
-    - Bill Browder
-    - Angela Duckworth
-    - E.K. Johnston
-    - Pedro Gabriel
-    - Jojo Moyes
-    - Jojo Moyes
-    - Moïra Fowley-Doyle
-    - J. A. Hazeley e J. P. Morris
-    - Cynthia D'Aprix Sweeney
-    - Ransom Riggs
-    - Pittacus Lore
-    - Jojo Moyes
-    - Hugh Howey
-    - Prof. Steve Peters
-    - Kate Scelsa
-    - Anônimo
-    - Noelle Stevenson
-    - Rick Riordan
-    - Pittacus Lore
-    - Neil Gaiman
-    - Monica de Bolle
-    - Isabela Freitas
-    - Elena Ferrante
-    - Elena Ferrante
-    - Amy Schumer
-    - Tilar J. Mazzeo
-    - Madeline Puckette e Justin Hammack
-    - Gillian Flynn
-    - Robert Jordan
-    - Delphine de Vigan
-    - Joaquim Ferreira dos Santos
-    - Jojo Moyes
-    - Stephenie Meyer
-    - Delphine de Vigan
-    - Dra. Frances E. Jensen com Amy Ellis Nutt
-    - Austin Wright
-    - Darrell Huff
-    - Ted Chiang
-    - Ransom Riggs
-    - Pittacus Lore
-    - Jojo Moyes
-    - Melissa Hill
-    - Gillian Flynn
-    - Jojo Moyes
-    - Julian Fellowes
-    - José de Alencar
-    - E.L. James
-    - Noelle Stevenson
-    - Jason Reynolds
-    - Ransom Riggs
-    - Michael Punke
-    - Elio Gaspari
-    - Chris Anderson
-    - Jojo Moyes
-    - Rick Riordan
-    - Stephen Hawking
-    - Elio Gaspari
-    - Becky Albertalli
-    - Neil Gaiman
-    - Jenny Lawson
-    - Fernando Scheller
-    - Jojo Moyes
-    - Stephenie Meyer
-    - Rodrigo Hasbún 
-    - Julian Fellowes
-    - Rick Riordan
-    - Jeff VanderMeer
-    - Rick Riordan
-    - Laini Taylor
-    - Doug Dorst
-    - Max Barry
-    - Jeff VanderMeer
-    - John Green
-    - Sally Green
-    - Rick Riordan
-    - Chris Kyle
-    - Lionel Shriver
-    - Andrew Fukuda
-    - Jojo Moyes
-    - Thomas Piketty
-    - Josh Malerman
-    - Gillian Flynn
-    - Eric Schmidt
-    - Samantha Hayes
-    - Matt Kuhn
-    - Stephen Hawking
-    - Matthew Quick
-    - Neil Gaiman
-    - Pittacus Lore
-    - Liane Moriarty 
-    - Hugh Howey
-    - Andrew Smith
-    - Seth Casteel
-    - Amanda Palmer
-    - Fabio Stassi 
-    - Jennifer Egan
-    - Miguel Sanches Neto
-    - Betty Halbreich 
-    - David Walliams
-    - Anthony Doerr
-    - Meg Medina
-    - Neil Gaiman
-    - Keri Smith
-    - Neill Lochery
-    - Jon Scieszka
-    - Joël Dicker
-    - Riad Sattouf
-    - James Frey
-    - David Nicholls
-    - Becca Fitzpatrick
-    - Letícia Wierzchowski
-    - Michael Moss
-    - Justin Go
-    - Jenny Han
-    - Gillian Flynn
-    - Andrew Knapp
-    - B.J. Novak
-    - Peter Evans
-    - John Green
-    - Meghan Doherty
-    - Robert Jordan
-    - Seth Casteel
-    - Stephanie Perkins
-    - Emily St. John Mandel
-    - Clóvis Bulcão
-    - John Green
-    - Isabela Freitas
-    - Nic Pizzolatto 
-    - Jory John
-    - Michael Lewis
-    - Ron Rash
-    - Alyson Noël
-    - Rick Riordan
-    - Miguel Sanches Neto
-    - E.L. James
-    - Sally Green
-    - James Frey
-    - David Arnold
-    - Anne-Sophie Girard
-    - Alain de Botton
-    - Stephen Witt
-    - Leif GW Persson
-    - Miriam Leitão
-    - R. J. Palacio
-    - Keri Smith
-    - Rick Riordan
-    - Brent Schlender e Rick Tetzeli
-    - Herman Koch
-    - Beck Weathers
-    - Megan Abbott 
-    - Peter Brown
-    - Matthew Quick
-    - Elizabeth Kolbert
-    - Jeff VanderMeer
-    - Maurício Gomyde
-    - David Walliams
-    - Neil Gaiman
-    - M. O. Walsh 
-    - Jean-Paul Didierlaurent
-    - Blake J. Harris
-    - Mitch Cullin
-    - Ashlee Vance
-    - Rafael Mantesso
-    - Jon Scieszka 
-    - Vanessa Barbara
-    - Thomas Piketty
-    - Dick Lehr
-    - Andrew Marr
-    - Wednesday Martin
-    - Erik Larson
-    - Jessie Burton
-    - Stephenie Meyer
-    - Isabela Freitas
-    - Pittacus Lore
-    - R. J. Palacio
-    - Amanda Nori
-    - Guillermo del Toro
-    - Potter Style
-    - Grégory Samak
-    - Joyce Pascowitch
-    - Miriam Leitão
-    - Gillian Flynn
-    - Stephenie Meyer
-    - David Walliams
-    - Josh Malerman
-    - Gillian Flynn
-    - Meg Medina
-    - Neil Gaiman
-    - Meghan Doherty
-    - Rick Riordan
-    - Stephen Hawking
-    - Thomas Piketty
-    - Isabela Freitas
-    - R. J. Palacio
-    - E.L. James
-    - Berney Stinson
-    - Stephenie Meyer
-    - M. O. Walsh
-    - Stephenie Meyer
-    - Jenny Han
-    - Brent Schlender e Rick Tetzeli
-    - Ashlee Vance
-    - Gillian Flynn
-    - Osny Mattano Junior
-    - György Dragomán
-    - Josh Malerman
-    - Vanessa Barbara
-    - Pittacus Lore
-    - James Frey
-    - Dick Lehr
-    - Andrew Marr
-    - Neil Gaiman
-    - Jean-Paul Didierlaurent
-    - Rick Riordan
-    - Andrew Marr
-    - Jeff VanderMeer
-    - Jenny Han
-    - Stephenie Meyer
-    - Rick Riordan
-    - Robert Jordan
-    - Rick Riordan
-    - Robert Jordan
-    - Cressida Cowell
-    - Jojo Moyes
-    - Esther Earl
-    - Andrew Kaplan
-    - Hugh Howey
-    - Michelle Paver
-    - Cat Patrick
-    - Matt Kuhn
-    - Shane Salerno
-    - Elio Gaspari
-    - Jennifer Egan
-    - David B. Agus
-    - Pittacus Lore
-    - Liane Moriarty 
-    - Rick Riordan
-    - Amity Gaige
-    - Paul Tough
-    - Elizabeth Haynes
-    - Ayana Mathis 
-    - Naoki Higashida
-    - R. J. Palacio
-    - Brad Stone
-    - Neil Gaiman
-    - Karen Harrington
-    - Lauren Beukes
-    - Max Hastings
-    - Robert W. Chambers
-    - A.S.A. Harrison
-    - Lauren Oliver
-    - Joël Dicker
-    - John Green
-    - Miriam Leitão
-    - Piper Kerman
-    - Anton DiSclafani
-    - Fred Vogelstein
-    - David Walliams
-    - Cressida Cowell
-    - Isabela Freitas
-    - Rachel Khoo
-    - Crystal Chan
-    - Timur Vermes
-    - Don Winslow
-    - Amanda Grace
-    - Thomas Piketty
-    - Jeff VanderMeer
-    - Sally Green
-    - Catherine Fisher
-    - Michael Pollan
-    - Rick Riordan
-    - Tom Perrotta
-    - Rachel Kushner
-    - Jason Reynolds
-    - John Green
-    - Clarice Freire
-    - Cressida Cowell
-    - Michael Lewis
-    - Anthony Marra
-    - Daniel Yergin
-    - Juliet Macur
-    - Keri Smith
-    - Keri Smith
-    - Rick Riordan
-    - Virgil Gheorghiu
-    - Keri Smith
-    - Rick Riordan
-    - Pittacus Lore
-    - Rick Riordan
-    - Gillian Flynn
-    - Rhidian Brook
-    - David Walliams
-    - Adriana Falcão 
-    - R. J. Palacio
-    - James Frey
-    - Lisa Nola
-    - Andrew Knapp
-    - David Walliams
-    - Alain de Botton
-    - Pedro Gabriel
-    - Lena Dunham
-    - Marisha Pessl
-    - Lauren Oliver
-    - A. Scott Berg
-    - Seth Casteel
-    - Stephanie Perkins
-    - Thomas Meehan
-    - Rick Riordan
-    - Markus Zusak
-    - James Frey
-    - John Green
-    - Rick Riordan
-    - R. J. Palacio
-    - Miriam Leitão
-    - Jason Reynolds
-    - Robert W. Chambers
-    - John Green
-    - Lena Dunhan
-    - Becca Fitzpatrick
-    - Pittacus Lore
-    - Adriana Falcão 
-    - Claire Kendal
-    - Lionel Shriver
-    - Thomas Piketty
-    - Liane Moriarty
-    - E.L. James
-    - Keri Smith
-    - Rick Riordan
-    - E.L. James
-    - Gillian Flynn
-    - Barney Stinson
-    - Isabela Freitas
-    - Timur Vermes
-    - Elio Gaspari
-    - Jeff VanderMeer
-    - Matthew Quick
-    - Robert Jordan
-    - Michael Pollan
-    - A. Scott Berg
-    - Anton Disclafani
-    - John Green
-    - Brad Stone
-    - Max Hastings
-    - Elio Gaspari
-    - Jenny Han
-    - Jeff VanderMeer
-    - Robert Jordan
-    - Rick Riordan
-    - Cressida Cowell
-    - Rick Riordan
-    - Lauren Oliver
-    - Becca Fitzpatrick
-    - Andrew Lane
-    - John Green
-    - Rick Riordan
-    - Pittacus Lore
-    - Salman Khan
-    - Stephen Rebello 
-    - Janet Foxley
-    - John Green
-    - Damien Echols
-    - R. J. Palacio
-    - Nils Johnson-Shelton
+    - [Gilza Helena](PER)
+    - [Andrei Sapkowski](PER)
+    - [Albert Einstein](PER)
+    - [Zenar Pedro Schein](PER)
+    - [Otávio Muck Schein](PER)
+    - [João](PER)
+    - [Ricardo](PER)
+    - [Eia Asen](PER)
+    - [Licia Assbu](PER)
+    - [Margaret O Mara](PER)
+    - [José Cláudio Securato](PER)
+    - [Venetia Young](PER)
+    - [João Luiz Maximo da Silva](PER)
+    - [Adriane Shibata](PER)
+    - [João Eduardo Chagas Sobral](PER)
+    - [Rogério Faria Tavares](PER)
+    - [Mauro F. Guillén](PER)
+    - [Julian Birkinshaw](PER)
+    - [Ken Mark](PER)
+    - [Anthony D. Slonim](PER)
+    - [René Caquet](PER)
+    - [Editoria Jurídica da Editora Manole](PER)
+    - [Guilherme Peña de Moraes](PER)
+    - [Lenio Luiz Streck](PER)
+    - [Simon Monk](PER)
+    - [Ligia Bertaggia de Almeida Costa](PER)
+    - [Mariângela Haddad; Sonia Junqueira](PER)
+    - [Leonardo da Vinci](PER)
+    - [Nath Finanças](PER)
+    - [Kate Elizabeth Russell](PER)
+    - [Blake Crouch](PER)
+    - [Kate Elizabeth Russell](PER)
+    - [Blake Crouch](PER)
+    - [Antonio Scurati](PER)
+    - [Robert Kirkman](PER)
+    - [Isabela Freitas](PER)
+    - [Lara Prescott](PER)
+    - [Stevie Lewis](PER)
+    - [Mike Isaac](PER)
+    - [Adam Christopher](PER)
+    - [Matt Ruff](PER)
+    - [Scott Cawthon](PER)
+    - [Lucy Foley](PER)
+    - [Elizabeth Warren](PER)
+    - [David Nicholls](PER)
+    - [Mariana Enriquez](PER)
+    - [Lucy Foley](PER)
+    - [Raina Telgemeier](PER)
+    - [Ransom Riggs](PER)
+    - [David Eagleman](PER)
+    - [Niklas Natt och Dag](PER)
+    - [Matt Ruff](PER)
+    - [Jenny Han](PER)
+    - [Jenny Han](PER)
+    - [Alfredo Nugent Setubal](PER)
+    - [Jeanine Cummins](PER)
+    - [Daniel Furlan](PER)
+    - [Alfredo Nugent Setubal](PER)
+    - [Ray Dalio](PER)
+    - [Jeff Lemire](PER)
+    - [Ransom Riggs](PER)
+    - [C.J. Tudor](PER)
+    - [David Nicholls](PER)
+    - [John M. Barry](PER)
+    - [S. E. Hinton](PER)
+    - [Greg James](PER)
+    - [Michael T. Osterholm](PER)
+    - [Eva García Sáenz de Urturi](PER)
+    - [Ann Patchett](PER)
+    - [Lucy Foley](PER)
+    - [Rick Riordan](PER)
+    - [C.J. Tudor](PER)
+    - [Neil Gaiman](PER)
+    - [Stephenie Meyer](PER)
+    - [Josh Malerman](PER)
+    - [Matt Haig](PER)
+    - [Robert Iger](PER)
+    - [Elena Ferrante](PER)
+    - [Thomas Piketty](PER)
+    - [Elena Ferrante](PER)
+    - [Riad Sattouf](PER)
+    - [Becky Albertalli](PER)
+    - [Ta-Nehisi Coates](PER)
+    - [Ann Patchett](PER)
+    - [Facundo Alvaredo](PER)
+    - [Daniela Arbex](PER)
+    - [Nic Stone](PER)
+    - [Ta-Nehisi Coates](PER)
+    - [Emma Jane Unsworth](PER)
+    - [Kurt Vonnegut](PER)
+    - [Jenna Evans Welch](PER)
+    - [Jenna Evans Welch](PER)
+    - [Reed Hastings](PER)
+    - [Matt Ruff](PER)
+    - [K. A. Applegate](PER)
+    - [Beth O'Leary](PER)
+    - [Beth O'Leary](PER)
+    - [Graham Allison](PER)
+    - [Deborah Feldman](PER)
+    - [Monica de Bolle](PER)
+    - [THOMAS ERIKSON](PER)
+    - [NEIL GAIMAN](PER)
+    - [Rick Riordan](PER)
+    - [Matthew Quick](PER)
+    - [Neil Gaiman](PER)
+    - [Joe Biden](PER)
+    - [Jessica Jung](PER)
+    - [Mick Kitson](PER)
+    - [Jill Lepore](PER)
+    - [Emma Jane Unsworth](PER)
+    - [Min Jin Lee](PER)
+    - [Beth O'Leary](PER)
+    - [Pilar Quintana](PER)
+    - [Papa Francisco](PER)
+    - [Erik Larson](PER)
+    - [Chico Otávio](PER)
+    - [Jeff Lemire](PER)
+    - [Nicholas Sparks](PER)
+    - [Felipe Miranda](PER)
+    - [Deborah Feldman](PER)
+    - [Ron Chernow](PER)
+    - [Mariko Tamaki](PER)
+    - [Scott Cawthon](PER)
+    - [ISABELA FREITAS](PER)
+    - [Linda Holmes](PER)
+    - [Beth Morrey](PER)
+    - [Miguel Pinto Guimarães](PER)
+    - [Min Jin Lee](PER)
+    - [Patricia Highsmith](PER)
+    - [Beth O'Leary](PER)
+    - [Joël Dicker](PER)
+    - [Joël Dicker](PER)
+    - [Richard H. Thaler](PER)
+    - [Jenny Han](PER)
+    - [Jenny Han](PER)
+    - [Jenny Han](PER)
+    - [Richard H. Thaler](PER)
+    - [Garrard Conley](PER)
+    - [Garrard Conley](PER)
+    - [Val Emmich](PER)
+    - [Michael Lewis](PER)
+    - [Daniela Arbex](PER)
+    - [Michelle Sacks](PER)
+    - [Markus Zusak](PER)
+    - [Liane Moriarty](PER)
+    - [C.J. Tudor](PER)
+    - [Roger Zezlany](PER)
+    - [Val Emmich](PER)
+    - [Kurt Vonnegut](PER)
+    - [Patrick Ness](PER)
+    - [Jake Knapp](PER)
+    - [Edgar Cantero](PER)
+    - [Jojo Moyes](PER)
+    - [Malin Persson Giolito](PER)
+    - [Jenny Han](PER)
+    - [Mark Manson](PER)
+    - [Andréa Pachá](PER)
+    - [Liane Moriarty](PER)
+    - [Whitney Scharer](PER)
+    - [Robert Kirkman](PER)
+    - [Richard Feynman](PER)
+    - [Sharlene Teo](PER)
+    - [Josh Malerman](PER)
+    - [Jeff Lemire](PER)
+    - [E.L. James](PER)
+    - [Ariano Suassuna](PER)
+    - [C.J. Tudor](PER)
+    - [Raquel Landim](PER)
+    - [Brad Stone](PER)
+    - [Gwenda Bond](PER)
+    - [Delia Owens](PER)
+    - [Edgar Cantero](PER)
+    - [Delia Owens](PER)
+    - [Becky Albertalli](PER)
+    - [Josh Malerman](PER)
+    - [Karina Sainz Borgo](PER)
+    - [Mariana Enriquez](PER)
+    - [Sharlene Teo](PER)
+    - [Alexandre de Moraes](PER)
+    - [Jason Reynolds](PER)
+    - [Clara Savelli](PER)
+    - [Josh Malerman](PER)
+    - [Cornelia Maria Funke](PER)
+    - [Lindsey Fitzharris](PER)
+    - [Patrick Ness](PER)
+    - [Olivier Guez](PER)
+    - [Fernando Aramburu](PER)
+    - [Fernando Aramburu](PER)
+    - [Edgar Cantero](PER)
+    - [Mary H.K. Choi](PER)
+    - [Jason Reynolds](PER)
+    - [Beth O'Leary](PER)
+    - [Becky Albertalli](PER)
+    - [Andrew Nagorski](PER)
+    - [Gary John Bishop](PER)
+    - [Josh Malerman](PER)
+    - [Felipe Castilho](PER)
+    - [Chandler Baker](PER)
+    - [Andre Agassi](PER)
+    - [Manson Mark](PER)
+    - [Markus Zusak](PER)
+    - [Lindsey Fitzharris](PER)
+    - [Jojo Moyes](PER)
+    - [Valerio Vidali](PER)
+    - [Daniela Arbex](PER)
+    - [Vinícius Dônola](PER)
+    - [Rick Riordan](PER)
+    - [Blake Crouch](PER)
+    - [Kurt Vonnegut](PER)
+    - [Chandler Baker](PER)
+    - [Leander Kahney](PER)
+    - [André Aciman](PER)
+    - [Jojo Moyes](PER)
+    - [Jeff Lemire](PER)
+    - [Andrea Beaty](PER)
+    - [Kurt Vonnegut](PER)
+    - [Ryan Holiday](PER)
+    - [Andréa Pachá](PER)
+    - [Andrea Beaty](PER)
+    - [Andrea Beaty](PER)
+    - [Andrea Beaty](PER)
+    - [John Green](PER)
+    - [Lara Prescott](PER)
+    - [Maria Luíza Filgueiras](PER)
+    - [Jeff Lemire](PER)
+    - [Chandler Baker](PER)
+    - [Lucy Foley](PER)
+    - [Jojo Moyes](PER)
+    - [Fernando Aramburu](PER)
+    - [Gary John Bishop](PER)
+    - [Raquel Landim](PER)
+    - [Guillermo del Toro](PER)
+    - [Kurt Vonnegut](PER)
+    - [Josh Malerman](PER)
+    - [Beth O'Leary](PER)
+    - [R.J. Palacio](PER)
+    - [Rick Riordan](PER)
+    - [Mark Manson](PER)
+    - [Rick Riordan](PER)
+    - [Delia Owens](PER)
+    - [E.L. James](PER)
+    - [Jojo Moyes](PER)
+    - [Robert Jordan](PER)
+    - [E.L. James](PER)
+    - [André Aciman](PER)
+    - [Daniela Arbex](PER)
+    - [Jojo Moyes](PER)
+    - [Tom Brady](PER)
+    - [Molly Bloom](PER)
+    - [C.J. Tudor](PER)
+    - [Guillermo del Toro](PER)
+    - [E L James](PER)
+    - [Amor Towles](PER)
+    - [Paolo Cognetti](PER)
+    - [Gustavo Magnani](PER)
+    - [Timothy Ferriss](PER)
+    - [Molly Bloom](PER)
+    - [Jeff VanderMeer](PER)
+    - [André Aciman](PER)
+    - [Amor Towles](PER)
+    - [Francesc Miralles](PER)
+    - [Bruce Dickinson](PER)
+    - [Scott Cawthon](PER)
+    - [Rick Riordan](PER)
+    - [Anthony Marra](PER)
+    - [Becky Albertalli](PER)
+    - [Rick Riordan](PER)
+    - [Camila Coutinho](PER)
+    - [Neil Gaiman](PER)
+    - [Camila Coutinho](PER)
+    - [Matthew Quick](PER)
+    - [Nathan Hill](PER)
+    - [Neil Gaiman](PER)
+    - [Cressida Cowell](PER)
+    - [Cressida Cowell](PER)
+    - [Michael Greger](PER)
+    - [Michael Greger](PER)
+    - [Celeste Ng](PER)
+    - [Jeff Lemire](PER)
+    - [Alexandra Bracken](PER)
+    - [Kelly Weinersmit](PER)
+    - [Luca D'Andrea](PER)
+    - [Jennifer Egan](PER)
+    - [Liane Moriarty](PER)
+    - [William Goldman](PER)
+    - [Josh Malerman](PER)
+    - [Alexandra Bracken](PER)
+    - [Matthew Quick](PER)
+    - [Miriam Leitão](PER)
+    - [André Aciman](PER)
+    - [Becky Albertalli](PER)
+    - [Del Toro](PER)
+    - [Ray Dalio](PER)
+    - [Pedro Malan](PER)
+    - [C.J. Tudor](PER)
+    - [Neil Gaiman](PER)
+    - [Henry Timms](PER)
+    - [Ray Dalio](PER)
+    - [Michiko Kakutani](PER)
+    - [Kim Smith](PER)
+    - [Chico Otávio](PER)
+    - [Walter Isaacson](PER)
+    - [Matthew Walker](PER)
+    - [Michiko Kakutani](PER)
+    - [Alexandra Bracken](PER)
+    - [Neil Gaiman](PER)
+    - [Kim Smith](PER)
+    - [Gillian Flynn](PER)
+    - [Jeff Lemire](PER)
+    - [James R. Hansen](PER)
+    - [Ransom Riggs](PER)
+    - [Jeff Lemire](PER)
+    - [Ildefonso Falcones](PER)
+    - [Joël Dicker](PER)
+    - [Lynda La Plante](PER)
+    - [Stephen Hawking](PER)
+    - [Jaron Lanier](PER)
+    - [Andréa Pachá](PER)
+    - [Val Emmich](PER)
+    - [Míriam Leitão](PER)
+    - [Michael Pollan](PER)
+    - [Markus Zusak](PER)
+    - [Alexandra Bracken](PER)
+    - [Alexandra Bracken](PER)
+    - [Edgar Cantero](PER)
+    - [Isabela Freitas](PER)
+    - [Ludmila Monteiro](PER)
+    - [John Green](PER)
+    - [Jaron Lanier](PER)
+    - [Becky Albertalli](PER)
+    - [Matthew Walker](PER)
+    - [Tim Ferriss](PER)
+    - [Paolo Cognetti](PER)
+    - [Jojo Moyes](PER)
+    - [Neil Gaiman](PER)
+    - [Fiona Barton](PER)
+    - [Jojo Moyes](PER)
+    - [Joël Dicker](PER)
+    - [Stephanie Perkins](PER)
+    - [Cressida Cowell](PER)
+    - [Stephen Hawking](PER)
+    - [Luiz Fernando Vianna](PER)
+    - [E.L. James](PER)
+    - [Donald Sull e Kathleen M. Eisenhardt](PER)
+    - [Tony DiTerlizzi](PER)
+    - [Lauren Oliver](PER)
+    - [E.L. James](PER)
+    - [Ben Fountain](PER)
+    - [Cressida Cowell](PER)
+    - [Fiona Barton](PER)
+    - [Miriam Leitão](PER)
+    - [Blake Crouch](PER)
+    - [Thomas Piketty](PER)
+    - [Siobhan Vivian](PER)
+    - [Liane Moriarty](PER)
+    - [David Walliams](PER)
+    - [Geoff Rodkey](PER)
+    - [R. J. Palacio](PER)
+    - [Claire Kendal](PER)
+    - [Herman Koch](PER)
+    - [Herman Koch](PER)
+    - [Glennon Doyle Melton](PER)
+    - [JP Delaney](PER)
+    - [William Finnegan](PER)
+    - [Elena Ferrante](PER)
+    - [Neil Gaiman](PER)
+    - [Jojo Moyes](PER)
+    - [Celeste Ng](PER)
+    - [Scott Cawthon](PER)
+    - [Anthony Doerr](PER)
+    - [Viih Tube](PER)
+    - [Geoff Rodkey](PER)
+    - [Alyson Noël](PER)
+    - [Liane Moriarty](PER)
+    - [Liane Moriarty](PER)
+    - [Clare Mackintosh](PER)
+    - [Clare Mackintosh](PER)
+    - [Potter Style](PER)
+    - [Márcia Vieira](PER)
+    - [Cynthia Bond](PER)
+    - [Cynthia Bond](PER)
+    - [Jake Knapp](PER)
+    - [Jake Knapp](PER)
+    - [David I. Kertzer](PER)
+    - [Lauren Oliver](PER)
+    - [Scott Cawthon](PER)
+    - [Jenny Han](PER)
+    - [Celeste Ng](PER)
+    - [Liane Moriarty](PER)
+    - [Christian McKay Heidicker](PER)
+    - [Noah Hawley](PER)
+    - [Marlon James](PER)
+    - [Josh Malerman](PER)
+    - [Meredith Russo](PER)
+    - [Jojo Moyes](PER)
+    - [Jojo Moyes](PER)
+    - [Neil Gaiman](PER)
+    - [Christian McKay Heidicker](PER)
+    - [Rick Riordan](PER)
+    - [Matt Haig](PER)
+    - [Matheus Leitão](PER)
+    - [Edmund de Waal](PER)
+    - [Michael Lewis](PER)
+    - [Emma Cline](PER)
+    - [Mariana Enriquez](PER)
+    - [Sarah Pinborough](PER)
+    - [Claire Kendal](PER)
+    - [Peter Brown](PER)
+    - [Peter Brown](PER)
+    - [Ashley Poston](PER)
+    - [Rick Riordan](PER)
+    - [Maria Semple](PER)
+    - [Maria Semple](PER)
+    - [Liane Moriarty](PER)
+    - [Mark Olshaker](PER)
+    - [Jenna Evans Welch](PER)
+    - [Jason Reynolds](PER)
+    - [Jason Reynolds](PER)
+    - [Jenna Evans Welch](PER)
+    - [Ransom Riggs](PER)
+    - [Brit Bennett](PER)
+    - [Brit Bennett](PER)
+    - [Becky Albertalli](PER)
+    - [Becky Albertalli](PER)
+    - [Jojo Moyes](PER)
+    - [Luiz Fernando Vianna](PER)
+    - [Stephen Wawking](PER)
+    - [Riad Sattouf](PER)
+    - [Allen Eskens](PER)
+    - [Allen Eskens](PER)
+    - [Paul Tough](PER)
+    - [Paul Tough](PER)
+    - [Brad Stone](PER)
+    - [Raony Phillips](PER)
+    - [Angus Deaton](PER)
+    - [Alain de Botton](PER)
+    - [Rick Riordan](PER)
+    - [Martha Hall Kelly](PER)
+    - [John Green](PER)
+    - [Ransom Riggs](PER)
+    - [Jenny Han](PER)
+    - [Jojo Moyes](PER)
+    - [Elena Ferrante](PER)
+    - [David Walliams](PER)
+    - [Walter Isaacson](PER)
+    - [Ryan Holiday](PER)
+    - [Stéphanie Hennette](PER)
+    - [Jojo Moyes](PER)
+    - [Cara Delevingne](PER)
+    - [Keri Smith](PER)
+    - [Keri Smith](PER)
+    - [Mariana Enriquez](PER)
+    - [Jojo Moyes](PER)
+    - [Scott Kelly](PER)
+    - [Ransom Riggs](PER)
+    - [Jack Cheng](PER)
+    - [Sergio Abramoff](PER)
+    - [Mark Manson](PER)
+    - [Ransom Riggs](PER)
+    - [John Green](PER)
+    - [Jojo Moyes](PER)
+    - [Munro Leaf](PER)
+    - [Felipe Castilho](PER)
+    - [Jenna Evans Welch](PER)
+    - [R. J. Palacio](PER)
+    - [Emma Cline](PER)
+    - [E.L. James](PER)
+    - [Blake Crouch](PER)
+    - [Mark Manson](PER)
+    - [Isabela Freitas](PER)
+    - [Joël Dicker](PER)
+    - [Elena Ferrante](PER)
+    - [Mark Manson](PER)
+    - [Jojo Moyes](PER)
+    - [Jojo Moyes](PER)
+    - [Jenny Han](PER)
+    - [Mark Olshaker](PER)
+    - [Rick Riordan](PER)
+    - [Rick Riordan](PER)
+    - [Walter Isaacson](PER)
+    - [Sergio Abramoff](PER)
+    - [Jojo Moyes](PER)
+    - [Rick Riordan](PER)
+    - [Felipe Castilho](PER)
+    - [Mark Olshaker](PER)
+    - [Rick Riordan](PER)
+    - [Ransom Riggs](PER)
+    - [Jenny Han](PER)
+    - [Peter Brown](PER)
+    - [Joakim Zander](PER)
+    - [Nick Davies](PER)
+    - [Jojo Moyes](PER)
+    - [Michael Punke](PER)
+    - [Bruce Cook](PER)
+    - [Cristina Tardáguila](PER)
+    - [Becky Albertalli](PER)
+    - [Anna Lyndsey](PER)
+    - [Stephen Hawking](PER)
+    - [Melissa Hill](PER)
+    - [Viih Tube](PER)
+    - [Geoff Rodkey](PER)
+    - [Ryan Gattis](PER)
+    - [Elizabeth Warren](PER)
+    - [Moïra Fowley-Doyle](PER)
+    - [Riad Sattouf](PER)
+    - [Jeff VanderMeer](PER)
+    - [Seth Grahame-Smith](PER)
+    - [Terry Hayes](PER)
+    - [Fernando Scheller](PER)
+    - [Jenny Lawson](PER)
+    - [Kory Merritt e Jack Chabert](PER)
+    - [Keri Smith](PER)
+    - [Lynsey Addario](PER)
+    - [Kate Bolick](PER)
+    - [Cristina Tardáguila](PER)
+    - [Jojo Moyes](PER)
+    - [Rick Riordan](PER)
+    - [Ransom Riggs](PER)
+    - [Chris Anderson](PER)
+    - [Lauren Groff](PER)
+    - [Elio Gaspari](PER)
+    - [Elio Gaspari](PER)
+    - [Jojo Moyes](PER)
+    - [Jojo Moyes](PER)
+    - [Jon Scieszka](PER)
+    - [Rodrigo Hasbún](PER)
+    - [Matthew Quick](PER)
+    - [Moby](PER)
+    - [Darrell Huff](PER)
+    - [Helen Macdonald](PER)
+    - [Robert Jordan](PER)
+    - [Fernanda Gentil](PER)
+    - [Neil Gaiman](PER)
+    - [Andrew Michael Hurley](PER)
+    - [Alex Ferguson com Michael Moritz](PER)
+    - [Tatiana de Rosnay](PER)
+    - [Jeffrey Cranor](PER)
+    - [Hampton Sides](PER)
+    - [Gillian Flynn](PER)
+    - [Jojo Moyes](PER)
+    - [Clarice Freire](PER)
+    - [Jojo Moyes](PER)
+    - [Sara Pennypacker](PER)
+    - [Darrell Huff](PER)
+    - [Lance Rubin](PER)
+    - [Julian Fellowes](PER)
+    - [Erik Larson](PER)
+    - [John Vaillant](PER)
+    - [Paolo Bacigalupi](PER)
+    - [Neil Gaiman](PER)
+    - [James Frey](PER)
+    - [Rick Riordan](PER)
+    - [James Frey](PER)
+    - [Delphine de Vigan](PER)
+    - [Ransom Riggs](PER)
+    - [Jory John e Mac Barnett](PER)
+    - [Bill Browder](PER)
+    - [Angela Duckworth](PER)
+    - [E.K. Johnston](PER)
+    - [Pedro Gabriel](PER)
+    - [Jojo Moyes](PER)
+    - [Jojo Moyes](PER)
+    - [Moïra Fowley-Doyle](PER)
+    - [J. A. Hazeley e J. P. Morris](PER)
+    - [Cynthia D'Aprix Sweeney](PER)
+    - [Ransom Riggs](PER)
+    - [Pittacus Lore](PER)
+    - [Jojo Moyes](PER)
+    - [Hugh Howey](PER)
+    - [Prof. Steve Peters](PER)
+    - [Kate Scelsa](PER)
+    - [Anônimo](PER)
+    - [Noelle Stevenson](PER)
+    - [Rick Riordan](PER)
+    - [Pittacus Lore](PER)
+    - [Neil Gaiman](PER)
+    - [Monica de Bolle](PER)
+    - [Isabela Freitas](PER)
+    - [Elena Ferrante](PER)
+    - [Elena Ferrante](PER)
+    - [Amy Schumer](PER)
+    - [Tilar J. Mazzeo](PER)
+    - [Madeline Puckette e Justin Hammack](PER)
+    - [Gillian Flynn](PER)
+    - [Robert Jordan](PER)
+    - [Delphine de Vigan](PER)
+    - [Joaquim Ferreira dos Santos](PER)
+    - [Jojo Moyes](PER)
+    - [Stephenie Meyer](PER)
+    - [Delphine de Vigan](PER)
+    - [Dra. Frances E. Jensen com Amy Ellis Nutt](PER)
+    - [Austin Wright](PER)
+    - [Darrell Huff](PER)
+    - [Ted Chiang](PER)
+    - [Ransom Riggs](PER)
+    - [Pittacus Lore](PER)
+    - [Jojo Moyes](PER)
+    - [Melissa Hill](PER)
+    - [Gillian Flynn](PER)
+    - [Jojo Moyes](PER)
+    - [Julian Fellowes](PER)
+    - [José de Alencar](PER)
+    - [E.L. James](PER)
+    - [Noelle Stevenson](PER)
+    - [Jason Reynolds](PER)
+    - [Ransom Riggs](PER)
+    - [Michael Punke](PER)
+    - [Elio Gaspari](PER)
+    - [Chris Anderson](PER)
+    - [Jojo Moyes](PER)
+    - [Rick Riordan](PER)
+    - [Stephen Hawking](PER)
+    - [Elio Gaspari](PER)
+    - [Becky Albertalli](PER)
+    - [Neil Gaiman](PER)
+    - [Jenny Lawson](PER)
+    - [Fernando Scheller](PER)
+    - [Jojo Moyes](PER)
+    - [Stephenie Meyer](PER)
+    - [Rodrigo Hasbún](PER)
+    - [Julian Fellowes](PER)
+    - [Rick Riordan](PER)
+    - [Jeff VanderMeer](PER)
+    - [Rick Riordan](PER)
+    - [Laini Taylor](PER)
+    - [Doug Dorst](PER)
+    - [Max Barry](PER)
+    - [Jeff VanderMeer](PER)
+    - [John Green](PER)
+    - [Sally Green](PER)
+    - [Rick Riordan](PER)
+    - [Chris Kyle](PER)
+    - [Lionel Shriver](PER)
+    - [Andrew Fukuda](PER)
+    - [Jojo Moyes](PER)
+    - [Thomas Piketty](PER)
+    - [Josh Malerman](PER)
+    - [Gillian Flynn](PER)
+    - [Eric Schmidt](PER)
+    - [Samantha Hayes](PER)
+    - [Matt Kuhn](PER)
+    - [Stephen Hawking](PER)
+    - [Matthew Quick](PER)
+    - [Neil Gaiman](PER)
+    - [Pittacus Lore](PER)
+    - [Liane Moriarty](PER)
+    - [Hugh Howey](PER)
+    - [Andrew Smith](PER)
+    - [Seth Casteel](PER)
+    - [Amanda Palmer](PER)
+    - [Fabio Stassi](PER)
+    - [Jennifer Egan](PER)
+    - [Miguel Sanches Neto](PER)
+    - [Betty Halbreich](PER)
+    - [David Walliams](PER)
+    - [Anthony Doerr](PER)
+    - [Meg Medina](PER)
+    - [Neil Gaiman](PER)
+    - [Keri Smith](PER)
+    - [Neill Lochery](PER)
+    - [Jon Scieszka](PER)
+    - [Joël Dicker](PER)
+    - [Riad Sattouf](PER)
+    - [James Frey](PER)
+    - [David Nicholls](PER)
+    - [Becca Fitzpatrick](PER)
+    - [Letícia Wierzchowski](PER)
+    - [Michael Moss](PER)
+    - [Justin Go](PER)
+    - [Jenny Han](PER)
+    - [Gillian Flynn](PER)
+    - [Andrew Knapp](PER)
+    - [B.J. Novak](PER)
+    - [Peter Evans](PER)
+    - [John Green](PER)
+    - [Meghan Doherty](PER)
+    - [Robert Jordan](PER)
+    - [Seth Casteel](PER)
+    - [Stephanie Perkins](PER)
+    - [Emily St. John Mandel](PER)
+    - [Clóvis Bulcão](PER)
+    - [John Green](PER)
+    - [Isabela Freitas](PER)
+    - [Nic Pizzolatto](PER)
+    - [Jory John](PER)
+    - [Michael Lewis](PER)
+    - [Ron Rash](PER)
+    - [Alyson Noël](PER)
+    - [Rick Riordan](PER)
+    - [Miguel Sanches Neto](PER)
+    - [E.L. James](PER)
+    - [Sally Green](PER)
+    - [James Frey](PER)
+    - [David Arnold](PER)
+    - [Anne-Sophie Girard](PER)
+    - [Alain de Botton](PER)
+    - [Stephen Witt](PER)
+    - [Leif GW Persson](PER)
+    - [Miriam Leitão](PER)
+    - [R. J. Palacio](PER)
+    - [Keri Smith](PER)
+    - [Rick Riordan](PER)
+    - [Brent Schlender e Rick Tetzeli](PER)
+    - [Herman Koch](PER)
+    - [Beck Weathers](PER)
+    - [Megan Abbott](PER)
+    - [Peter Brown](PER)
+    - [Matthew Quick](PER)
+    - [Elizabeth Kolbert](PER)
+    - [Jeff VanderMeer](PER)
+    - [Maurício Gomyde](PER)
+    - [David Walliams](PER)
+    - [Neil Gaiman](PER)
+    - [M. O. Walsh](PER)
+    - [Jean-Paul Didierlaurent](PER)
+    - [Blake J. Harris](PER)
+    - [Mitch Cullin](PER)
+    - [Ashlee Vance](PER)
+    - [Rafael Mantesso](PER)
+    - [Jon Scieszka](PER)
+    - [Vanessa Barbara](PER)
+    - [Thomas Piketty](PER)
+    - [Dick Lehr](PER)
+    - [Andrew Marr](PER)
+    - [Wednesday Martin](PER)
+    - [Erik Larson](PER)
+    - [Jessie Burton](PER)
+    - [Stephenie Meyer](PER)
+    - [Isabela Freitas](PER)
+    - [Pittacus Lore](PER)
+    - [R. J. Palacio](PER)
+    - [Amanda Nori](PER)
+    - [Guillermo del Toro](PER)
+    - [Potter Style](PER)
+    - [Grégory Samak](PER)
+    - [Joyce Pascowitch](PER)
+    - [Miriam Leitão](PER)
+    - [Gillian Flynn](PER)
+    - [Stephenie Meyer](PER)
+    - [David Walliams](PER)
+    - [Josh Malerman](PER)
+    - [Gillian Flynn](PER)
+    - [Meg Medina](PER)
+    - [Neil Gaiman](PER)
+    - [Meghan Doherty](PER)
+    - [Rick Riordan](PER)
+    - [Stephen Hawking](PER)
+    - [Thomas Piketty](PER)
+    - [Isabela Freitas](PER)
+    - [R. J. Palacio](PER)
+    - [E.L. James](PER)
+    - [Berney Stinson](PER)
+    - [Stephenie Meyer](PER)
+    - [M. O. Walsh](PER)
+    - [Stephenie Meyer](PER)
+    - [Jenny Han](PER)
+    - [Brent Schlender e Rick Tetzeli](PER)
+    - [Ashlee Vance](PER)
+    - [Gillian Flynn](PER)
+    - [Osny Mattano Junior](PER)
+    - [György Dragomán](PER)
+    - [Josh Malerman](PER)
+    - [Vanessa Barbara](PER)
+    - [Pittacus Lore](PER)
+    - [James Frey](PER)
+    - [Dick Lehr](PER)
+    - [Andrew Marr](PER)
+    - [Neil Gaiman](PER)
+    - [Jean-Paul Didierlaurent](PER)
+    - [Rick Riordan](PER)
+    - [Andrew Marr](PER)
+    - [Jeff VanderMeer](PER)
+    - [Jenny Han](PER)
+    - [Stephenie Meyer](PER)
+    - [Rick Riordan](PER)
+    - [Robert Jordan](PER)
+    - [Rick Riordan](PER)
+    - [Robert Jordan](PER)
+    - [Cressida Cowell](PER)
+    - [Jojo Moyes](PER)
+    - [Esther Earl](PER)
+    - [Andrew Kaplan](PER)
+    - [Hugh Howey](PER)
+    - [Michelle Paver](PER)
+    - [Cat Patrick](PER)
+    - [Matt Kuhn](PER)
+    - [Shane Salerno](PER)
+    - [Elio Gaspari](PER)
+    - [Jennifer Egan](PER)
+    - [David B. Agus](PER)
+    - [Pittacus Lore](PER)
+    - [Liane Moriarty](PER)
+    - [Rick Riordan](PER)
+    - [Amity Gaige](PER)
+    - [Paul Tough](PER)
+    - [Elizabeth Haynes](PER)
+    - [Ayana Mathis](PER)
+    - [Naoki Higashida](PER)
+    - [R. J. Palacio](PER)
+    - [Brad Stone](PER)
+    - [Neil Gaiman](PER)
+    - [Karen Harrington](PER)
+    - [Lauren Beukes](PER)
+    - [Max Hastings](PER)
+    - [Robert W. Chambers](PER)
+    - [A.S.A. Harrison](PER)
+    - [Lauren Oliver](PER)
+    - [Joël Dicker](PER)
+    - [John Green](PER)
+    - [Miriam Leitão](PER)
+    - [Piper Kerman](PER)
+    - [Anton DiSclafani](PER)
+    - [Fred Vogelstein](PER)
+    - [David Walliams](PER)
+    - [Cressida Cowell](PER)
+    - [Isabela Freitas](PER)
+    - [Rachel Khoo](PER)
+    - [Crystal Chan](PER)
+    - [Timur Vermes](PER)
+    - [Don Winslow](PER)
+    - [Amanda Grace](PER)
+    - [Thomas Piketty](PER)
+    - [Jeff VanderMeer](PER)
+    - [Sally Green](PER)
+    - [Catherine Fisher](PER)
+    - [Michael Pollan](PER)
+    - [Rick Riordan](PER)
+    - [Tom Perrotta](PER)
+    - [Rachel Kushner](PER)
+    - [Jason Reynolds](PER)
+    - [John Green](PER)
+    - [Clarice Freire](PER)
+    - [Cressida Cowell](PER)
+    - [Michael Lewis](PER)
+    - [Anthony Marra](PER)
+    - [Daniel Yergin](PER)
+    - [Juliet Macur](PER)
+    - [Keri Smith](PER)
+    - [Keri Smith](PER)
+    - [Rick Riordan](PER)
+    - [Virgil Gheorghiu](PER)
+    - [Keri Smith](PER)
+    - [Rick Riordan](PER)
+    - [Pittacus Lore](PER)
+    - [Rick Riordan](PER)
+    - [Gillian Flynn](PER)
+    - [Rhidian Brook](PER)
+    - [David Walliams](PER)
+    - [Adriana Falcão](PER)
+    - [R. J. Palacio](PER)
+    - [James Frey](PER)
+    - [Lisa Nola](PER)
+    - [Andrew Knapp](PER)
+    - [David Walliams](PER)
+    - [Alain de Botton](PER)
+    - [Pedro Gabriel](PER)
+    - [Lena Dunham](PER)
+    - [Marisha Pessl](PER)
+    - [Lauren Oliver](PER)
+    - [A. Scott Berg](PER)
+    - [Seth Casteel](PER)
+    - [Stephanie Perkins](PER)
+    - [Thomas Meehan](PER)
+    - [Rick Riordan](PER)
+    - [Markus Zusak](PER)
+    - [James Frey](PER)
+    - [John Green](PER)
+    - [Rick Riordan](PER)
+    - [R. J. Palacio](PER)
+    - [Miriam Leitão](PER)
+    - [Jason Reynolds](PER)
+    - [Robert W. Chambers](PER)
+    - [John Green](PER)
+    - [Lena Dunhan](PER)
+    - [Becca Fitzpatrick](PER)
+    - [Pittacus Lore](PER)
+    - [Adriana Falcão](PER)
+    - [Claire Kendal](PER)
+    - [Lionel Shriver](PER)
+    - [Thomas Piketty](PER)
+    - [Liane Moriarty](PER)
+    - [E.L. James](PER)
+    - [Keri Smith](PER)
+    - [Rick Riordan](PER)
+    - [E.L. James](PER)
+    - [Gillian Flynn](PER)
+    - [Barney Stinson](PER)
+    - [Isabela Freitas](PER)
+    - [Timur Vermes](PER)
+    - [Elio Gaspari](PER)
+    - [Jeff VanderMeer](PER)
+    - [Matthew Quick](PER)
+    - [Robert Jordan](PER)
+    - [Michael Pollan](PER)
+    - [A. Scott Berg](PER)
+    - [Anton Disclafani](PER)
+    - [John Green](PER)
+    - [Brad Stone](PER)
+    - [Max Hastings](PER)
+    - [Elio Gaspari](PER)
+    - [Jenny Han](PER)
+    - [Jeff VanderMeer](PER)
+    - [Robert Jordan](PER)
+    - [Rick Riordan](PER)
+    - [Cressida Cowell](PER)
+    - [Rick Riordan](PER)
+    - [Lauren Oliver](PER)
+    - [Becca Fitzpatrick](PER)
+    - [Andrew Lane](PER)
+    - [John Green](PER)
+    - [Rick Riordan](PER)
+    - [Pittacus Lore](PER)
+    - [Salman Khan](PER)
+    - [Stephen Rebello](PER)
+    - [Janet Foxley](PER)
+    - [John Green](PER)
+    - [Damien Echols](PER)
+    - [R. J. Palacio](PER)
+    - [Nils Johnson-Shelton](PER)

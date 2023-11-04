@@ -80,7 +80,42 @@ nlu:
     - liste livros por titulo
     - liste obras por nome
     - procure um livro
-    - quero um livro
+    - quero um livro 
+    - nome da obra [BOOK](BOOK)
+    - nome de obra [BOOK](BOOK)
+    - titulo [BOOK](BOOK)
+    - título [BOOK](BOOK)
+    - titulo da obra [BOOK](BOOK)
+    - livro [BOOK](BOOK)
+    - procure por titulo [BOOK](BOOK)
+    - procure por nome [BOOK](BOOK)
+    - procure um livro por titulo [BOOK](BOOK)
+    - procure um livro por nome [BOOK](BOOK)
+    - pesquisar um livro por titulo [BOOK](BOOK)
+    - pesquisar um livro por nome [BOOK](BOOK)
+    - buscar por titulo [BOOK](BOOK)
+    - buscar por nome [BOOK](BOOK)
+    - pesquise um livro por titulo [BOOK](BOOK)
+    - pesquise um livro por nome [BOOK](BOOK)
+    - pesquise uma obra por titulo [BOOK](BOOK)
+    - pesquise uma obra por nome [BOOK](BOOK)
+    - liste livros por titulo [BOOK](BOOK)
+    - liste obras por nome [BOOK](BOOK)
+    - procure por titulo [BOOK](BOOK)
+    - procure por nome [BOOK](BOOK)
+    - procure um livro por titulo [BOOK](BOOK)
+    - procure um livro por nome [BOOK](BOOK)
+    - pesquisar um livro por titulo [BOOK](BOOK)
+    - pesquisar um livro por nome [BOOK](BOOK)
+    - buscar por titulo [BOOK](BOOK)
+    - buscar por nome [BOOK](BOOK)
+    - pesquise um livro por titulo [BOOK](BOOK)
+    - pesquise um livro por nome [BOOK](BOOK)
+    - pesquise uma obra por titulo [BOOK](BOOK)
+    - pesquise uma obra por nome [BOOK](BOOK)
+    - liste livros por titulo [BOOK](BOOK)
+    - liste obras por nome [BOOK](BOOK)
+    - procure um livro [BOOK](BOOK)
 
 - intent: buscar_livro_por_autor
   examples: |
@@ -102,6 +137,24 @@ nlu:
     - nome da autora
     - autor
     - autora
+    - procure por autor [PER](PER)
+    - procure um livro por autor [PER](PER)
+    - pesquisar um livro por autor [PER](PER)
+    - buscar autor [PER](PER)
+    - buscar autora [PER](PER)
+    - pesquise um livro por autor [PER](PER)
+    - pesquise uma livro por autora [PER](PER)
+    - liste livros do autor [PER](PER)
+    - liste obras por autor [PER](PER)
+    - quero alguma obra do autor [PER](PER)
+    - quero algum livro do autor [PER](PER)
+    - quero um livro do [PER](PER)
+    - obra do autor [PER](PER)
+    - obra da [PER](PER)
+    - nome do autor [PER](PER)
+    - nome da autora [PER](PER)
+    - autor [PER](PER)
+    - autora [PER](PER)
 
 - intent: buscar_mais_opcoes
   examples: |

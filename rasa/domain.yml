@@ -11,6 +11,10 @@ intents:
   - autor
   - buscar_mais_opcoes
 
+entities:
+  - BOOK
+  - PER
+
 slots:
   titulo_livro:
     type: text
