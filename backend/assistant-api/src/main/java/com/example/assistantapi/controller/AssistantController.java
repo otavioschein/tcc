@@ -6,7 +6,9 @@ import com.example.assistantapi.service.AssistantService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class AssistantController {
 
     @GetMapping(value = "{sessionId}/books/minha-biblioteca/titulo/{titulo}")
     @ResponseStatus(HttpStatus.OK)
-    public AssistantResponse searchDocumentsByTitulo(@PathVariable String sessionId, @PathVariable String titulo) {
+    public AssistantResponse searchDocumentsByTituloMinhaBiblioteca(@PathVariable String sessionId, @PathVariable String titulo) {
         log.info("Minha biblioteca, titulo: {}", titulo);
         return assistantService.getDocumentsByTituloMinhaBiblioteca(sessionId, titulo);
     }
@@ -63,9 +65,14 @@ public class AssistantController {
 
     @GetMapping(value = "{sessionId}/books/mais-opcoes")
     @ResponseStatus(HttpStatus.OK)
-    public List<LivroResponse> getCachedPearsonBooks(@PathVariable String sessionId) {
+    public List<LivroResponse> getCachedBooks(@PathVariable String sessionId) {
         log.info("Buscando mais opções para a sessão: {}", sessionId);
         return assistantService.getCachedDocuments(sessionId);
     }
 
+    @CrossOrigin(origins = "*")
+    @PostMapping("/update/catalog")
+    public ResponseEntity<String> updateCatalog(@RequestParam MultipartFile file, @RequestParam String library) throws Exception {
+        return ResponseEntity.ok(assistantService.updateCatalog(file, library));
+    }
 }

@@ -7,9 +7,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
 
 # - story: buscar um livro por titulo caminho feliz 2
@@ -17,13 +17,13 @@ stories:
 #     - intent: saudacao
 #     - action: utter_saudacao
 #     - intent: buscar_livro_por_titulo
-#     - action: actions_extrai_nome_de_livro
+#     - action: action_extrai_nome_de_livro_ou_nome_de_autor
 #     - action: action_buscar_livro_por_titulo
 
 - story: buscar um livro por titulo caminho feliz 3
   steps:
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
 
 - story: buscar um livro por titulo caminho feliz 4
@@ -31,9 +31,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: agradecimento
     - action: utter_agradecimento
@@ -45,9 +45,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: despedida
     - action: utter_despedida
@@ -57,9 +57,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: agradecimento
     - action: utter_agradecimento
@@ -69,7 +69,7 @@ stories:
 - story: buscar um livro por titulo caminho feliz 7
   steps:
     - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: agradecimento
     - action: utter_agradecimento
 
@@ -78,7 +78,7 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: agradecimento
     - action: utter_agradecimento
@@ -90,9 +90,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: negativa
     - action: utter_negativa
@@ -104,9 +104,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: negativa
     - action: utter_negativa
@@ -114,9 +114,9 @@ stories:
 - story: buscar um livro por titulo caminho triste 3
   steps:
     - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: negativa
     - action: utter_negativa
@@ -124,7 +124,7 @@ stories:
 - story: buscar um livro por titulo caminho triste 4
   steps:
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: negativa
     - action: utter_negativa
@@ -137,23 +137,23 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_autor
 
 - story: buscar um livro por autor cominho feliz 2
   steps:
     - intent: buscar_livro_por_autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_autor
 
 - story: buscar um livro por autor cominho feliz 3
   steps:
     - intent: autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_autor
 
 - story: buscar um livro por autor cominho feliz 4
@@ -161,9 +161,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_autor
     - intent: agradecimento
     - action: utter_agradecimento
@@ -175,27 +175,27 @@ stories:
 #     - intent: saudacao
 #     - action: utter_saudacao
 #     - intent: buscar_livro_por_autor
-#     - action: actions_extrai_nome_de_livro
+#     - action: action_extrai_nome_de_livro_ou_nome_de_autor
 #     - action: action_buscar_livro_por_autor
 
 # - story: buscar um livro por autor cominho feliz 6
 #   steps:
 #     - intent: buscar_livro_por_autor
-#     - action: actions_extrai_nome_de_livro
+#     - action: action_extrai_nome_de_livro_ou_nome_de_autor
 #     - action: action_buscar_livro_por_autor
 
 - story: buscar um livro por autor cominho feliz 7
   steps:
     - intent: buscar_livro_por_autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_autor
 
 # - story: buscar um livro por autor cominho feliz 8
 #   steps:
 #     - intent: buscar_livro_por_autor
-#     - action: actions_extrai_nome_de_livro
+#     - action: action_extrai_nome_de_livro_ou_nome_de_autor
 #     - action: action_buscar_livro_por_autor
 
 - story: buscar um livro por autor cominho triste 1
@@ -203,9 +203,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_autor
     - intent: negativa
     - action: utter_negativa
@@ -215,9 +215,9 @@ stories:
 - story: buscar um livro por autor cominho triste 2
   steps:
     - intent: buscar_livro_por_autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_autor
     - intent: negativa
     - action: utter_negativa
@@ -225,7 +225,7 @@ stories:
 - story: buscar um livro por autor cominho triste 3
   steps:
     - intent: autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_autor
     - intent: negativa
     - action: utter_negativa
@@ -241,9 +241,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_titulo
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: buscar_mais_opcoes
     - action: action_buscar_mais_opcoes
@@ -253,9 +253,9 @@ stories:
     - intent: saudacao
     - action: utter_saudacao
     - intent: buscar_livro_por_autor
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - intent: livro
-    - action: actions_extrai_nome_de_livro
+    - action: action_extrai_nome_de_livro_ou_nome_de_autor
     - action: action_buscar_livro_por_titulo
     - intent: buscar_mais_opcoes
     - action: action_buscar_mais_opcoes

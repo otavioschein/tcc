@@ -80,6 +80,7 @@ nlu:
     - liste livros por titulo
     - liste obras por nome
     - procure um livro
+    - quero um livro
 
 - intent: buscar_livro_por_autor
   examples: |

@@ -55,7 +55,7 @@ actions:
   - action_buscar_livro_por_titulo
   - action_buscar_livro_por_autor
   - action_buscar_livros_semelhantes
-  - actions_extrai_nome_de_livro
+  - action_extrai_nome_de_livro_ou_nome_de_autor
   - action_buscar_mais_opcoes
 
 session_config:

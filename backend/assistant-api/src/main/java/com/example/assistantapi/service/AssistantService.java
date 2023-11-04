@@ -7,14 +7,22 @@ import com.example.assistantapi.mapper.AssistantMapper;
 import com.example.assistantapi.mapper.FisicaMapper;
 import com.example.assistantapi.mapper.MinhaBibliotecaMapper;
 import com.example.assistantapi.mapper.PearsonMapper;
+import com.example.assistantapi.repository.BibliotecaFisicaRepository;
 import com.example.assistantapi.repository.BookWiseRepository;
+import com.example.assistantapi.repository.MinhaBibliotecaRepository;
+import com.example.assistantapi.repository.PearsonRepository;
 import com.example.assistantapi.response.AssistantResponse;
 import com.example.assistantapi.response.LivroResponse;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.text.Normalizer;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -26,11 +34,15 @@ public class AssistantService {
 
     private final CacheService cacheService;
     private final BookWiseRepository bookWiseRepository;
+    private final PearsonRepository pearsonRepository;
+    private final MinhaBibliotecaRepository minhaBibliotecaRepository;
+    private final BibliotecaFisicaRepository bibliotecaFisicaRepository;
+
     private static final Set<String> stopWords = new HashSet<>(Arrays.asList("o", "os", "a", "as", "do", "dos", "da", "das", "de", "e"));
 
-    private final String PEARSON_BIBLIOTECA = "Pearson Biblioteca";
-    private final String FISICA_BIBLIOTECA = "Biblioteca Física";
-    private final String MINHA_BIBLIOTECA = "Minha Biblioteca";
+    private static final String PEARSON_BIBLIOTECA = "Pearson Biblioteca";
+    private static final String FISICA_BIBLIOTECA = "Biblioteca Física";
+    private static final String MINHA_BIBLIOTECA = "Minha Biblioteca";
 
     public AssistantResponse getDocumentsByTituloBibliotecaFisica(String sessionId, String titulo) {
         boolean isCache = false;
@@ -217,4 +229,75 @@ public class AssistantService {
         return refinedList;
     }
 
+
+    public String updateCatalog(MultipartFile file, String library) throws Exception {
+        log.info("Começando o processo de atualização de catálogo");
+        try (Reader reader = new BufferedReader(new InputStreamReader(file.getInputStream()))) {
+            switch(library) {
+                case "PEARSON" -> {
+                    return updatePearsonCatalog(reader);
+                }
+                case "MINHA" -> {
+                    return updateMinhaBibliotecaCatalog(reader);
+                }
+                case "FISICA" -> {
+                    return updateBibliotecaFisicaCatalog(reader);
+                }
+                default -> {return "Completed!";}
+            }
+        } catch (Exception e) {
+            throw new Exception("Erro ao processar o arquivo CSV", e);
+        }
+    }
+
+    private String updatePearsonCatalog(Reader reader) {
+        log.info("Processando o arquivo para Pearson");
+        CsvToBean<PearsonBibliotecaBookEntity> csvToBean = new CsvToBeanBuilder(reader)
+                .withType(PearsonBibliotecaBookEntity.class)
+                .withIgnoreLeadingWhiteSpace(true)
+                .build();
+
+        List<PearsonBibliotecaBookEntity> books = csvToBean.parse();
+
+        pearsonRepository.deleteAll();
+        pearsonRepository.saveAll(books);
+        bookWiseRepository.createTextIndexForCatalog("pearson-biblioteca");
+        var message = "Processo atualização de catálogo pearson finalizado!";
+        log.info("{}", message);
+        return message;
+    }
+
+    private String updateMinhaBibliotecaCatalog(Reader reader) {
+        log.info("Processando o arquivo para minha biblioteca");
+        CsvToBean<MinhaBibliotecaBookEntity> csvToBean = new CsvToBeanBuilder(reader)
+                .withType(MinhaBibliotecaBookEntity.class)
+                .withIgnoreLeadingWhiteSpace(true)
+                .build();
+
+        List<MinhaBibliotecaBookEntity> books = csvToBean.parse();
+
+        minhaBibliotecaRepository.deleteAll();
+        minhaBibliotecaRepository.saveAll(books);
+        bookWiseRepository.createTextIndexForCatalog("minha-biblioteca");
+        var message = "Processo atualização de catálogo minha biblioteca finalizado!";
+        log.info("{}", message);
+        return message;
+    }
+
+    private String updateBibliotecaFisicaCatalog(Reader reader) {
+        log.info("Processando o arquivo para biblioteca física");
+        CsvToBean<FisicaBookEntity> csvToBean = new CsvToBeanBuilder(reader)
+                .withType(FisicaBookEntity.class)
+                .withIgnoreLeadingWhiteSpace(true)
+                .build();
+
+        List<FisicaBookEntity> books = csvToBean.parse();
+
+        bibliotecaFisicaRepository.deleteAll();
+        bibliotecaFisicaRepository.saveAll(books);
+        bookWiseRepository.createTextIndexForCatalog("fisica-biblioteca");
+        var message = "Processo atualização de catálogo biblioteca física finalizado!";
+        log.info("{}", message);
+        return message;
+    }
 }

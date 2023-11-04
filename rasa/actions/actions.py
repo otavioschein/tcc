@@ -240,13 +240,13 @@ class ActionBuscarLivroPorAutor(Action):
 
 class ActionExtraiNomeDeLivro(Action):
     def name(self) -> Text:
-        return "actions_extrai_nome_de_livro"
+        return "action_extrai_nome_de_livro_ou_nome_de_autor"
     
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        nlp = spacy.load('../python/tunned-model-md-v2')
+        nlp = spacy.load('../python/tunned-model-md-v4')
         mensagem = tracker.latest_message.get('text', '')
         doc = nlp(mensagem)
 
