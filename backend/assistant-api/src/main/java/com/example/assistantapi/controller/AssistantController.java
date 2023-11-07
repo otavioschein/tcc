@@ -20,47 +20,47 @@ public class AssistantController {
 
     private final AssistantService assistantService;
 
-    @GetMapping(value = "{sessionId}/books/minha-biblioteca/titulo/{titulo}")
+    @GetMapping(value = "{sessionId}/books/minha-biblioteca/titulo/{title}")
     @ResponseStatus(HttpStatus.OK)
-    public AssistantResponse searchDocumentsByTituloMinhaBiblioteca(@PathVariable String sessionId, @PathVariable String titulo) {
-        log.info("Minha biblioteca, titulo: {}", titulo);
-        return assistantService.getDocumentsByTituloMinhaBiblioteca(sessionId, titulo);
+    public AssistantResponse searchDocumentsByTituloMinhaBiblioteca(@PathVariable String sessionId, @PathVariable String title) {
+        log.info("Minha biblioteca, titulo: {}", title);
+        return assistantService.getDocumentsByTituloMinhaBiblioteca(sessionId, title);
     }
 
-    @GetMapping(value = "/books/minha-biblioteca/autor/{autor}")
+    @GetMapping(value = "/books/minha-biblioteca/autor/{author}")
     @ResponseStatus(HttpStatus.OK)
-    public List<LivroResponse> searchDocumentsByAutorMinhaBiblioteca(@PathVariable String autor) {
-        log.info("Minha biblioteca, autor: {}", autor);
-        return assistantService.getDocumentsByAutorMinhaBiblioteca(autor);
+    public List<LivroResponse> searchDocumentsByAutorMinhaBiblioteca(@PathVariable String author) {
+        log.info("Minha biblioteca, autor: {}", author);
+        return assistantService.getDocumentsByAutorMinhaBiblioteca(author);
     }
 
-    @GetMapping(value = "{sessionId}/books/pearson-biblioteca/titulo/{titulo}")
+    @GetMapping(value = "{sessionId}/books/pearson-biblioteca/titulo/{title}")
     @ResponseStatus(HttpStatus.OK)
-    public AssistantResponse searchDocumentsByTituloPearson(@PathVariable String sessionId, @PathVariable String titulo) {
-        log.info("Biblioteca pearson, titulo: {}", titulo);
-        return assistantService.getDocumentsByTituloPearsonBiblioteca(sessionId, titulo);
+    public AssistantResponse searchDocumentsByTituloPearson(@PathVariable String sessionId, @PathVariable String title) {
+        log.info("Biblioteca pearson, titulo: {}", title);
+        return assistantService.getDocumentsByTituloPearsonBiblioteca(sessionId, title);
     }
 
 
-    @GetMapping(value = "/books/pearson-biblioteca/autor/{autor}")
+    @GetMapping(value = "/books/pearson-biblioteca/autor/{author}")
     @ResponseStatus(HttpStatus.OK)
-    public List<LivroResponse> searchDocumentsByAutorPearson(@PathVariable String autor) {
-        log.info("Biblioteca pearson, autor: {}", autor);
-        return assistantService.getDocumentsByAutorPearsonBiblioteca(autor);
+    public List<LivroResponse> searchDocumentsByAutorPearson(@PathVariable String author) {
+        log.info("Biblioteca pearson, autor: {}", author);
+        return assistantService.getDocumentsByAutorPearsonBiblioteca(author);
     }
 
-    @GetMapping(value = "{sessionId}/books/biblioteca-fisica/titulo/{titulo}")
+    @GetMapping(value = "{sessionId}/books/biblioteca-fisica/titulo/{title}")
     @ResponseStatus(HttpStatus.OK)
-    public AssistantResponse searchDocumentsByTituloFisica(@PathVariable String sessionId, @PathVariable String titulo) {
-        log.info("Biblioteca física, titulo: {}", titulo);
-        return assistantService.getDocumentsByTituloBibliotecaFisica(sessionId, titulo);
+    public AssistantResponse searchDocumentsByTituloFisica(@PathVariable String sessionId, @PathVariable String title) {
+        log.info("Biblioteca física, titulo: {}", title);
+        return assistantService.getDocumentsByTituloBibliotecaFisica(sessionId, title);
     }
 
-    @GetMapping(value = "/books/biblioteca-fisica/autor/{autor}")
+    @GetMapping(value = "/books/biblioteca-fisica/autor/{author}")
     @ResponseStatus(HttpStatus.OK)
-    public List<LivroResponse> searchDocumentsByAutorFisica(@PathVariable String autor) {
-        log.info("Biblioteca física, autor: {}", autor);
-        return assistantService.getDocumentsByAutorBibliotecaFisica(autor);
+    public List<LivroResponse> searchDocumentsByAutorFisica(@PathVariable String author) {
+        log.info("Biblioteca física, autor: {}", author);
+        return assistantService.getDocumentsByAutorBibliotecaFisica(author);
     }
 
     @GetMapping(value = "{sessionId}/books/mais-opcoes")

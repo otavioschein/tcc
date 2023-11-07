@@ -1,7 +1,7 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType
+from rasa_sdk.events import SlotSet, SessionStarted, FollowupAction, EventType
 import requests
 import spacy
 import uuid
@@ -31,8 +31,10 @@ class ActionSessionStart(Action):
 
         mensagem = "Olá, bem-vindo ao BookWise! Você pode pesquisar livros por título e por autor, o que você gostaria?"
         mensagem2 = "Tente escrever o nome do livro ou nome do autor da forma mais correta possível para eu trazer o melhor resultado!"
+        mensagem3 = "Para nome de autor, tente escrever com a primeira letra de cada nome em maiúsculo"
         dispatcher.utter_message(mensagem)
         dispatcher.utter_message(mensagem2)
+        dispatcher.utter_message(mensagem3)
 
         return events
 
@@ -45,10 +47,10 @@ class ActionBuscarLivroPorTitulo(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message("Buscando livros...")
-
         titulo = tracker.get_slot("titulo_livro")
         session_id = tracker.get_slot("session_id")
+
+        print(f'BUSCAR LIVRO titulo: {titulo}')
 
         responseMinhaBiblioteca = requests.get(f"http://localhost:8080/assistant/{session_id}/books/minha-biblioteca/titulo/{titulo}")
         responsePearson = requests.get(f"http://localhost:8080/assistant/{session_id}/books/pearson-biblioteca/titulo/{titulo}")
@@ -133,11 +135,12 @@ class ActionBuscarLivroPorTitulo(Action):
         if livrosPearson == [] and livrosMinhaBiblioteca == [] and livrosFisica == []:
             m = "Verifique se foi escrito corretamente"
             dispatcher.utter_message(m)
-        else:
+        
+        if dataPearson["cache"] or dataFisica["cache"] or dataMinhaBiblioteca["cache"]:
             msg = "Caso queira mais opções de livros digite: mais opções"
             dispatcher.utter_message(msg)
 
-        return[SlotSet("nome_autor", None)]
+        return[SlotSet("titulo_livro", None), SlotSet("nome_autor", None)]
     
 class ActionBuscarLivroPorAutor(Action):
     def name(self) -> Text:
@@ -147,9 +150,9 @@ class ActionBuscarLivroPorAutor(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message("Buscando livros...")
-
         autor = tracker.get_slot("nome_autor")
+
+        print(f'BUSCAR AUTOR Autor: {autor}')
 
         responseMinhaBiblioteca = requests.get(f"http://localhost:8080/assistant/books/minha-biblioteca/autor/{autor}")
         responsePearson = requests.get(f"http://localhost:8080/assistant/books/pearson-biblioteca/autor/{autor}")
@@ -235,7 +238,7 @@ class ActionBuscarLivroPorAutor(Action):
             m = "Verifique se foi escrito corretamente"
             dispatcher.utter_message(m)
         
-        return[SlotSet("titulo_livro", None)]
+        return[SlotSet("titulo_livro", None), SlotSet("nome_autor", None)]
         
 
 class ActionExtraiNomeDeLivro(Action):
@@ -245,25 +248,30 @@ class ActionExtraiNomeDeLivro(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-        nlp = spacy.load('../python/tunned-model-md-v4')
+    
+        nlp = spacy.load('pt_core_news_md')
+        nlp2 = spacy.load('../python/tunned-model-md-v4')
         mensagem = tracker.latest_message.get('text', '')
         doc = nlp(mensagem)
+        doc2 = nlp2(mensagem)
 
-        sentences = [ent.text for ent in doc.ents if ent.label_ == 'BOOK']
+        sentences = [ent.text for ent in doc2.ents if ent.label_ == 'BOOK']
         autor = [ent.text for ent in doc.ents if ent.label_ == 'PER']
+        
+        print(f'BOOK sentences: {sentences}')
+        print(f'PERSON autor: {autor}')
 
-        if sentences:
-            for s in sentences:
-                return [SlotSet("titulo_livro", s)]
-            return []
-        elif autor:
+        if autor:
+            dispatcher.utter_message("Buscando livros...")
             for a in autor:
-                return [SlotSet("nome_autor", a)]
-            return []
+                return [SlotSet("nome_autor", a), FollowupAction("action_buscar_livro_por_autor")]
+        elif sentences:
+            dispatcher.utter_message("Buscando livros...")
+            for s in sentences:
+                return [SlotSet("titulo_livro", s), FollowupAction("action_buscar_livro_por_titulo")]
         else:
             dispatcher.utter_message("Informe o nome do livro ou do autor que você quer")
-            return []  
+            return []
 
 
 class ActionBuscarMaisOpcoes(Action):

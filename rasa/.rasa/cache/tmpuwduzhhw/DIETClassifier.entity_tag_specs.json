@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-BOOK",
+      "2": "I-BOOK",
+      "3": "L-BOOK",
+      "4": "U-BOOK",
+      "5": "B-PER",
+      "6": "I-PER",
+      "7": "L-PER",
+      "8": "U-PER",
+      "9": "B-PERSON",
+      "10": "I-PERSON",
+      "11": "L-PERSON",
+      "12": "U-PERSON",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-BOOK": 1,
+      "I-BOOK": 2,
+      "L-BOOK": 3,
+      "U-BOOK": 4,
+      "B-PER": 5,
+      "I-PER": 6,
+      "L-PER": 7,
+      "U-PER": 8,
+      "B-PERSON": 9,
+      "I-PERSON": 10,
+      "L-PERSON": 11,
+      "U-PERSON": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

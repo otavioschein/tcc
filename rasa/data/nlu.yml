@@ -80,7 +80,10 @@ nlu:
     - liste livros por titulo
     - liste obras por nome
     - procure um livro
-    - quero um livro 
+    - quero um livro
+    - quero um
+    - quero livro
+    - livro quero
     - nome da obra [BOOK](BOOK)
     - nome de obra [BOOK](BOOK)
     - titulo [BOOK](BOOK)

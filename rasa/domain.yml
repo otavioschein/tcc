@@ -19,12 +19,12 @@ slots:
   titulo_livro:
     type: text
     mappings:
-    - type: from_text
+    - type: custom
 
   nome_autor:
     type: text
     mappings:
-    - type: from_text
+    - type: custom
 
   session_id:
     type: text
