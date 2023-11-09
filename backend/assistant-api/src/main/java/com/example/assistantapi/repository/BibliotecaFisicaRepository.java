@@ -8,12 +8,4 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BibliotecaFisicaRepository extends MongoRepository<FisicaBookEntity, String> {
-
-    @Query("{$text: {$search: ?0}}")
-    List<FisicaBookEntity> findDocumentByTitle(String title);
-
-    @Query("{$text: {$search: ?0}}")
-    List<FisicaBookEntity> findDocumentByAuthor(String author);
-
-}
+public interface BibliotecaFisicaRepository extends MongoRepository<FisicaBookEntity, String> {}

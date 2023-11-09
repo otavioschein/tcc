@@ -46,7 +46,7 @@ public class AssistantService {
 
     public AssistantResponse getDocumentsByTituloBibliotecaFisica(String sessionId, String titulo) {
         boolean isCache = false;
-        var listLivros = bibliotecaFisicaRepository.findDocumentByTitle(titulo)
+        var listLivros = bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, FisicaBookEntity.class)
                 .stream()
                 .limit(10)
                 .filter(livro -> Objects.nonNull(livro.getTitulo()))
@@ -69,7 +69,7 @@ public class AssistantService {
     public List<LivroResponse> getDocumentsByAutorBibliotecaFisica(String autor) {
         var regexPattern = getRegexPattern(autor);
         log.info("Regex pattern: {}", regexPattern);
-        return bibliotecaFisicaRepository.findDocumentByAuthor(autor)
+        return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(autor, FisicaBookEntity.class)
                 .stream()
                 .filter(livro -> Objects.nonNull(livro.getAutor()))
                 .filter(livro -> regexPattern.matcher(livro.getAutor()).find())
@@ -80,7 +80,7 @@ public class AssistantService {
 
     public AssistantResponse getDocumentsByTituloPearsonBiblioteca(String sessionId, String titulo) {
         var isCache = false;
-        var pearsonLivrosList = pearsonRepository.findDocumentByTitle(titulo)
+        var pearsonLivrosList = bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, PearsonBibliotecaBookEntity.class)
                 .stream()
                 .limit(10)
                 .filter(livro -> Objects.nonNull(livro.getTitulo()))
@@ -102,7 +102,7 @@ public class AssistantService {
     public List<LivroResponse> getDocumentsByAutorPearsonBiblioteca(String autor) {
         var regexPattern = getRegexPattern(autor);
         log.info("Regex pattern: {}", regexPattern);
-        return pearsonRepository.findDocumentByAutor(autor)
+        return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(autor, PearsonBibliotecaBookEntity.class)
                 .stream()
                 .filter(livro -> Objects.nonNull(livro.getAutor()))
                 .filter(livro -> regexPattern.matcher(livro.getAutor()).find())
@@ -112,8 +112,7 @@ public class AssistantService {
 
     public AssistantResponse getDocumentsByTituloMinhaBiblioteca(String sessionId, String titulo) {
         var isCache = false;
-//        var bookList = bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, MinhaBibliotecaBookEntity.class)
-        var bookList = minhaBibliotecaRepository.findDocumentByTitle(titulo)
+        var bookList = bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(titulo, MinhaBibliotecaBookEntity.class)
                 .stream()
                 .limit(10)
                 .filter(livro -> Objects.nonNull(livro.getTitulo()))
@@ -135,7 +134,7 @@ public class AssistantService {
     public List<LivroResponse> getDocumentsByAutorMinhaBiblioteca(String autor) {
         var regexPattern = getRegexPattern(autor);
         log.info("Regex pattern: {}", regexPattern);
-        return minhaBibliotecaRepository.findDocumentByAutor(autor)
+        return bookWiseRepository.buscarLivrosPearsonBibliotecaPorTermo(autor, MinhaBibliotecaBookEntity.class)
                 .stream()
                 .filter(livro -> Objects.nonNull(livro.getAutor()))
                 .filter(livro -> regexPattern.matcher(livro.getAutor()).find())

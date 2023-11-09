@@ -8,12 +8,4 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PearsonRepository extends MongoRepository<PearsonBibliotecaBookEntity, String> {
-
-    @Query("{$text: {$search: ?0}}")
-    List<PearsonBibliotecaBookEntity> findDocumentByTitle(String title);
-
-    @Query("{$text: {$search: ?0}}")
-    List<PearsonBibliotecaBookEntity> findDocumentByAutor(String autor);
-
-}
+public interface PearsonRepository extends MongoRepository<PearsonBibliotecaBookEntity, String> {}
