@@ -102,7 +102,7 @@ class ActionBuscarLivroPorTitulo(Action):
             dispatcher.utter_message(text=messageMinhaBiblioteca)
 
             for mbLivro in livrosMinhaBiblioteca:
-                textLivro = f"Titulo {mbLivro.titulo}, do autor {mbLivro.autor} e está disponível no link {mbLivro.acesso}"
+                textLivro = f"Título {mbLivro.titulo}, do autor {mbLivro.autor} e está disponível no link {mbLivro.acesso}"
                 dispatcher.utter_message(text=textLivro)
         else:
             messageMinhaBiblioteca = f"Desculpe, na Minha Biblioteca não há livros para esse título."
@@ -114,7 +114,7 @@ class ActionBuscarLivroPorTitulo(Action):
             dispatcher.utter_message(text=messagePearson)
             
             for prLivro in livrosPearson:
-                textLivro = f"Titulo {prLivro.titulo}, do autor {prLivro.autor} e está disponível no link {prLivro.acesso}"
+                textLivro = f"Título {prLivro.titulo}, do autor {prLivro.autor} e está disponível no link {prLivro.acesso}"
                 dispatcher.utter_message(text=textLivro)
         else:
             messagePearson = f"Desculpe, não foi encontrado nenhum livro com esse nome na biblioteca Pearson"
@@ -125,7 +125,7 @@ class ActionBuscarLivroPorTitulo(Action):
             dispatcher.utter_message(text=messageFisica)
             
             for livroFisica in livrosFisica:
-                textLivro = f"Titulo {livroFisica.titulo}, do autor {livroFisica.autor} está disponível em {livroFisica.acesso}"
+                textLivro = f"Título {livroFisica.titulo}, do autor {livroFisica.autor} está disponível em {livroFisica.acesso}"
                 dispatcher.utter_message(text=textLivro)
         else:
             messagePearson = f"Desculpe, não foi encontrado nenhum livro com esse nome na biblioteca física"
